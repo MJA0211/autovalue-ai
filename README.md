@@ -21,6 +21,14 @@ valuation.
 > A clone without it reports `artifact required` and never substitutes a
 > placeholder.
 
+## Demo Video
+
+A short walkthrough of AutoValue AI will be added here, covering the valuation
+workflow, calibrated uncertainty, engineering dashboard, and River
+shadow-learning simulation.
+
+<!-- Future GitHub-hosted video URL: add here -->
+
 ## Final evidence at a glance
 
 | Evidence | Result |
