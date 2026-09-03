@@ -9,6 +9,10 @@ updates:
       time: "09:00"
       timezone: America/New_York
     open-pull-requests-limit: 3
+    # Remove when AutoValue intentionally moves from Python 3.11 to Python 3.12+.
+    ignore:
+      - dependency-name: "numpy"
+        versions: [">=2.5.0"]
     groups:
       python-compatible-updates:
         patterns:
