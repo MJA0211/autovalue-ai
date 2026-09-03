@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "decision_id": "autovalue-yoad22-controlled-batch-approval-v1",
+  "source_id": "hf_yoad22_craigslist_used_cars",
+  "repository": "Yoad22/craigslist-used-cars-eda",
+  "revision": "912f968086868effb8523537015fb6a107c8eb3a",
+  "artifact_sha256": "f702408dee80181f1d003e9e7d2173340f26eb6eb013e76e9a47af6296833791",
+  "decision": {
+    "acquisition": "approved",
+    "controlled_batch_experimentation": "approved",
+    "production_batch_training": "not_approved",
+    "online_river_learning": "blocked",
+    "automatic_model_promotion": "prohibited"
+  },
+  "approval_gates": {
+    "pinned_artifact_identity": "passed",
+    "quality_and_schema_review": "passed",
+    "us_market_scope": "passed_source_and_row_state_review",
+    "usd_asking_price_semantics": "passed_source_review",
+    "license_and_attribution": "passed_cc_by_4_0_with_upstream_cc0_lineage_recorded",
+    "upstream_provenance": "passed_austin_reese_craigslist_v10_identified",
+    "source_family_overlap_with_cars_com": "passed_no_known_shared_origin",
+    "coarse_duplicate_control": "passed_group_before_split_and_remove_exact_cross_source_collisions",
+    "common_feature_contract": "passed_model_excluded_from_both_arms",
+    "leakage_safe_evaluation": "passed_pooled_predictor_group_folds",
+    "phase4_calibration_protection": "passed_excluded",
+    "legacy_holdout_protection": "passed_excluded"
+  },
+  "required_filters": {
+    "exclude_unknown_manufacturer": true,
+    "remove_exact_raw_duplicates": true,
+    "remove_development_cross_source_year_make_mileage_price_collisions": true,
+    "normalize_make_case_only_without_unreviewed_alias_mapping": true,
+    "source_id_as_predictor": false
+  },
+  "restrictions": [
+    "Use only the pinned private local artifact for the controlled experiment.",
+    "Retain attribution to Yoad22 and the documented Austin Reese/Craigslist upstream source.",
+    "Do not redistribute source rows or a row-derived model artifact without a new review.",
+    "Do not treat the data as current observations because row timestamps are unavailable.",
+    "Do not combine another Austin Reese/Craigslist derivative without a new overlap decision.",
+    "Do not send these records to River or any online learner."
+  ],
+  "evidence": {
+    "quality_report": "docs/data-reviews/hf-yoad22-craigslist-used-cars-eda-v1.quality.json",
+    "candidate_comparison": "docs/data-reviews/hf-candidates-vs-current-retail-v1.comparison.json",
+    "human_review": "docs/data-reviews/hugging-face-candidates.md",
+    "controlled_experiment": "docs/experiments/yoad22-controlled-batch-v1.json"
+  },
+  "carson_shively_status": {
+    "batch_training": "blocked",
+    "online_learning": "blocked",
+    "reason": "Upstream provenance and U.S./USD scope remain unresolved."
+  }
+}

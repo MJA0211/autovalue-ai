@@ -1,0 +1,527 @@
+{
+  "artifact": {
+    "cache_hit_at_profile_time": true,
+    "sha256": "f702408dee80181f1d003e9e7d2173340f26eb6eb013e76e9a47af6296833791",
+    "size_bytes": 20749648
+  },
+  "candidate": {
+    "config": "default",
+    "file_path": "vehicles_clean.csv",
+    "repo_id": "Yoad22/craigslist-used-cars-eda",
+    "required_product_currency": "USD",
+    "required_product_market_country": "US",
+    "revision": "912f968086868effb8523537015fb6a107c8eb3a",
+    "source_currency_status": "reviewed_us_craigslist_asking_price_semantics",
+    "source_id": "hf_yoad22_craigslist_used_cars",
+    "source_market_scope_status": "reviewed_us_craigslist_source",
+    "split": "train",
+    "target_semantics": "historical_used_vehicle_advertised_asking_price"
+  },
+  "generated_at": "2026-09-01T12:00:00+00:00",
+  "license_and_permissions": {
+    "acquisition": "approved",
+    "acquisition_evidence": "Public ungated Hugging Face artifact reviewed at the pinned revision; CC-BY-4.0 attribution is retained.",
+    "attribution": "Yoad22, craigslist-used-cars-eda, derived from the Austin Reese Craigslist vehicle data; licensed CC BY 4.0.",
+    "batch_training": "pending",
+    "batch_training_evidence": "Pending independent quality, source-overlap, transformation, and split review.",
+    "declared_license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "online_learning": "blocked",
+    "online_learning_evidence": "Blocked until batch reuse and append-only online-label semantics are separately approved.",
+    "usage_restrictions": [
+      "Attribute Yoad22 and the documented Austin Reese/Craigslist upstream source.",
+      "Do not combine with another Austin Reese/Craigslist derivative without a source-level partition or deduplication decision.",
+      "Do not redistribute raw or processed rows from this repository without a new review."
+    ]
+  },
+  "overlap_with_current_retail": {
+    "current_retail_origin": "historical Cars.com extraction, not Craigslist",
+    "current_retail_source_id": "kaggle_us_sales_cars_v2",
+    "merge_blocked_by_overlap_gate": false,
+    "rationale": "Reviewed lineage contains no shared upstream dataset family.",
+    "risk": "no_known_shared_origin",
+    "shared_upstream_families": []
+  },
+  "promotion_decision": {
+    "merged_into_existing_training_data": false,
+    "reason": "Pending independent quality, source-overlap, transformation, and split review.",
+    "training_experiment_started": false
+  },
+  "provenance": {
+    "accepted_row_count": 250361,
+    "acquired_at": "2026-09-01T12:00:00+00:00",
+    "acquisition_approval": "approved",
+    "batch_training_approval": "pending",
+    "config": "default",
+    "duplicate_row_count": 0,
+    "file_path": "vehicles_clean.csv",
+    "online_learning_approval": "blocked",
+    "raw_row_count": 250361,
+    "rejected_row_count": 0,
+    "repo_id": "Yoad22/craigslist-used-cars-eda",
+    "revision": "912f968086868effb8523537015fb6a107c8eb3a",
+    "schema_mapping_version": "hf-yoad-craigslist/1.0.0",
+    "split": "train"
+  },
+  "quality": {
+    "accident_history_coverage": {
+      "distinct_values": 0,
+      "present_percentage": 0.0,
+      "present_rows": 0,
+      "raw_rows": 250361,
+      "reason": "no accident-history field",
+      "top_values": []
+    },
+    "condition_coverage": {
+      "distinct_values": 7,
+      "present_percentage": 100.0,
+      "present_rows": 250361,
+      "top_values": [
+        {
+          "count": 87128,
+          "value": "unknown"
+        },
+        {
+          "count": 77658,
+          "value": "good"
+        },
+        {
+          "count": 64507,
+          "value": "excellent"
+        },
+        {
+          "count": 14727,
+          "value": "like new"
+        },
+        {
+          "count": 5194,
+          "value": "fair"
+        },
+        {
+          "count": 697,
+          "value": "new"
+        },
+        {
+          "count": 450,
+          "value": "salvage"
+        }
+      ]
+    },
+    "distribution_indicators": {
+      "records_with_price_and_mileage": 250361,
+      "vehicles_above_75000_percentage": 0.0,
+      "vehicles_above_75000_usd": 0
+    },
+    "geographic_coverage": {
+      "distinct_values": 51,
+      "present_percentage": 100.0,
+      "present_rows": 250361,
+      "top_values": [
+        {
+          "count": 25551,
+          "value": "ca"
+        },
+        {
+          "count": 15933,
+          "value": "fl"
+        },
+        {
+          "count": 14108,
+          "value": "tx"
+        },
+        {
+          "count": 11453,
+          "value": "ny"
+        },
+        {
+          "count": 10026,
+          "value": "oh"
+        },
+        {
+          "count": 8415,
+          "value": "mi"
+        },
+        {
+          "count": 8278,
+          "value": "pa"
+        },
+        {
+          "count": 7810,
+          "value": "or"
+        },
+        {
+          "count": 7735,
+          "value": "co"
+        },
+        {
+          "count": 7292,
+          "value": "il"
+        },
+        {
+          "count": 7267,
+          "value": "nc"
+        },
+        {
+          "count": 7165,
+          "value": "wi"
+        },
+        {
+          "count": 6788,
+          "value": "nj"
+        },
+        {
+          "count": 6737,
+          "value": "wa"
+        },
+        {
+          "count": 6734,
+          "value": "tn"
+        }
+      ]
+    },
+    "make_coverage": {
+      "distinct_values": 43,
+      "present_percentage": 100.0,
+      "present_rows": 250361,
+      "top_values": [
+        {
+          "count": 39779,
+          "value": "ford"
+        },
+        {
+          "count": 30264,
+          "value": "chevrolet"
+        },
+        {
+          "count": 21845,
+          "value": "toyota"
+        },
+        {
+          "count": 14554,
+          "value": "honda"
+        },
+        {
+          "count": 12148,
+          "value": "nissan"
+        },
+        {
+          "count": 11077,
+          "value": "jeep"
+        },
+        {
+          "count": 9160,
+          "value": "ram"
+        },
+        {
+          "count": 8931,
+          "value": "gmc"
+        },
+        {
+          "count": 8786,
+          "value": "bmw"
+        },
+        {
+          "count": 7726,
+          "value": "dodge"
+        },
+        {
+          "count": 7695,
+          "value": "unknown"
+        },
+        {
+          "count": 6659,
+          "value": "subaru"
+        },
+        {
+          "count": 6468,
+          "value": "mercedes-benz"
+        },
+        {
+          "count": 6430,
+          "value": "hyundai"
+        },
+        {
+          "count": 5806,
+          "value": "volkswagen"
+        }
+      ]
+    },
+    "mileage_coverage": {
+      "above_500000": 0,
+      "count": 250361,
+      "max": 399999.0,
+      "median": 96000.0,
+      "min": 0.0,
+      "negative_or_unparseable_nonmissing": 0,
+      "p01": 104.0,
+      "p25": 44853.0,
+      "p75": 142998.0,
+      "p95": 211000.0,
+      "p99": 270000.0,
+      "present_percentage": 100.0,
+      "present_rows": 250361
+    },
+    "missing_value_percentages": {
+      "car_age": 0.0,
+      "condition": 0.0,
+      "cylinders": 0.0,
+      "drive": 0.0,
+      "fuel": 0.0,
+      "manufacturer": 0.0,
+      "odometer": 0.0,
+      "paint_color": 0.0,
+      "price": 0.0,
+      "state": 0.0,
+      "title_status": 0.0,
+      "transmission": 0.0,
+      "type": 0.0,
+      "year": 0.0
+    },
+    "model_coverage": {
+      "distinct_values": 0,
+      "present_percentage": 0.0,
+      "present_rows": 0,
+      "raw_rows": 250361,
+      "reason": "source artifact has no model column",
+      "top_values": []
+    },
+    "notes": [
+      "The cleaned artifact has no model, VIN, stable listing ID, URL, or row timestamp.",
+      "The source card documents prior price/year/odometer filtering and IQR outlier removal; this report does not silently apply another target filter.",
+      "Model coverage is zero, limiting exact-model leakage detection and rich-model use."
+    ],
+    "price_distribution_usd": {
+      "count": 250361,
+      "max": 54241.0,
+      "median": 13900.0,
+      "min": 500.0,
+      "p01": 995.0,
+      "p25": 6900.0,
+      "p75": 24984.0,
+      "p95": 39990.0,
+      "p99": 49590.0
+    },
+    "price_quality_flags": {
+      "above_1000000": 0,
+      "above_250000": 0,
+      "below_2000": 7873,
+      "below_500": 0,
+      "filtering_decision": "No additional price rows removed by the quality report.",
+      "most_repeated_prices": [
+        {
+          "count": 2251,
+          "price_usd": 4500.0
+        },
+        {
+          "count": 2170,
+          "price_usd": 3500.0
+        },
+        {
+          "count": 2147,
+          "price_usd": 6995.0
+        },
+        {
+          "count": 2084,
+          "price_usd": 7995.0
+        },
+        {
+          "count": 2080,
+          "price_usd": 5500.0
+        },
+        {
+          "count": 2050,
+          "price_usd": 6500.0
+        },
+        {
+          "count": 1952,
+          "price_usd": 8995.0
+        },
+        {
+          "count": 1888,
+          "price_usd": 9995.0
+        },
+        {
+          "count": 1862,
+          "price_usd": 5995.0
+        },
+        {
+          "count": 1781,
+          "price_usd": 2500.0
+        }
+      ],
+      "nonpositive_or_unparseable": 0
+    },
+    "row_accounting": {
+      "acceptance_is_training_approval": false,
+      "accepted_rows": 250361,
+      "exact_duplicate_rows": 0,
+      "raw_rows": 250361,
+      "rejected_rows": 0
+    },
+    "schema_compatibility": {
+      "broad_coverage_fields": {
+        "drivetrain": {
+          "present_percentage": 100.0,
+          "source_column": "drive",
+          "supported": true
+        },
+        "fuel_type": {
+          "present_percentage": 100.0,
+          "source_column": "fuel",
+          "supported": true
+        },
+        "geography": {
+          "present_percentage": 100.0,
+          "source_column": "state",
+          "supported": true
+        },
+        "make": {
+          "present_percentage": 100.0,
+          "source_column": "manufacturer",
+          "supported": true
+        },
+        "mileage": {
+          "present_percentage": 100.0,
+          "source_column": "odometer",
+          "supported": true
+        },
+        "model": {
+          "present_percentage": 0.0,
+          "source_column": null,
+          "supported": false
+        },
+        "transmission": {
+          "present_percentage": 100.0,
+          "source_column": "transmission",
+          "supported": true
+        },
+        "vehicle_type": {
+          "present_percentage": 100.0,
+          "source_column": "type",
+          "supported": true
+        },
+        "year": {
+          "present_percentage": 100.0,
+          "source_column": "year",
+          "supported": true
+        }
+      },
+      "rich_fields": {
+        "accident_status": {
+          "present_percentage": 0.0,
+          "source_column": null,
+          "supported": false
+        },
+        "condition": {
+          "present_percentage": 100.0,
+          "source_column": "condition",
+          "supported": true
+        },
+        "engine": {
+          "present_percentage": 100.0,
+          "source_column": "cylinders",
+          "supported": true
+        },
+        "title_status": {
+          "present_percentage": 100.0,
+          "source_column": "title_status",
+          "supported": true
+        }
+      }
+    },
+    "title_status_coverage": {
+      "distinct_values": 7,
+      "present_percentage": 100.0,
+      "present_rows": 250361,
+      "top_values": [
+        {
+          "count": 236533,
+          "value": "clean"
+        },
+        {
+          "count": 5635,
+          "value": "rebuilt"
+        },
+        {
+          "count": 3495,
+          "value": "unknown"
+        },
+        {
+          "count": 3096,
+          "value": "salvage"
+        },
+        {
+          "count": 1256,
+          "value": "lien"
+        },
+        {
+          "count": 249,
+          "value": "missing"
+        },
+        {
+          "count": 97,
+          "value": "parts only"
+        }
+      ]
+    },
+    "year_coverage": {
+      "count": 250361,
+      "distinct_years": 33,
+      "impossible_or_future_after_2028": 0,
+      "max": 2022.0,
+      "median": 2013.0,
+      "min": 1990.0,
+      "p01": 1994.0,
+      "p25": 2008.0,
+      "p75": 2016.0,
+      "p95": 2019.0,
+      "p99": 2020.0
+    }
+  },
+  "report_schema_version": 1,
+  "report_type": "hugging_face_candidate_quality_and_compatibility",
+  "schema": {
+    "canonical_mapping": {
+      "accident_status": null,
+      "condition": "condition",
+      "drivetrain": "drive",
+      "engine": "cylinders (limited engine proxy)",
+      "fuel_type": "fuel",
+      "make": "manufacturer",
+      "mileage": "odometer",
+      "model": null,
+      "price_cents": "price (numeric USD asking price multiplied by 100)",
+      "state": "state",
+      "title_status": "title_status",
+      "transmission": "transmission",
+      "vehicle_type": "type",
+      "year": "year"
+    },
+    "mapping_version": "hf-yoad-craigslist/1.0.0",
+    "source_columns": [
+      "price",
+      "year",
+      "manufacturer",
+      "condition",
+      "cylinders",
+      "fuel",
+      "odometer",
+      "title_status",
+      "transmission",
+      "drive",
+      "type",
+      "paint_color",
+      "state",
+      "car_age"
+    ],
+    "source_id_available_for_audit_only": true,
+    "source_id_is_predictive_feature": false
+  },
+  "source_provenance": {
+    "known_upstream_families": [
+      "austin_reese_craigslist_vehicles_v10"
+    ],
+    "provenance_known": true,
+    "upstream_source": "Austin Reese Craigslist Cars and Trucks Data v10 (Craigslist US)"
+  }
+}

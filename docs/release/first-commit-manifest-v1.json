@@ -1,0 +1,1987 @@
+{
+  "schema_version": 1,
+  "manifest_type": "first_commit_publication_inventory",
+  "generated_at": "2026-09-02T23:07:43.619Z",
+  "repository_state": {
+    "branch": "main",
+    "existing_commit_count": 0,
+    "remote_count": 0
+  },
+  "scope": {
+    "path_source": "git ls-files --cached --others --exclude-standard",
+    "exact_candidate_path_set": true,
+    "ignored_paths_included": false,
+    "self_hash_and_size": null,
+    "self_note": "The manifest inventories itself, but its own hash and byte size are null because embedding either would be self-referential. Verify the manifest file separately."
+  },
+  "summary": {
+    "candidate_file_count": 280,
+    "externally_hashed_file_count": 279,
+    "externally_hashed_bytes": 5587244,
+    "safe_public_count": 280,
+    "needs_review_count": 0,
+    "ignored_private_in_manifest": 0
+  },
+  "entries": [
+    {
+      "path": ".editorconfig",
+      "size_bytes": 288,
+      "sha256": "836d45b8497dcb53edc3700e981e9a67989accb7d6c16f11166afd1dea2d1ead",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": ".gitattributes",
+      "size_bytes": 329,
+      "sha256": "d05a15672da88a2481524f6b84337d67cedb38234214a1c42be3471e3b38bda8",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": ".github/workflows/quality.yml",
+      "size_bytes": 1521,
+      "sha256": "01d4cbc0d471ca6ea0c8f7b7130ec097af16707e2205fe9209f6388ead1e2664",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 1415,
+      "sha256": "cf6f92797f90066a19caa2bec96c3651efa24a298ded45430508b3fb071feb4b",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "backend/.env.example",
+      "size_bytes": 570,
+      "sha256": "d026bd6080c87c309a71d064da39c75473aa29db95e35ad314c74c19058e4336",
+      "classification": "safe_public",
+      "category": "safe_configuration_template"
+    },
+    {
+      "path": "backend/README.md",
+      "size_bytes": 2443,
+      "sha256": "d502c70012830eda7efd59902b59f387aef0a50465b4c4a951e4eb6ddeabf139",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "size_bytes": 70,
+      "sha256": "418376931dfb4db05618373f4f56b671e41647a98036e0a0c2b63acc0efaf72b",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "backend/src/autovalue_api/__init__.py",
+      "size_bytes": 52,
+      "sha256": "eb444a16ee0093e3d3b193db08e7f54706c446cfc9a9e9dbe639541372402c94",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/api/__init__.py",
+      "size_bytes": 28,
+      "sha256": "5989bb3989db2e75ebc42fe0e00ed8a2a7eb14e88f6ca5ddfedca0904ed00be5",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/api/router.py",
+      "size_bytes": 313,
+      "sha256": "2ec83b06c9fd1d71c5b25db25e88a504de95b4d28d63ed9dcdec632afc6c53ad",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/api/routes/__init__.py",
+      "size_bytes": 25,
+      "sha256": "51bf83470168d705beb38744164cc071189699478cdb8ceebd28fd927f332148",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/api/routes/health.py",
+      "size_bytes": 802,
+      "sha256": "362a2bc48223c87e92a9c0c7c916308b4f984a34aa478a1784dde1ad79bb2b57",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/api/routes/valuation.py",
+      "size_bytes": 4989,
+      "sha256": "41ed06221973621c2c881f02687f08d6840b86c5cf1e2b27dd4d4b7cf52bd75a",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/core/__init__.py",
+      "size_bytes": 68,
+      "sha256": "a2e3698bc53f658e7e4af1013357a55365754f164df7753c219379a6ddc2db2b",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/core/config.py",
+      "size_bytes": 2193,
+      "sha256": "a8f769d262e9702a3c3a14d39468bfd4de152d8c742964d525407854f2a3a0de",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/main.py",
+      "size_bytes": 1821,
+      "sha256": "cbab5e87aea97fe55cbc3dbe0e441a96041569907c49727ed614250c52fecd26",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/schemas/__init__.py",
+      "size_bytes": 201,
+      "sha256": "86b7708224bde059b5757c8db2a62d0efbef76e8e0b080824c86784ceb4d9bc7",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/schemas/prediction.py",
+      "size_bytes": 4928,
+      "sha256": "743641e0da57dbe98628706e1249f29e106d3bf8d11f320e8c7709f2294b5c6b",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/services/__init__.py",
+      "size_bytes": 80,
+      "sha256": "cc05e14775a814a52cb82ffb979b1c9f097bc1001431529f12c31e99d08642ec",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/services/history.py",
+      "size_bytes": 6179,
+      "sha256": "610228332ebe29b92ad63073d624dd4827a002dc552f54c1651bf7e5c05437b5",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/services/shadow_learning.py",
+      "size_bytes": 1384,
+      "sha256": "aac3be5bd68b6dbe8f6101c1d9f76aca682a71d3d0684059a9c515ff47defcb9",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "backend/src/autovalue_api/services/valuation.py",
+      "size_bytes": 17331,
+      "sha256": "c77aa94cc673bb56ba85335d5eda44a5bdffa1811a9fb7816aff6eb03c19481e",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "data/fixtures/README.md",
+      "size_bytes": 417,
+      "sha256": "1220cb8a93d5b1f8168575e8ed3baf4b1e425cd81716cca5d0ef9e988ea76805",
+      "classification": "safe_public",
+      "category": "project_owned_synthetic_fixture"
+    },
+    {
+      "path": "data/fixtures/scraper_site/index.html",
+      "size_bytes": 2056,
+      "sha256": "d68be40ddbed6360ffb31c9461218284d85a24e38d6a829b2091e5d7834dd777",
+      "classification": "safe_public",
+      "category": "project_owned_synthetic_fixture"
+    },
+    {
+      "path": "data/fixtures/scraper_site/page-2.html",
+      "size_bytes": 2157,
+      "sha256": "06f1dc800e63a731dde74eb78fd3ebd71788b4147defb8d2aa9cf386427d264a",
+      "classification": "safe_public",
+      "category": "project_owned_synthetic_fixture"
+    },
+    {
+      "path": "data/fixtures/scraper_site/page-3.html",
+      "size_bytes": 1971,
+      "sha256": "897e117ae0e7ebf917295a878a21357761e177c43407e9090a6188a54cedac55",
+      "classification": "safe_public",
+      "category": "project_owned_synthetic_fixture"
+    },
+    {
+      "path": "data/fixtures/scraper_site/README.md",
+      "size_bytes": 1115,
+      "sha256": "5bf78a02a518096ff37ce3671bf764dce19c5b754545d36f026706d2aa71e782",
+      "classification": "safe_public",
+      "category": "project_owned_synthetic_fixture"
+    },
+    {
+      "path": "data/fixtures/scraper_site/robots.txt",
+      "size_bytes": 107,
+      "sha256": "9b95c4b72ebe5a7402c2bbbb2f9019a3aa61496d8a40c5a5418838de3a0e59eb",
+      "classification": "safe_public",
+      "category": "project_owned_synthetic_fixture"
+    },
+    {
+      "path": "data/fixtures/scraper_site/terms.html",
+      "size_bytes": 675,
+      "sha256": "57eeea6e5817c0e74db86a420131b13cc3400e6c8004f049e81bb3890f328416",
+      "classification": "safe_public",
+      "category": "project_owned_synthetic_fixture"
+    },
+    {
+      "path": "data/interim/.gitkeep",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "data/manifest.example.json",
+      "size_bytes": 745,
+      "sha256": "f806fc1edf8481d4c5f07566272295fb48675398487507c79095c327629d315d",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "data/processed/.gitkeep",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "data/raw/.gitkeep",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "data/README.md",
+      "size_bytes": 12450,
+      "sha256": "5a536543632398938e3d11e09f9f31d00074604a13487b5738fe79d64b4235fc",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "DATA_SOURCES.md",
+      "size_bytes": 5991,
+      "sha256": "1b15939333daa3292efb9c6430d9366431fb476c4dc9d29d21be911a300f1f19",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/architecture.md",
+      "size_bytes": 11120,
+      "sha256": "e2252cf904e587dde4dc6160a4ce5fad7a24eb3ff152edae69751570c0bed916",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/data-acquisition.md",
+      "size_bytes": 20442,
+      "sha256": "69f8167c476dafeac4bc355c62be95a3838104cae4d04fb107707b973456ea9d",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/data-attribution.md",
+      "size_bytes": 2654,
+      "sha256": "728aaea035167de96eb18aec535532a1596b39646a23246812a39ddfd3a623c1",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/data-reviews/hf-candidates-vs-current-retail-v1.comparison.json",
+      "size_bytes": 9356,
+      "sha256": "c644c46edd00d9ff21195e3391a4f72e4ec7bc59d249b5a2c4ea575f8c205c53",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/hf-carson-shively-used-car-price-v1.quality.json",
+      "size_bytes": 13502,
+      "sha256": "32470a81385c2e5877342360404cf467932e0fa6eab9d8b92c35bdbde138f30d",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/hf-yoad22-craigslist-used-cars-eda-v1.quality.json",
+      "size_bytes": 13582,
+      "sha256": "4c642a018da7669662431626d3c70bf96606b3877810c0eb0e63c82168b7e89b",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/hugging-face-candidates.md",
+      "size_bytes": 17140,
+      "sha256": "a5b457a99bd81be443796d1f7419822305cde929dc40ab199f18bd777befabb0",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/kaggle-us-sales-cars-v2.review.json",
+      "size_bytes": 7027,
+      "sha256": "316f02c398339022c5667ec66a93f4e209f6386d3578c75a18efbf40d774cf76",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/kaggle-vehicle-sales-data-v1.review.json",
+      "size_bytes": 5090,
+      "sha256": "b7824448dac48f8849e42bc29e8d250b11ce7aea3b9e2f81f108049a68e1ef70",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/kaggle-vehicle-sales-v1.split.json",
+      "size_bytes": 1689,
+      "sha256": "4c0d4b68d2ad1b8bcbbfc89d1936e0b8ba77287f3f1bc3f97b9c3301224e6833",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/README.md",
+      "size_bytes": 6804,
+      "sha256": "9a512cc49581f843537996f00476d28d5bb753e3534f02cd5c897ad5c0890d47",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/rebrowser-autotrader-preview-v1.audit.json",
+      "size_bytes": 22702,
+      "sha256": "a4eb30c62ce63059b0dcd73313ed171340dbb1924c9e56e9c8fc8cd0fae10a25",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/rebrowser-autotrader-preview-v1.md",
+      "size_bytes": 11948,
+      "sha256": "080b38eefbfffb1ae85ae46865e362e3b8cdb20b922d5bda18f9eaebd04feaf9",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-reviews/yoad22-controlled-batch-approval-v1.json",
+      "size_bytes": 2783,
+      "sha256": "84f0b8e2bc73dde89dbc8a0fe71b54f704f830f9e76e09db0aeef1e5e47e1bb7",
+      "classification": "safe_public",
+      "category": "aggregate_source_review"
+    },
+    {
+      "path": "docs/data-strategy.md",
+      "size_bytes": 19764,
+      "sha256": "26f70f33ca4bf618afe26f895613b0a29edbcca785a2b686622c8c14c6bb43ab",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/decisions/0001-initial-architecture.md",
+      "size_bytes": 1939,
+      "sha256": "e8d2ae115bf2d47f7ffc4f13469c06c0794b266322843d6a87e023031dd43fa5",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/decisions/0002-permission-gated-acquisition.md",
+      "size_bytes": 2355,
+      "sha256": "260ca480fa078cfeeea2abc805c86d22883b58666c7b73f3e2f486b4dc5e88df",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/decisions/0003-us-market-only.md",
+      "size_bytes": 1796,
+      "sha256": "2edc6b7ccc4fefd316bb4054147a95162a495f68ee1ea783f310d9604d2b1028",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/decisions/0004-separate-price-targets.md",
+      "size_bytes": 1979,
+      "sha256": "6512bf7b8b83f9d2593fb17f0e02a86ad96d12cceab8b938da0cd3c04dc9b8ab",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/decisions/0005-phase4-holdout-and-calibration.md",
+      "size_bytes": 2982,
+      "sha256": "c667d32d3a5d0c462bc06c472d7548ac4017bd7d544a63601fad7d07c9f2b740",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/deployment.md",
+      "size_bytes": 5188,
+      "sha256": "c20e2bd4e421ccb46e740456fca4fa973b386c2445e31f675686b209ccf28543",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/experiments/phase4-model-selection-v1.json",
+      "size_bytes": 13001,
+      "sha256": "6e517acb29634d676155c80fb73f4f126db492eba12a4281e9216dc568b1d384",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-partition-audit-v1.json",
+      "size_bytes": 3312,
+      "sha256": "7a272ce7e99078195bf08846eaa4edc7587d376f59a9b14563a507f0b92a7a10",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-retail-full-development-v1.checkpoint.json",
+      "size_bytes": 9054,
+      "sha256": "4efa6517f608f2f54aea0cb65cfd16429832641eb481e770dfca116741cd63ba",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-retail-full-development-v1.json",
+      "size_bytes": 10079,
+      "sha256": "07cf667e2e325f0bbb9b0fca1d62f4f3cdb54db4d607a03ff603142ee5fbc54f",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-retail-screening-v1.checkpoint.json",
+      "size_bytes": 22873,
+      "sha256": "c3ee4aa206a90f576edf591c0389c0ea6f6cdcb6c760f299c72a25bd39497cc1",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-retail-screening-v1.json",
+      "size_bytes": 23954,
+      "sha256": "62dcd2c1c41d30d49a4c98eab98e82529170aedd6f9313b46d00ffa50fdc4c9c",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-wholesale-full-development-v1.checkpoint.json",
+      "size_bytes": 5168,
+      "sha256": "6d273e1250b53a0a371477671c919e0ea5845d567501b2bbc74aed71663bcb45",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-wholesale-full-development-v1.json",
+      "size_bytes": 6250,
+      "sha256": "e8b89ca4607f7afb6814560c9d053976c00cca6103590262b00a8e89c4461f3e",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-wholesale-screening-v1.checkpoint.json",
+      "size_bytes": 12738,
+      "sha256": "a36d7f61755aa49d68657c4a6cd9afb6a8eebbabc9ff401e996eaa141d849b1e",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/phase4-wholesale-screening-v1.json",
+      "size_bytes": 13958,
+      "sha256": "0b0bb79ce82138215e6e8920f7b4ba57086e0f75e60cfc2095f8ab93e6e240c7",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/README.md",
+      "size_bytes": 10034,
+      "sha256": "ed4bb256800ee259974c11c52872bd03006bfcc5339911e935483837c5aced46",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-calibration-policy-v1.json",
+      "size_bytes": 4517,
+      "sha256": "1398519c699bd129ef4fbb552813c064839c6c1e1c4ecd35c7f5d42bcf8e1ca2",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-calibration-v1.artifact.json",
+      "size_bytes": 5534,
+      "sha256": "b7eb5970b164ec68fb76cf8314f36080d085cda02968d3570d11f724490a6da0",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-calibration-v1.md",
+      "size_bytes": 4940,
+      "sha256": "a913c8630bd727eb297e762e39b33cceb680e5fe88d63ab17402e0f494c5525a",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-calibration-v1.report.json",
+      "size_bytes": 85744,
+      "sha256": "e7fafff505603669e73cfbff2fe1cf5e04f9c5d896666470fe212411aa1b3084",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-development-residual-diagnostics-v1.json",
+      "size_bytes": 36835,
+      "sha256": "8f79ac027a72fff2512ab0b168d91a3a7b46677d72374dc00571a4646aac925d",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-final-evaluation-policy-v1.json",
+      "size_bytes": 11499,
+      "sha256": "2be880be315f39a727bd8f1c6545b9410ea855bee63a3e72336f4da8cd7d5c33",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-final-evaluation-v1.manifest.json",
+      "size_bytes": 6770,
+      "sha256": "40edba9a6846197c6d322b567e110c8bfa908518ee71c9da884263cb009e7c45",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-final-holdout-v1.md",
+      "size_bytes": 6797,
+      "sha256": "bc246570117734fb87787f8d05e3401d6d0be79ca7472d771334030c27cc8457",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-final-holdout-v1.report.json",
+      "size_bytes": 47133,
+      "sha256": "017ab1824b1ddf4248959ecf8bb4a7d87991b513526a5567f29af0dd6e191e86",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-serving-reconstruction-policy-v1.json",
+      "size_bytes": 4696,
+      "sha256": "becb895893f81cf04744786b722fc2a3c40be9e52257590989e1f9f2b44c831b",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-serving-reconstruction-v1.json",
+      "size_bytes": 5400,
+      "sha256": "e0dc8686e98a4d6cc51dd17ef61b43ca6a263a498d07aa9f3fb040071f6409f9",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-serving-reconstruction-v1.md",
+      "size_bytes": 3919,
+      "sha256": "8e13e1aa384bb2fd8b7f0427b4cf9b9b169aa85fff688af36e9231b486dcfd19",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-uncertainty-sharpness-policy-v1.json",
+      "size_bytes": 9103,
+      "sha256": "ec1787be963a907bbae2d1d521aeaef4239b8a5bf7816ced844dcd16902f1058",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-uncertainty-sharpness-v1.md",
+      "size_bytes": 4933,
+      "sha256": "910dde13d7b330e5228e56413dbe6232507a51817339e90901a346a7db49327f",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/retail-rf05-uncertainty-sharpness-v1.report.json",
+      "size_bytes": 499612,
+      "sha256": "8614bad1ccd5345c64925c11e6172a7b4ef000ed6f16856aa45b48c3e4a741dd",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/river-shadow-simulation-v1.json",
+      "size_bytes": 10408,
+      "sha256": "7c5d8b6a3fd28bcd0f65644a5736e6785645ba1492d3c11015eb33c410528957",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/yoad22-controlled-batch-v1.json",
+      "size_bytes": 35591,
+      "sha256": "30d1f6011b7f2d5e611bbae6197be4780eeabcda3daca501c0b683807cf12ec5",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/yoad22-source-composition-confirmation-v1.json",
+      "size_bytes": 73843,
+      "sha256": "6ca3dd25cfb24bb0734497e4703cc516b3152e42f319286fcdd73374a6b2e5f5",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/yoad22-source-composition-confirmation-v1.md",
+      "size_bytes": 6987,
+      "sha256": "d764485973c93ddcb76ce618239282bd999d94f30b0d027729ef3f3eeffaff76",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/yoad22-training-weight-confirmation-v1.checkpoint.json",
+      "size_bytes": 315058,
+      "sha256": "52fb1f1c57c358fdee9339e76b5cc84e4573c7ad32851b903cf30df452c8360e",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/yoad22-training-weight-confirmation-v1.json",
+      "size_bytes": 168663,
+      "sha256": "ceddd3dd530487ef57ee3d24390d5f0ef8e26db9c04f5d5b4f0ba56e84fb11a2",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/experiments/yoad22-training-weight-confirmation-v1.md",
+      "size_bytes": 16645,
+      "sha256": "91968b99327f31922582d703077b3c5917e0c29499e602869d6812f774bba01d",
+      "classification": "safe_public",
+      "category": "aggregate_experiment_evidence"
+    },
+    {
+      "path": "docs/ml-workflow.md",
+      "size_bytes": 27303,
+      "sha256": "71e603fe0c852fc43ec89391c517b1f1f0abb5b25d08d1cd46da680d0a304031",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/model-cards/autovalue-retail-rf05-v1.md",
+      "size_bytes": 3195,
+      "sha256": "bfffefc801434d12eaecfc98be0e79387afb9a80eb511818feb52c19bfdef09a",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/publication-readiness.md",
+      "size_bytes": 4019,
+      "sha256": "5dcdf3aeb4b9209be3cd164d48e977cd8373d51523d4d823904cb71363b599f4",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/release/first-commit-manifest-v1.json",
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "safe_public",
+      "category": "self_referential_publication_manifest"
+    },
+    {
+      "path": "docs/release/first-commit-review-v1.md",
+      "size_bytes": 4332,
+      "sha256": "bb10214062339b7879bcd0a0a01e7489e57d419ebcee97ae565738f86865c370",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/release/README.md",
+      "size_bytes": 2849,
+      "sha256": "ec47e003f3ad2912fcb0ee2d67d63bdc75073449a0b591cda304d200e6778ec2",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/release/release-smoke-checklist.md",
+      "size_bytes": 2791,
+      "sha256": "0bb4004282900c69b92a7c68701af2d5fdac7c5ee4e26f6909c18fb6fcd0ba78",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/release/screenshot-plan.md",
+      "size_bytes": 1889,
+      "sha256": "412de31ad4d1bb4c3cbd9924422a5046af6af5fe1d329e65d3be4f43382dbb9f",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/results/README.md",
+      "size_bytes": 5744,
+      "sha256": "f85af2edb3f137ed05a000b6f3c739faed75be6ed0479c26bd82e7ce770fd468",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/results/retail-baseline-v1.json",
+      "size_bytes": 4290,
+      "sha256": "b5cae941ebb01d9766716d01a24acc75ad7d0432b05e8dde44a6200caffad28a",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/results/wholesale-baseline-v1.json",
+      "size_bytes": 2861,
+      "sha256": "b0be8b30367f7b7adca904d80610dd161b9b33dffd9e116d5030bd34403a3030",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/river-shadow-learning.md",
+      "size_bytes": 7564,
+      "sha256": "329c01ce77d3c24b2c377379127e566e14034442d8a63accf76ebdb44daa9549",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "size_bytes": 10798,
+      "sha256": "1e377a05ecd195d46693a4f19806600a46a79cfa9d45ff6148d7e0e205a258b9",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/scraping-policy.md",
+      "size_bytes": 8286,
+      "sha256": "6174be6abde79373f5a1da76ddefed4ccae4c8793995fc34755b4f29128c2476",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "docs/screenshots/engineering-desktop.png",
+      "size_bytes": 312526,
+      "sha256": "df719e9e1c684d8f96ec1171aff2b3a4d8193aca84617ddd819ccacf08f822bc",
+      "classification": "safe_public",
+      "category": "privacy_safe_screenshot"
+    },
+    {
+      "path": "docs/screenshots/landing-desktop.png",
+      "size_bytes": 539324,
+      "sha256": "7349ff973e693c4baae0c555b54c768a9085b8c3b2805862d516ab1e232eb03e",
+      "classification": "safe_public",
+      "category": "privacy_safe_screenshot"
+    },
+    {
+      "path": "docs/screenshots/landing-mobile-cdp.png",
+      "size_bytes": 136127,
+      "sha256": "9dec8eb77417265f4a461755fc7923696820f07e62a79637ec6415abffa97693",
+      "classification": "safe_public",
+      "category": "privacy_safe_screenshot"
+    },
+    {
+      "path": "docs/screenshots/valuation-result-desktop.png",
+      "size_bytes": 525089,
+      "sha256": "22f90d49ce39db9306b68d1df6183c33b1459aabbea718c64b503b5fba8c4e0f",
+      "classification": "safe_public",
+      "category": "privacy_safe_screenshot"
+    },
+    {
+      "path": "frontend/.env.example",
+      "size_bytes": 120,
+      "sha256": "5da2bd135c8d0c9b9eb5696a40896e09bc4415740b7c58da7780d9766fc71cf9",
+      "classification": "safe_public",
+      "category": "safe_configuration_template"
+    },
+    {
+      "path": "frontend/eslint.config.js",
+      "size_bytes": 643,
+      "sha256": "0230bc43509155202542553c00b8f9202096d542af7028149c55228b40ee76d3",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "frontend/index.html",
+      "size_bytes": 580,
+      "sha256": "8583b83ecd3473e61aa53c0cd27f06fda7dbb27b92830feaf0443a1fe9807611",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "frontend/package.json",
+      "size_bytes": 676,
+      "sha256": "ff3adf9ec5b9e7cf37982e0b265cd0da978389bda2dadcef0450ffd1dfb4ffff",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "size_bytes": 80709,
+      "sha256": "f2b0b9d57391cf66ab638fdbbc9dbaed89caf283302b388fa892fb5a7b0bf27f",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "frontend/public/favicon.svg",
+      "size_bytes": 217,
+      "sha256": "15cb9b5687114e9edfeebd1abdd2fc6ba9cef1a39f46146c75591a3e61d5599e",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "frontend/README.md",
+      "size_bytes": 1650,
+      "sha256": "35bb127fee79e9722a396a2f4efbe3d87db90cd61306f44f6d10f4f9a7ec5ee9",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "frontend/src/api/health.js",
+      "size_bytes": 480,
+      "sha256": "9031284f461efe87b09a3c5e03c2fbc69f55a1558d2c57874488596612b71fe0",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "frontend/src/api/valuation.js",
+      "size_bytes": 1432,
+      "sha256": "abf851586b105d6b47bac4632154c3dd71976bfd1bb81bfb56fd93bbe5390cc5",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "frontend/src/App.jsx",
+      "size_bytes": 22920,
+      "sha256": "c95b660e4d14e056412231acc8534f55146dbef24d1bafff8816d1546114abcd",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "frontend/src/main.jsx",
+      "size_bytes": 307,
+      "sha256": "1b178e252a1a0e5e72f5917c19f68b21ffb42cf0c427422e222d0b8dfc36f26b",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "frontend/src/styles.css",
+      "size_bytes": 21592,
+      "sha256": "0d620829199deb8835fa74019130403902292499a1e635974582c1c90b898672",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1083,
+      "sha256": "5f8a0009d50ad32d070da623f7ddb27928e92d1a3c89d529e18429099be1b388",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "ml/README.md",
+      "size_bytes": 10410,
+      "sha256": "4d9d9f60f7477d2fffd8402d9b3efe72429bb37e8b5c4d810d51c18bceffa116",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "ml/requirements.txt",
+      "size_bytes": 126,
+      "sha256": "b490f2e4fd11c747006669b6d9cec2e70ad0ffdd6d405d03cad38aabb9f8b56c",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "ml/schemas/vehicle-listing-v1.schema.json",
+      "size_bytes": 2521,
+      "sha256": "6f51e9d56af5b557c129c747837fe5487ea2fdb0407999f8b4a80aa8bfdfc58c",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "ml/src/autovalue_ml/__init__.py",
+      "size_bytes": 78,
+      "sha256": "06c15adc3f03523ec39d705a9bc126d43a8e279d7ad282e4162c944cb41543e3",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/__init__.py",
+      "size_bytes": 6878,
+      "sha256": "720a003e275e96bb3768c13bca0065b36df5db005b1874d6b8aab286971fc9b4",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/adapter.py",
+      "size_bytes": 2709,
+      "sha256": "5b1c9cdafcb844dbaa3c637e866834fa208946824e4ca59d56bea6270102240b",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/autotrader_audit.py",
+      "size_bytes": 32745,
+      "sha256": "6711676cd65323b41e56b854c0aa7e29e0dc04002ad9daf04c469c93a1f88df0",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/autotrader_audit_cli.py",
+      "size_bytes": 1558,
+      "sha256": "6df5ddd7af49639f18090c76944a9625ac65230ba46849bf96c024d63e2b6919",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/cache.py",
+      "size_bytes": 4580,
+      "sha256": "86bbda49e241dc315cc93ff4e5884ce1c4a6bd400babb6c2f7c1215003201603",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/contracts.py",
+      "size_bytes": 11385,
+      "sha256": "9fbe937ea3e27498df0bfc9cc0422fc30427cee21eb5791a504646049e6bb0d3",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/demo.py",
+      "size_bytes": 7511,
+      "sha256": "9a9b839f37129735e2fc952602cfd73039a86e426bd9cd5347d46f6ae8e55b03",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/errors.py",
+      "size_bytes": 1108,
+      "sha256": "33b6ecfdb70d92c4d683d80b07032541257e7d25dcc6603d8e71d1587c1239ba",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/huggingface_comparison.py",
+      "size_bytes": 11334,
+      "sha256": "1d1df2c9a635e0836bfc2ff075fb303e91258f47f38b0570a982bbcfe2db652d",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/huggingface_dataset.py",
+      "size_bytes": 16766,
+      "sha256": "1d109ba635319cb3e0d2135bdfc1078be0217d218a5ff12e9bc3afe8918cb58d",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/huggingface_quality.py",
+      "size_bytes": 22167,
+      "sha256": "a0fbaa3afcf9f8b2cde20fc9d734c5c65baaa47f4c5c4d66822a7be56946d3db",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/huggingface_quality_cli.py",
+      "size_bytes": 2210,
+      "sha256": "014c200a7ff0a1cea6f6152b094ed1f7c66d4904112e58322eb51839ff2bfe3e",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/licensed_dataset.py",
+      "size_bytes": 25166,
+      "sha256": "2ce559fef15dad132fef86269a0a20abdc8f6c27489d78420f4a5d9c58a0518e",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/normalization.py",
+      "size_bytes": 13246,
+      "sha256": "72982c5cd49a65cb3e3d82fbd8c134154eec6d89329ebd87aab1fe96cc875cc5",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/parser.py",
+      "size_bytes": 9181,
+      "sha256": "90cbd7ea917f08afff2a73ebed77c67a9399e25eadc52c2f4a5c8d74ba333f40",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/policy.py",
+      "size_bytes": 17645,
+      "sha256": "b343415e60365c9ffbe805afc3b1a91e1717d73af730e5ed10e73f2d88cc6a41",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/provenance.py",
+      "size_bytes": 3024,
+      "sha256": "79395364d0fa25e852925d7b777b28ada22a8d26476d7038684ac4ab1f773a41",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/scalar_parsing.py",
+      "size_bytes": 2514,
+      "sha256": "5969faae6e2844ce8525742e540541c290d2839d2c2d6eab00a74be0d796e26d",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/scraper.py",
+      "size_bytes": 24723,
+      "sha256": "2047b58f71b8b56f1b16e33aa56c34252ca8cb9249fd2a429b0809c32cbade1e",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/sources/__init__.py",
+      "size_bytes": 4520,
+      "sha256": "0facb27908150c2880c958579138db8e3ff1f413e3e48eb41a0604d12af8f0ec",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/sources/huggingface_candidates.py",
+      "size_bytes": 19190,
+      "sha256": "afcca76adaf9d2842cd9b04d695833983d6a66dabffc4b94e328a532110c0f76",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/sources/kaggle_us_sales_cars.py",
+      "size_bytes": 68770,
+      "sha256": "9dde42b5d9fc00ceb6ba7e4a55a3638256af1af6acf9ff9bd04a310384f4063f",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/sources/kaggle_us_sales_cars_split.py",
+      "size_bytes": 53077,
+      "sha256": "744146a22d4e26c18d049d6bdbd52cc164bbdf18f05bf6263ad7b357a8cd8a1f",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/sources/kaggle_vehicle_sales.py",
+      "size_bytes": 69320,
+      "sha256": "c4a05ba6e0a87ec5a53eddf6174c90c1dfdae012d4373acea4d4010ab14ead88",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/sources/kaggle_vehicle_sales_split.py",
+      "size_bytes": 61477,
+      "sha256": "f0c529d923c41e1abfdab0e8bdf264496905b5a6caa76bb45508f8628a5bc55e",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/training_gate.py",
+      "size_bytes": 8204,
+      "sha256": "8bf720e6c2a5f2e7a21a742fca85815af72d771451c132a61145fd4cbf6d52a0",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/acquisition/writer.py",
+      "size_bytes": 13032,
+      "sha256": "70ee3b057728c90c2de6c96a6e80edd1a48321aab9ade97fb35bd569c40eb343",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/__init__.py",
+      "size_bytes": 7464,
+      "sha256": "ca24b65d76b4c80239b42cec4a7017ace888755fb3e242734716bf7792e0c322",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/baseline_cli.py",
+      "size_bytes": 22650,
+      "sha256": "006d25756091097da50e4d79ab511837078ac179ad2cb3e0d75b9ffbbc947ba5",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/baselines.py",
+      "size_bytes": 1581,
+      "sha256": "6ab5450ecdf1d1a62b7cac0979170a74e48b637f16c3753acf2d326eedc613ea",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/calibration.py",
+      "size_bytes": 20871,
+      "sha256": "5bf236be04914de82f2d36991425f0bb96b4ae6a76e7ae0b8c29c45b914ef798",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/calibration_artifact.py",
+      "size_bytes": 31284,
+      "sha256": "73e6d0ae0d0ecf1a14e6b31408dd41a3ebba0ffa5e316ebcaac9d2952be839a5",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/candidates.py",
+      "size_bytes": 11262,
+      "sha256": "480140a97af8a230a38d56d7b037b3f393944e1f7166d3f45b1584179516d18d",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/contracts.py",
+      "size_bytes": 8348,
+      "sha256": "312f8a3aaa31e3b02681611f681c22929785225c904d28bd295fb324652f7316",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/cv.py",
+      "size_bytes": 5422,
+      "sha256": "8f13f9afc20a238e58ddceec0cc025626757c66ff81f226bccbd852fb2891aad",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/experiment.py",
+      "size_bytes": 38729,
+      "sha256": "2768fc2a953965776020a4ae61efcd759755a3a0a151ec457a127e18258de666",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/feature_engineering.py",
+      "size_bytes": 5464,
+      "sha256": "5471abae3057273733203718072cf6595c9a178f4159c4b58bb1ee9145e8c1a2",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/final_evaluation_policy.py",
+      "size_bytes": 8219,
+      "sha256": "f78503c46f1dac0cd0e8a1a8c92c2132fd33196350454cd9034fe3ef29c739d9",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/metrics.py",
+      "size_bytes": 4725,
+      "sha256": "a498473c100719e06e8562a78ec374e86f57e51c344c6c91033fad2e64535dee",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/phase4_confirmation.py",
+      "size_bytes": 24979,
+      "sha256": "5bec0d9f93b0e4b4983ddd215def18627a5dd348ca3a381bcf2d29a1ff53953a",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/phase4_confirmation_cli.py",
+      "size_bytes": 10402,
+      "sha256": "e1e1a4e09ebf781e0657721d1e31af081d1acd637666719b1e8ab6ae28de1977",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/phase4_evaluation.py",
+      "size_bytes": 26284,
+      "sha256": "ec6e86099cf5bda5b8bb1ceeee1b00878fba1d68778bf252d0bc2bcae927fdaf",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/phase4_protocol.py",
+      "size_bytes": 54011,
+      "sha256": "bd8021e22a711ba2f9cb87ca88b0655b8ce7ef635bdae857fb60db3946098778",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/phase4_screening_cli.py",
+      "size_bytes": 10324,
+      "sha256": "ef8c51dedaf856ed2616c51e2be5ad27fccfcc85e43a96162dc561a136be9c29",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/phase4_screening_experiment.py",
+      "size_bytes": 36873,
+      "sha256": "95605e8be19943a75959e69d6ba072b19ba9c6235d81e63499ec8726a215bf54",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/phase4_selection.py",
+      "size_bytes": 26427,
+      "sha256": "4ac45692b6292f9b46fdcea00e7379b551ccc8c9855b63f12097f65f1f1395f3",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/preprocessing.py",
+      "size_bytes": 2819,
+      "sha256": "7f3887550185e5f793d6dec57835759bf2d99f0b3edb27968005f3ecda12952e",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/reporting.py",
+      "size_bytes": 10534,
+      "sha256": "eeb21a37d3bbfed48a96230fca111b5eff565527e88aa53954d414c4ffcc41cb",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/retail_calibration_cli.py",
+      "size_bytes": 12298,
+      "sha256": "e9075b04e6df032fe5eec1a4d6624bf1b24736f4888caae8a0f597fe53796177",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/retail_calibration_experiment.py",
+      "size_bytes": 35005,
+      "sha256": "c29db265dc580645190b64241cd2476c82d370bd94ede955f3b06db0bb346a8c",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/retail_final_evaluation.py",
+      "size_bytes": 42857,
+      "sha256": "10a1d619777089fc76002762c05c0f1b7249822eeb30830a0116f9904f46a18c",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/retail_final_evaluation_cli.py",
+      "size_bytes": 41717,
+      "sha256": "bc0f7a7d2edf8729e16bd9691512aa1d317babe1122b47429fd0bcb4013ba2a4",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/retail_uncertainty_diagnostics.py",
+      "size_bytes": 16282,
+      "sha256": "cfc048ee04c2445abb11755ed34cb962e4d08178d19cbb439e05798b2c919979",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/retail_uncertainty_diagnostics_cli.py",
+      "size_bytes": 5893,
+      "sha256": "97bb1d5eea31b9d97d5cd96316409680740a40dfc207f15f2fa8b241b4e6f4a4",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/retail_uncertainty_sharpness.py",
+      "size_bytes": 78968,
+      "sha256": "ac7971f75e923e9cb4f6a322b68c93d7ae6b2704020c62b20fe6f1a7010cdfcb",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/retail_uncertainty_sharpness_cli.py",
+      "size_bytes": 32756,
+      "sha256": "d348bf8a2f4bb3aef76bdc5dd16f5c18f557fece50736ee49273f91343975cfc",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/rf05_serving_bundle.py",
+      "size_bytes": 34597,
+      "sha256": "ac021b9efd5b0cfbb018efe3543082358eeb0629912ddbf793da26940f5857e6",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/rf05_serving_bundle_cli.py",
+      "size_bytes": 2018,
+      "sha256": "c8ec85b5839810e95c7d9173d9bb069fc49163155e6e6d2285f6bcc72da57711",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/screening.py",
+      "size_bytes": 12962,
+      "sha256": "7752305a2fc48336e47001daab648a78b2819106fa0dc4973c08ecbc94afcae6",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/tree_preprocessing.py",
+      "size_bytes": 2858,
+      "sha256": "fab8894876c0eb82e9dbf8fa353d7f322d4aae2a9e73f32feb76be663473986d",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/uncertainty_candidate_artifact.py",
+      "size_bytes": 29764,
+      "sha256": "3f5a0b19d7625f849ad9eb9d4074da5ccbb3b94397ec64a3cfd405bae9b4994c",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/uncertainty_sharpness_policy.py",
+      "size_bytes": 45280,
+      "sha256": "5b87096a71a18a229fe1c69807052b959058239e644ef72869763ab17bd2cee1",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/yoad_confirmation.py",
+      "size_bytes": 32528,
+      "sha256": "30569c744fd06a7a5f8ce58a87c81091dd67232803dfbfc1347f2c36e6734327",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/yoad_confirmation_cli.py",
+      "size_bytes": 2006,
+      "sha256": "fda3f2ee59a1f1886283bbfe5226277651645deffb71f673577cd6b5f5dad4d1",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/yoad_experiment.py",
+      "size_bytes": 27575,
+      "sha256": "1fb5911b5d0a60e160c8cd7ce5aa9f40d8dcf4a663dd557c1902c34006381729",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/yoad_experiment_cli.py",
+      "size_bytes": 1878,
+      "sha256": "449f0f87620d4f11ace3462f167a9811fc56d71df8b7f0c0dd4d9832a020fbd2",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/yoad_weighting.py",
+      "size_bytes": 49168,
+      "sha256": "32c81c8ec2f11c609ba1e86a1706ce52fa26c81446b2b463b669425813bac59f",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/modeling/yoad_weighting_cli.py",
+      "size_bytes": 3787,
+      "sha256": "1a5c31277d556216a7039e305bdd5ed9e2b5d8118f332aa5141fe64845c75b22",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/__init__.py",
+      "size_bytes": 494,
+      "sha256": "f2287d26975bcb4093a7bd2311641df450f55563fd8281a83681806b93f4fb9f",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/contracts.py",
+      "size_bytes": 5828,
+      "sha256": "1c07611c265bbc6b984eb88a3aa6c9d93353972638835890f3ec8aa6f82e9ca7",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/drift_monitor.py",
+      "size_bytes": 2241,
+      "sha256": "5722282551d2185284f380233716b039a124e987af2cd44ddc255355bfe7e3bc",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/errors.py",
+      "size_bytes": 1101,
+      "sha256": "b83b902b9df66843c63b5f1ceaa3652bac86bb3c270f1843cadb9771c33533a6",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/metrics.py",
+      "size_bytes": 5435,
+      "sha256": "2d57bee0de0911c95bde543f38ae25a2c4cacaa11a42ccecbd01f56595426224",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/model.py",
+      "size_bytes": 3754,
+      "sha256": "06cd4e2b8e73677ad1c4c7d3bfc8cfbee52bbde7629d71c50a5d72f1040bb8ec",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/permissions.py",
+      "size_bytes": 4010,
+      "sha256": "d1445931de20b641cfa3779ae840cbb8c4835c6461699db893203aff71a06079",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/service.py",
+      "size_bytes": 16953,
+      "sha256": "986154fce019aec3cfe4548f9aaedfcf276d146d959848c0c04bcefe38af173e",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/simulation_cli.py",
+      "size_bytes": 1449,
+      "sha256": "ed330d625a95e32d85b628a919ad12ce70fbf333573767f6eac53a923bd027fb",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "ml/src/autovalue_ml/online/simulator.py",
+      "size_bytes": 14310,
+      "sha256": "6836a64d2e9bc519b91134dea86cabfea319c7dd328f9d0da46533fa5ac827e8",
+      "classification": "safe_public",
+      "category": "source_code"
+    },
+    {
+      "path": "models/README.md",
+      "size_bytes": 2184,
+      "sha256": "a922300feb4028f79f1783225b098893d787f1fbbe3e3c1be666d3db59d83f20",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "pyproject.toml",
+      "size_bytes": 687,
+      "sha256": "3ceca92754a8769410b49f6f503bedb4cc66042cad57a05220617939a23bb3ba",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 26644,
+      "sha256": "2c6318fd7589a42a0929ba2e2cb2856990295fdefb10502a477de592cd7dddef",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "requirements.txt",
+      "size_bytes": 52,
+      "sha256": "7bed41993c7225a5dfaaec73fee17919419b984265bd0adbf302c2fe706b2f97",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "requirements-acquisition.txt",
+      "size_bytes": 202,
+      "sha256": "b9b6596a92badfa9049ab1f243666d048ae085854a6dd24dfc787129c6e47140",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "size_bytes": 106,
+      "sha256": "d39a49ad4ea0cc881d90f98ebc951d1ac4bfceee855f5a490252c16e0f3c0fbf",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "requirements-training.txt",
+      "size_bytes": 41,
+      "sha256": "dfcf3e8a0814df3f820de139e4110e7745a7bff076799e5be84d14e33cbb6ce3",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "SECURITY.md",
+      "size_bytes": 1722,
+      "sha256": "597a9b4d67f06fe4551ee30d09e174925063e65d163c83f3b88c46e0f9bc5f64",
+      "classification": "safe_public",
+      "category": "repository_documentation_or_configuration"
+    },
+    {
+      "path": "tests/__init__.py",
+      "size_bytes": 33,
+      "sha256": "a29ce78d4eee8a3666c9cafd21eab79851690c9a4116c498a03fede6a18d482d",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_config.py",
+      "size_bytes": 1960,
+      "sha256": "1fb4eef236faa896c83c2f150716b0eb5823d6df1a9d347fd6ff4b8f69f02c73",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_frozen_rf05_serving_integration.py",
+      "size_bytes": 2515,
+      "sha256": "36b565fd712755a9ac1ab6d52a9a8adcf43d3096424018dd6e34430d060071ec",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_health.py",
+      "size_bytes": 1126,
+      "sha256": "21211e07e4cf71980e9d386765ddcd2ac0350be227325ffea1b38784b1859ef9",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_prediction_history.py",
+      "size_bytes": 2539,
+      "sha256": "8b8a47db67f85a15197c70e4b909d8793d40204e5a4dc9f629f46e6928f1d8a2",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_prediction_schema.py",
+      "size_bytes": 2768,
+      "sha256": "1bf6c6269e45015a9b2619249099b5b15b97eff7e47d4c6a43483f231a62bc2b",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_release_candidate_demo.py",
+      "size_bytes": 3829,
+      "sha256": "01de7ce4e134a89c66c04d1bcfd2c66cfb83b71663b2cab6de7afa8dfbfea547",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_shadow_learning_interface.py",
+      "size_bytes": 1036,
+      "sha256": "2ce37ed47f3f0c445a04a43538d68ffc12cb48ec414f3cb003c56206854b32a9",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_valuation_api.py",
+      "size_bytes": 5454,
+      "sha256": "3786419acf98d1907e30a1da707660bf2bd848167c42ca87f9b7309b6142c3b1",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/backend/test_valuation_service.py",
+      "size_bytes": 9506,
+      "sha256": "1ab058430500975b72bde2d829fde9bf28c116739ff7de5074f4e043bd7dbb34",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/fixtures/retail-rf05-v1.golden.json",
+      "size_bytes": 2305,
+      "sha256": "b36878a2c2a7bc9ed1fbc4901e1453120a11aa5a746ee894eb20682d0a43dcef",
+      "classification": "safe_public",
+      "category": "project_owned_synthetic_fixture"
+    },
+    {
+      "path": "tests/ml/__init__.py",
+      "size_bytes": 46,
+      "sha256": "e9f9ced89182ac9a379a7be08803c8e5a77aee4db7db093000a1062de454aaa7",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/__init__.py",
+      "size_bytes": 63,
+      "sha256": "00b2fe26d8a3dabfaff4cc71ded355d8b75da15552f18f0f3b16d1a585fbefdb",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_baseline_cli.py",
+      "size_bytes": 17091,
+      "sha256": "d4317aa0bde559237f402bc89f2e9e8760b624f052b197da14a9032c6d35bb81",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_calibration.py",
+      "size_bytes": 12219,
+      "sha256": "702663c8d30ea1fa8d44096ca78a0af57447e30dffde7be08609fa73bf8f1443",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_calibration_artifact.py",
+      "size_bytes": 8277,
+      "sha256": "39868a15cf2796d48afa90a629321bd8010d16d14a31d2afaacc1af677f67837",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_candidates.py",
+      "size_bytes": 7151,
+      "sha256": "dd81430aec1bcda95e214ec60e8488768a7ff150fbfc95452391c6b5698d28e6",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_contracts_and_features.py",
+      "size_bytes": 7141,
+      "sha256": "3a8f3cc22cd74eda5d63bc64110b9a00f12b1255a9bbe4468beb4fed133f8511",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_cv.py",
+      "size_bytes": 4175,
+      "sha256": "56d9ec4594e8c43ea0ac6475f54f3a26fa31bb9cc36542ece8a7c76d9482e3a6",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_experiment.py",
+      "size_bytes": 24325,
+      "sha256": "b4a2f22377d7625a9e9dd78a7d39650e30356cc89a260ea9c53a7f53e77d52eb",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_final_evaluation_policy.py",
+      "size_bytes": 2866,
+      "sha256": "9c99ff8bdf28f649c502cf91a35302e58f22567331c7dd0f28b9c6b32911054b",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_metrics_and_reporting.py",
+      "size_bytes": 6368,
+      "sha256": "b5da0fb34ff96e78684a4d822c037ff0c28bbcbbba764dddc1fe7f79b92f5c19",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_phase4_confirmation.py",
+      "size_bytes": 7885,
+      "sha256": "99c69aaa8579285d9386fb48a750affa0eda48bedb42094c172152d7bc9cb40d",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_phase4_confirmation_cli.py",
+      "size_bytes": 3914,
+      "sha256": "073105cf26b69594536b9080d074d298611e50fe36820b57f0e71fe20a743348",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_phase4_evaluation.py",
+      "size_bytes": 14694,
+      "sha256": "4f4eec23464ec553b9e9fa6db109efa604ccf9857fbf17595ef97cc88f602dfa",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_phase4_protocol.py",
+      "size_bytes": 15154,
+      "sha256": "97428aa26d0e8e59d769685174f8f0c96643f498d995ff29a0b791fca46ab1e0",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_phase4_screening_cli.py",
+      "size_bytes": 4954,
+      "sha256": "384813177bb447bec76b6c185b8e7fe964d09959cc54a3c738b68a6fc90e253f",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_phase4_screening_experiment.py",
+      "size_bytes": 10585,
+      "sha256": "51c2cc2ff86d3a2d30f43eb236e25ad7d72275142de236ca38ce2198c04dd309",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_phase4_selection.py",
+      "size_bytes": 15063,
+      "sha256": "10623d41dd0ade6bcefb39afd6c6d0672c107292f57b930af2e1ac3c8a21ccd9",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_preprocessing_and_baselines.py",
+      "size_bytes": 3756,
+      "sha256": "0afe1b48765cb1e508fa11c5f5b35911322b84aa20bb1555dadbd72538319ed4",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_retail_calibration_cli.py",
+      "size_bytes": 3495,
+      "sha256": "8478124340ee1fbae9a758d53d0e60ef211229351d22c4bafd00d2582ef17271",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_retail_calibration_experiment.py",
+      "size_bytes": 7768,
+      "sha256": "42ef52eba7cdc233676ec725c223e02f6687f604ee3561ce989339b72f85ffcb",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_retail_final_evaluation.py",
+      "size_bytes": 8140,
+      "sha256": "92e5b46116d6af7e23e359a10084fcde59938127a53b0d799087dd7b6ad3b7c7",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_retail_final_evaluation_cli.py",
+      "size_bytes": 7825,
+      "sha256": "790c1e14c097dd5259dd66b4cc570afc8a8e2d8e305b7b3dbbb3e32ceb638cd8",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_retail_uncertainty_diagnostics.py",
+      "size_bytes": 15607,
+      "sha256": "30f8a180190a45081fcb5f36a416e300e6644ac5ae49a677c8e2c2155c6cc607",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_retail_uncertainty_diagnostics_cli.py",
+      "size_bytes": 8238,
+      "sha256": "430e15dc515fb8bd247e99a39e22d8df5b90b3fabf91b94c18fade63286925ca",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_retail_uncertainty_sharpness.py",
+      "size_bytes": 31114,
+      "sha256": "b5901eaeabbe26033877b8a8908e988354e4f16b958aac94d8965fe5ca3a5a91",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_retail_uncertainty_sharpness_cli.py",
+      "size_bytes": 44717,
+      "sha256": "7e9f4310fafe2ef17b74822edd7ea533bee129b2549c382965b81e8a076c42bd",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_rf05_serving_bundle.py",
+      "size_bytes": 6537,
+      "sha256": "e87104bce944e1607da1fb671eb6f763475be9122927b641ef062ffb3af59f77",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_screening.py",
+      "size_bytes": 11946,
+      "sha256": "63a84a3b037c22391d2140319f43b38e66249a1b9c43fa51413c15fa91579858",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_tree_preprocessing.py",
+      "size_bytes": 3818,
+      "sha256": "bf48727add9410328ad3798a8752b0a34dd2ca2cf81a8c69262873d2cb535b46",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_uncertainty_candidate_artifact.py",
+      "size_bytes": 24944,
+      "sha256": "8e475e8bf9ec8a360af5d0b5036f38095d81f41869d77829751c9b5b0dc8d765",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_uncertainty_sharpness_policy.py",
+      "size_bytes": 4455,
+      "sha256": "56852af2fc60f9fc1aff91a6f920df5b6f03b0d6430b92dd4b2853a06fccc979",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_yoad_confirmation.py",
+      "size_bytes": 4261,
+      "sha256": "2e0a28f4f810236c9ac69dadbc3fd42b93938a6eb58a41e537d095e4a6b76201",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_yoad_experiment.py",
+      "size_bytes": 3732,
+      "sha256": "4b3b56de7fe17d2f6902a5606a254b54702f6e451d684e008aecf581f7ee98b3",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/modeling/test_yoad_weighting.py",
+      "size_bytes": 11768,
+      "sha256": "3d39594f454b6e6fa298d494b565e1b180001609c2dcc21f9c736b62220dfc42",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/online/__init__.py",
+      "size_bytes": 57,
+      "sha256": "7325a024642341c8c3102404bc79506f4a0e57d6b7294b6d1528e53cb7607589",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/online/test_checkpoint_and_simulator.py",
+      "size_bytes": 3758,
+      "sha256": "377edfcb5561ae2e1682ca57fa2eb54e1d6b5ace6ec7fc2666a8814cfa537c8d",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/online/test_metrics_and_drift.py",
+      "size_bytes": 2018,
+      "sha256": "7e7a6c9d14ef3a3309752997e0226b1f545a1036d816f84a55c8a188185ed105",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/online/test_permissions_and_contracts.py",
+      "size_bytes": 1916,
+      "sha256": "65f9f0ba59355213f1e349cfbeb3380a0c0187b99b70cc060ca5f81da95f7bde",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/online/test_shadow_service.py",
+      "size_bytes": 6368,
+      "sha256": "31651b16f7f7fe7435513a75600e9ef70041cb42b201f9b1db8226a4e962dc19",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_acquisition.py",
+      "size_bytes": 44606,
+      "sha256": "5d2bed73095b0628c3404a278a5660be5176e49d1808c1c7dc0bfe1c1fca93ad",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_adapter_and_cache.py",
+      "size_bytes": 4935,
+      "sha256": "e1e63ceff4e49241b2dcdc0fb8a17f5acbc8ef46bdcff6bd6624c6c325e8abd2",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_autotrader_audit.py",
+      "size_bytes": 7030,
+      "sha256": "2797afcf1f3b92c3a4e368ef7b1325c22c63e86b79e99b05918dd5e63ed00a10",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_autotrader_audit_cli.py",
+      "size_bytes": 1482,
+      "sha256": "e860f76984f84849e61b3ea7e29938824d497633c0ad72ccecc058a9498db42f",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_common_schema.py",
+      "size_bytes": 3488,
+      "sha256": "0f18ce9b61092faa588e38d54ee2a2444bc88eb48777ca32d0401c29bb0c6c98",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_huggingface_candidates.py",
+      "size_bytes": 5189,
+      "sha256": "ed820bead8faa610657f7624c9c1e3315df766e595011397caf5350b8c412b76",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_huggingface_comparison.py",
+      "size_bytes": 5014,
+      "sha256": "81d613114d7738f9e996d2f81c9d0e9b09043b5a3a2fbd90bd92db55dfe88556",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_huggingface_dataset.py",
+      "size_bytes": 5829,
+      "sha256": "4f164a78780b4b0203bf289ed1481a4ea036eef293a596dc8fdf7f9244f3cd97",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_huggingface_quality.py",
+      "size_bytes": 2411,
+      "sha256": "92dff2bca1c57fe03fb691620195c82c364070d3f3a89822156f873e642f5f03",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_huggingface_quality_cli.py",
+      "size_bytes": 2064,
+      "sha256": "2f26c8ddf15fe5a20cbdc1612eb3d23f854deb1db8a46b95b8866173488913d8",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_kaggle_us_sales_cars.py",
+      "size_bytes": 20547,
+      "sha256": "803574c86e177bbce1d11d0587c4125bd1092ab71949494cff60567d98032a8d",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_kaggle_us_sales_cars_split.py",
+      "size_bytes": 22744,
+      "sha256": "b6c49ae9a15d4b092e8058589c0972475ef2f8dc7c7f67f5c253e83f6008535b",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_kaggle_vehicle_sales.py",
+      "size_bytes": 14902,
+      "sha256": "05d8e429b5628c16414eff3ef7edbe02b4e36fc0e61b1b7992104a1afa4415e6",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_kaggle_vehicle_sales_split.py",
+      "size_bytes": 20209,
+      "sha256": "17233a74162d64e90f77d9a5faeb14329e9d2cd06c0f64ccd6493e906d82dd67",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_licensed_dataset.py",
+      "size_bytes": 19611,
+      "sha256": "2c2eb1602ecf7a015aa60af582f2014b3c16e1e6fa3bdf0ba82b6368ce5bdf40",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_normalization.py",
+      "size_bytes": 7948,
+      "sha256": "7471bbe4ac3b4a311feec621a8b8565728cb75205dabd808763291c71663d26f",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_synthetic_fixture.py",
+      "size_bytes": 1959,
+      "sha256": "ae5dff76ea8955d835c7bb6e138851f5edf76650aebd0a6670e8401edb35629e",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/ml/test_training_gate.py",
+      "size_bytes": 8000,
+      "sha256": "140613b3f5b295931b5500e8e441e7d63d73b3197e6f3fd2a69d51fb71e34b76",
+      "classification": "safe_public",
+      "category": "test_source"
+    },
+    {
+      "path": "tests/README.md",
+      "size_bytes": 1736,
+      "sha256": "0c95eb1876eb612f4c9dc32b250a838567fb40f6ea1ee8b0dfb7dd17334a399d",
+      "classification": "safe_public",
+      "category": "test_source"
+    }
+  ]
+}

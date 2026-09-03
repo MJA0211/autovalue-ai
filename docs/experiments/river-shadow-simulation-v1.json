@@ -1,0 +1,279 @@
+{
+  "checkpoint_restart_verification": {
+    "aggregate_state_matched": true,
+    "events": 120,
+    "passed": true,
+    "raw_rows_persisted_after_resolution": false,
+    "restart_after_event": 60
+  },
+  "classification": "architecture validated for shadow simulation",
+  "data_scope": "project-owned synthetic events only",
+  "idempotency_verification": {
+    "duplicate_delivery_accepted": false,
+    "duplicate_reason_code": "duplicate_outcome",
+    "first_delivery_accepted": true,
+    "learn_calls": 1,
+    "passed": true
+  },
+  "interpretation": "Synthetic results validate lifecycle plumbing only and are not evidence that the River model is superior on real vehicles.",
+  "lifecycle": [
+    "create_prediction_event",
+    "predict_one",
+    "record_pre_update_prediction",
+    "receive_delayed_outcome",
+    "validate_eligibility",
+    "update_prequential_metrics",
+    "update_drift_telemetry",
+    "learn_one",
+    "checkpoint_state",
+    "reject_duplicate_learning"
+  ],
+  "model": {
+    "estimator": "River TargetStandardScaler + LinearRegression (SGD)",
+    "feature_contract_version": "shadow-vehicle-features-v1",
+    "incremental_preprocessing": [
+      "StandardScaler",
+      "OneHotEncoder"
+    ],
+    "model_version": "river-target-scaled-linear-regression-v1",
+    "prediction_manipulation": false
+  },
+  "permission_policy": {
+    "decisions": [
+      {
+        "approved": true,
+        "data_class": "synthetic_simulation",
+        "reason": "project-owned synthetic events approved for architecture testing only",
+        "source_id": "autovalue.synthetic.shadow.v1"
+      },
+      {
+        "approved": false,
+        "data_class": "unresolved_provenance",
+        "reason": "upstream provenance and U.S./USD scope remain unresolved",
+        "source_id": "hf_carson_shively_used_car_price"
+      },
+      {
+        "approved": false,
+        "data_class": "third_party_reference",
+        "reason": "controlled non-commercial research only; River use is blocked",
+        "source_id": "hf_rebrowser_autotrader_preview"
+      },
+      {
+        "approved": false,
+        "data_class": "historical_retail",
+        "reason": "controlled batch experimentation only; River use is blocked",
+        "source_id": "hf_yoad22_craigslist_used_cars"
+      },
+      {
+        "approved": false,
+        "data_class": "historical_retail",
+        "reason": "batch permission does not grant online-learning permission",
+        "source_id": "kaggle_us_sales_cars_v2"
+      },
+      {
+        "approved": false,
+        "data_class": "historical_wholesale",
+        "reason": "batch permission does not grant online-learning permission",
+        "source_id": "kaggle_vehicle_sales_v1"
+      }
+    ],
+    "default": "deny",
+    "version": "river-source-permissions-v1"
+  },
+  "production_effect": false,
+  "promotion_decision": "not promoted",
+  "report_sha256_without_self": "7c4ad4fcef107562a9a9605f0fc6a0b203265706b9cd98e23c3a44537f5e3027",
+  "report_version": "river-shadow-simulation-v1",
+  "scenarios": {
+    "abrupt_price_shift": {
+      "cold_start_prediction_usd": 0.0,
+      "drift": {
+        "automatic_action": false,
+        "current_estimation": 0.18568317638728898,
+        "current_width": 600.0,
+        "delta": 0.002,
+        "detection_count": 0,
+        "detections": [],
+        "detector": "ADWIN",
+        "status": "telemetry_only"
+      },
+      "events_created": 600,
+      "maximum_pending_outcomes": 5,
+      "metrics": {
+        "cumulative_mae_usd": 2143.311885564606,
+        "cumulative_rmse_usd": 3373.0016813335114,
+        "mae_delta_vs_static_usd": -2552.7005782687056,
+        "observations_learned": 600,
+        "prediction_count": 600,
+        "rmse_delta_vs_static_usd": -2563.6190001300774,
+        "rolling_mae_usd": 1867.9887852299423,
+        "rolling_observations": 100,
+        "rolling_rmse_usd": 2327.172040191896,
+        "rolling_window_size": 100,
+        "static_cumulative_mae_usd": 4696.012463833312,
+        "static_cumulative_rmse_usd": 5936.620681463589,
+        "static_rolling_mae_usd": 8041.853604752079,
+        "static_rolling_rmse_usd": 8287.371888927053
+      },
+      "outcomes_accepted": 600,
+      "outcomes_quarantined": 0,
+      "scenario": "abrupt_price_shift",
+      "state_fingerprint": "ef28a17c18bf0a5b559efa5d1c1269e9855710a2f0dba4af7b5d7244b3c30f45"
+    },
+    "gradual_price_drift": {
+      "cold_start_prediction_usd": 0.0,
+      "drift": {
+        "automatic_action": false,
+        "current_estimation": 0.13786800925546688,
+        "current_width": 600.0,
+        "delta": 0.002,
+        "detection_count": 0,
+        "detections": [],
+        "detector": "ADWIN",
+        "status": "telemetry_only"
+      },
+      "events_created": 600,
+      "maximum_pending_outcomes": 5,
+      "metrics": {
+        "cumulative_mae_usd": 2088.8602994934017,
+        "cumulative_rmse_usd": 3304.0933317890817,
+        "mae_delta_vs_static_usd": -1672.1141026411628,
+        "observations_learned": 600,
+        "prediction_count": 600,
+        "rmse_delta_vs_static_usd": -1139.245777971621,
+        "rolling_mae_usd": 1880.1945788697103,
+        "rolling_observations": 100,
+        "rolling_rmse_usd": 2331.926963080768,
+        "rolling_window_size": 100,
+        "static_cumulative_mae_usd": 3760.9744021345646,
+        "static_cumulative_rmse_usd": 4443.339109760703,
+        "static_rolling_mae_usd": 6463.155775035884,
+        "static_rolling_rmse_usd": 6778.927215034607
+      },
+      "outcomes_accepted": 600,
+      "outcomes_quarantined": 0,
+      "scenario": "gradual_price_drift",
+      "state_fingerprint": "b1f44c430ec3166b6f4fa0dfc6bde52276001ec301cd616ac5f76018fb1d109c"
+    },
+    "manufacturer_specific_drift": {
+      "cold_start_prediction_usd": 0.0,
+      "drift": {
+        "automatic_action": false,
+        "current_estimation": 0.23399546768683596,
+        "current_width": 600.0,
+        "delta": 0.002,
+        "detection_count": 0,
+        "detections": [],
+        "detector": "ADWIN",
+        "status": "telemetry_only"
+      },
+      "events_created": 600,
+      "maximum_pending_outcomes": 5,
+      "metrics": {
+        "cumulative_mae_usd": 2286.712152677124,
+        "cumulative_rmse_usd": 3530.5743899132885,
+        "mae_delta_vs_static_usd": 9.204323760136049,
+        "observations_learned": 600,
+        "prediction_count": 600,
+        "rmse_delta_vs_static_usd": -90.18572174146857,
+        "rolling_mae_usd": 1899.4215586580708,
+        "rolling_observations": 100,
+        "rolling_rmse_usd": 2327.1358377085044,
+        "rolling_window_size": 100,
+        "static_cumulative_mae_usd": 2277.507828916988,
+        "static_cumulative_rmse_usd": 3620.760111654757,
+        "static_rolling_mae_usd": 3305.995236410133,
+        "static_rolling_rmse_usd": 4976.326700531917
+      },
+      "outcomes_accepted": 600,
+      "outcomes_quarantined": 0,
+      "scenario": "manufacturer_specific_drift",
+      "state_fingerprint": "a35b3a8ac1aab2e36a23623a8fdedfc29fda8867f2e3003732026e8117abd1ca"
+    },
+    "mileage_related_drift": {
+      "cold_start_prediction_usd": 0.0,
+      "drift": {
+        "automatic_action": false,
+        "current_estimation": 1.7142026267111496,
+        "current_width": 152.0,
+        "delta": 0.002,
+        "detection_count": 1,
+        "detections": [
+          {
+            "detector_estimation": 0.7065680966400355,
+            "detector_width": 384.0,
+            "event_id": "sim-mileage_related_drift-000446",
+            "normalized_absolute_error": 0.662013319352255,
+            "observation_index": 448
+          }
+        ],
+        "detector": "ADWIN",
+        "status": "telemetry_only"
+      },
+      "events_created": 600,
+      "maximum_pending_outcomes": 5,
+      "metrics": {
+        "cumulative_mae_usd": 2709.410165556597,
+        "cumulative_rmse_usd": 4008.0886291995384,
+        "mae_delta_vs_static_usd": 0.11608208066900261,
+        "observations_learned": 600,
+        "prediction_count": 600,
+        "rmse_delta_vs_static_usd": 157.86016195211096,
+        "rolling_mae_usd": 3063.528389358171,
+        "rolling_observations": 100,
+        "rolling_rmse_usd": 3842.2212604698097,
+        "rolling_window_size": 100,
+        "static_cumulative_mae_usd": 2709.294083475928,
+        "static_cumulative_rmse_usd": 3850.2284672474275,
+        "static_rolling_mae_usd": 4078.7089889128065,
+        "static_rolling_rmse_usd": 5206.906011065469
+      },
+      "outcomes_accepted": 600,
+      "outcomes_quarantined": 0,
+      "scenario": "mileage_related_drift",
+      "state_fingerprint": "a7571f60d09aace31fa9c8c472203f89e137a796c51827aa411281f034745ee7"
+    },
+    "stable_market": {
+      "cold_start_prediction_usd": 0.0,
+      "drift": {
+        "automatic_action": false,
+        "current_estimation": 0.2383935775453773,
+        "current_width": 600.0,
+        "delta": 0.002,
+        "detection_count": 0,
+        "detections": [],
+        "detector": "ADWIN",
+        "status": "telemetry_only"
+      },
+      "events_created": 600,
+      "maximum_pending_outcomes": 5,
+      "metrics": {
+        "cumulative_mae_usd": 2059.3508169339116,
+        "cumulative_rmse_usd": 3277.1664145363184,
+        "mae_delta_vs_static_usd": 646.8270311970318,
+        "observations_learned": 600,
+        "prediction_count": 600,
+        "rmse_delta_vs_static_usd": 1527.0361960027708,
+        "rolling_mae_usd": 1795.4428690321242,
+        "rolling_observations": 100,
+        "rolling_rmse_usd": 2225.7918423126316,
+        "rolling_window_size": 100,
+        "static_cumulative_mae_usd": 1412.5237857368797,
+        "static_cumulative_rmse_usd": 1750.1302185335476,
+        "static_rolling_mae_usd": 1542.508993027446,
+        "static_rolling_rmse_usd": 1926.177603018285
+      },
+      "outcomes_accepted": 600,
+      "outcomes_quarantined": 0,
+      "scenario": "stable_market",
+      "state_fingerprint": "26407dc886986a0ecc1395af9918143b7d78902e3739909bab3e50bba557c6a3"
+    }
+  },
+  "simulator_config": {
+    "drift_delta": 0.002,
+    "events_per_scenario": 600,
+    "maximum_outcome_delay_steps": 5,
+    "rolling_window_size": 100,
+    "seed": 20260902
+  }
+}

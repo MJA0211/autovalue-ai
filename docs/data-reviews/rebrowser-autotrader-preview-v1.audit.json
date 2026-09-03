@@ -1,0 +1,758 @@
+{
+  "artifact": {
+    "advertised_field_count": 68,
+    "advertised_maximum_rows": 30000,
+    "column_names": [
+      "_primaryKey",
+      "_firstSeenAt",
+      "_lastSeenAt",
+      "listingId",
+      "vin",
+      "stockNumber",
+      "year",
+      "makeCode",
+      "makeName",
+      "modelCode",
+      "modelName",
+      "trim",
+      "bodyStyle",
+      "listingType",
+      "listingTitle",
+      "mileage",
+      "salePrice",
+      "msrp",
+      "dealIndicator",
+      "kbbFairPurchasePrice",
+      "kbbFairPriceLow",
+      "kbbFairPriceHigh",
+      "exteriorColor",
+      "exteriorColorSimple",
+      "interiorColor",
+      "interiorColorSimple",
+      "engineCode",
+      "engine",
+      "drivetrain",
+      "transmissionCode",
+      "transmission",
+      "transmissionGroup",
+      "fuelTypeCode",
+      "fuelType",
+      "fuelTypeGroup",
+      "mpgCity",
+      "mpgHighway",
+      "displacementUOM",
+      "hasLeatherSeats",
+      "daysOnMarket",
+      "isHot",
+      "isNewlyListed",
+      "isReducedPrice",
+      "isNoHagglePrice",
+      "hasSpecialOffer",
+      "moneyBackGuarantee",
+      "mainImageIsStock",
+      "priority",
+      "sellerId",
+      "sellerName",
+      "sellerPhone",
+      "sellerRating",
+      "sellerReviewCount",
+      "sellerWebsite",
+      "isPrivateSeller",
+      "sellerContractLevel",
+      "kbbVehicleId",
+      "kbbConsumerRatings",
+      "kbbConsumerReviewCount",
+      "safetyRecallCount",
+      "vhrPreview",
+      "options",
+      "optionsCount",
+      "description",
+      "images",
+      "imagesCount",
+      "sellerAddress",
+      "sellerCity",
+      "sellerState",
+      "sellerZip",
+      "listingUrl"
+    ],
+    "columns": 71,
+    "listing_type_counts": {
+      "Certified": 744,
+      "New": 696,
+      "Third-Party Certified": 85,
+      "Used": 6494
+    },
+    "observed_card_discrepancies": {
+      "additional_columns_vs_advertised": 3,
+      "row_shortfall_from_advertised_maximum": 21981
+    },
+    "rows": 8019,
+    "schema_consistent_across_files": true
+  },
+  "comparison": {
+    "basis": "current governed development/audit artifacts; no datasets are merged",
+    "coverage_percentage": {
+      "engine": {
+        "autotrader": 100.0,
+        "cars_com": 0.0,
+        "yoad": "cylinders proxy only"
+      },
+      "exact_model": {
+        "autotrader": 100.0,
+        "cars_com": 100.0,
+        "yoad": 0.0
+      },
+      "mileage": {
+        "autotrader": 100.0,
+        "cars_com": 40.780501664096114,
+        "yoad": 100.0
+      },
+      "row_geography": {
+        "autotrader": 99.76306272602568,
+        "cars_com": 0.0,
+        "yoad": 100.0
+      },
+      "timestamps": {
+        "autotrader": 100.0,
+        "cars_com": 0.0,
+        "yoad": 0.0
+      },
+      "trim": {
+        "autotrader": 94.57538346427235,
+        "cars_com": 0.0,
+        "yoad": 0.0
+      },
+      "vehicle_history": {
+        "autotrader": 92.99164484349669,
+        "cars_com": 0.0,
+        "yoad": "title status only"
+      }
+    },
+    "rows": {
+      "autotrader_raw": 8019,
+      "cars_com_development": 98552,
+      "yoad_approved": 242666
+    }
+  },
+  "decision": {
+    "classification": "reference/analytics only",
+    "merge_with_cars_or_yoad": false,
+    "model_training_run": false,
+    "requirements_before_reconsideration": [
+      "document permission covering ML reuse of KBB-derived valuation targets",
+      "document permission to publish aggregate results and any trained derivative",
+      "freeze the exact approved artifact and attribution/redistribution terms",
+      "preregister grouped temporal validation and the leakage denylist"
+    ]
+  },
+  "feature_coverage": {
+    "drivetrain": {
+      "distinct_values": 5,
+      "present_percentage": 99.93764808579624,
+      "present_rows": 8014
+    },
+    "engine": {
+      "distinct_values": 18,
+      "present_percentage": 100.0,
+      "present_rows": 8019
+    },
+    "listingType": {
+      "distinct_values": 4,
+      "present_percentage": 100.0,
+      "present_rows": 8019
+    },
+    "makeName": {
+      "distinct_values": 49,
+      "present_percentage": 100.0,
+      "present_rows": 8019
+    },
+    "mileage": {
+      "distinct_values": 7030,
+      "present_percentage": 100.0,
+      "present_rows": 8019
+    },
+    "modelName": {
+      "distinct_values": 633,
+      "present_percentage": 100.0,
+      "present_rows": 8019
+    },
+    "physicalCondition": {
+      "note": "listingType is inventory status, not physical vehicle condition",
+      "present_percentage": 0.0,
+      "present_rows": 0
+    },
+    "sellerCity": {
+      "distinct_values": 1508,
+      "present_percentage": 99.76306272602568,
+      "present_rows": 8000
+    },
+    "sellerState": {
+      "distinct_values": 49,
+      "present_percentage": 99.76306272602568,
+      "present_rows": 8000
+    },
+    "sellerZip": {
+      "distinct_values": 2297,
+      "present_percentage": 99.76306272602568,
+      "present_rows": 8000
+    },
+    "transmission": {
+      "distinct_values": 18,
+      "present_percentage": 97.59321611173462,
+      "present_rows": 7826
+    },
+    "trim": {
+      "distinct_values": 645,
+      "present_percentage": 94.57538346427235,
+      "present_rows": 7584
+    },
+    "vhrPreview": {
+      "distinct_values": 23,
+      "present_percentage": 92.99164484349669,
+      "present_rows": 7457
+    },
+    "year": {
+      "distinct_values": 39,
+      "present_percentage": 100.0,
+      "present_rows": 8019
+    }
+  },
+  "field_access": {
+    "free_field_count": 62,
+    "free_fields": [
+      "_primaryKey",
+      "_firstSeenAt",
+      "_lastSeenAt",
+      "listingId",
+      "stockNumber",
+      "year",
+      "makeCode",
+      "makeName",
+      "modelCode",
+      "modelName",
+      "trim",
+      "bodyStyle",
+      "listingType",
+      "listingTitle",
+      "mileage",
+      "msrp",
+      "dealIndicator",
+      "kbbFairPriceLow",
+      "kbbFairPriceHigh",
+      "exteriorColor",
+      "exteriorColorSimple",
+      "interiorColor",
+      "interiorColorSimple",
+      "engineCode",
+      "engine",
+      "drivetrain",
+      "transmissionCode",
+      "transmission",
+      "transmissionGroup",
+      "fuelTypeCode",
+      "fuelType",
+      "fuelTypeGroup",
+      "mpgCity",
+      "mpgHighway",
+      "displacementUOM",
+      "hasLeatherSeats",
+      "daysOnMarket",
+      "isHot",
+      "isNewlyListed",
+      "isReducedPrice",
+      "isNoHagglePrice",
+      "hasSpecialOffer",
+      "moneyBackGuarantee",
+      "mainImageIsStock",
+      "priority",
+      "sellerId",
+      "sellerReviewCount",
+      "isPrivateSeller",
+      "sellerContractLevel",
+      "kbbVehicleId",
+      "kbbConsumerRatings",
+      "kbbConsumerReviewCount",
+      "safetyRecallCount",
+      "vhrPreview",
+      "options",
+      "optionsCount",
+      "description",
+      "imagesCount",
+      "sellerAddress",
+      "sellerCity",
+      "sellerState",
+      "sellerZip"
+    ],
+    "premium_field_audit": {
+      "images": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      },
+      "kbbFairPurchasePrice": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      },
+      "listingUrl": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      },
+      "salePrice": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      },
+      "sellerName": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      },
+      "sellerPhone": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      },
+      "sellerRating": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      },
+      "sellerWebsite": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      },
+      "vin": {
+        "missing_rows": 0,
+        "premium_sentinel_rows": 8019,
+        "unexpected_exposed_rows": 0
+      }
+    },
+    "premium_field_count": 9,
+    "premium_fields": [
+      "vin",
+      "salePrice",
+      "kbbFairPurchasePrice",
+      "sellerName",
+      "sellerPhone",
+      "sellerRating",
+      "sellerWebsite",
+      "images",
+      "listingUrl"
+    ]
+  },
+  "generated_at": "2026-09-02T04:20:00+00:00",
+  "identifiers_and_repetition": {
+    "exact_duplicate_rows_beyond_first": 0,
+    "exact_duplicate_rows_total": 0,
+    "future_grouping_rule": "group by listingId; additionally group stable sellerId+stockNumber where available, and keep all snapshots of a group in one validation partition",
+    "kbb_change_assessment": "not_evaluable_no_repeated_listing_ids",
+    "listing_id_present": 8019,
+    "listing_ids_across_multiple_snapshot_files": 0,
+    "listing_ids_repeated": 0,
+    "listing_rows_beyond_first": 0,
+    "max_rows_per_listing_id": 1,
+    "primary_key_present": 8019,
+    "primary_keys_repeated": 0,
+    "repeated_listing_ids_with_kbb_changes": 0,
+    "repeated_vins": "not_evaluable_premium_sentinel_only",
+    "seller_stock_groups": 7955,
+    "seller_stock_groups_repeated": 0,
+    "unique_listing_ids": 8019,
+    "unique_primary_keys": 8019,
+    "vin_available": false,
+    "vin_status": "premium sentinel only"
+  },
+  "kbb_targets": {
+    "both_missing": 524,
+    "complete_valid_percentage": 84.42449183189925,
+    "complete_valid_ranges": 6770,
+    "equal_low_high": 725,
+    "exactly_one_missing": 0,
+    "hard_extremes": {
+      "high_above_500000": 0,
+      "low_above_500000": 0,
+      "midpoint_above_500000": 0,
+      "range_width_above_100000": 0
+    },
+    "high": {
+      "distribution_usd": {
+        "count": 7495,
+        "max": 124140.0,
+        "mean": 27673.886057371583,
+        "median": 26550.0,
+        "min": 0.0,
+        "p01": 0.0,
+        "p25": 15703.0,
+        "p75": 36048.5,
+        "p95": 62292.99999999999,
+        "p99": 86727.79999999993
+      },
+      "missing_rows": 524,
+      "nonnumeric_nonmissing_rows": 0,
+      "numeric_rows": 7495,
+      "raw_present_rows": 7495
+    },
+    "low": {
+      "distribution_usd": {
+        "count": 7495,
+        "max": 117140.0,
+        "mean": 25109.31300867245,
+        "median": 23610.0,
+        "min": 0.0,
+        "p01": 0.0,
+        "p25": 13775.0,
+        "p75": 33062.0,
+        "p95": 56960.899999999994,
+        "p99": 81905.99999999994
+      },
+      "missing_rows": 524,
+      "nonnumeric_nonmissing_rows": 0,
+      "numeric_rows": 7495,
+      "raw_present_rows": 7495
+    },
+    "low_greater_than_high": 0,
+    "meaning": "KBB Fair Purchase Price low/high range in USD as reproduced in AutoTrader listings; not an observed sale price and not an empirical prediction interval",
+    "midpoint_usd": {
+      "count": 6770,
+      "max": 120640.0,
+      "mean": 29217.878655834564,
+      "median": 27040.0,
+      "min": 1197.5,
+      "p01": 3632.0,
+      "p25": 18305.0,
+      "p75": 35819.0,
+      "p95": 61185.49999999999,
+      "p99": 85359.21999999987
+    },
+    "negative_high": 0,
+    "negative_low": 0,
+    "range_width_usd": {
+      "count": 6770,
+      "max": 13300.0,
+      "mean": 2839.2134416543577,
+      "median": 2400.0,
+      "min": 300.0,
+      "p01": 725.0,
+      "p25": 1875.0,
+      "p75": 3300.0,
+      "p95": 6054.999999999927,
+      "p99": 8930.999999999949
+    },
+    "tukey_extreme_outliers_3_iqr": {
+      "high": 46,
+      "low": 47,
+      "midpoint": 56,
+      "range_width": 157
+    },
+    "valid_ranges_by_listing_type": {
+      "Certified": {
+        "rows": 744,
+        "valid_percentage": 94.35483870967742,
+        "valid_ranges": 702
+      },
+      "New": {
+        "rows": 696,
+        "valid_percentage": 61.92528735632183,
+        "valid_ranges": 431
+      },
+      "Third-Party Certified": {
+        "rows": 85,
+        "valid_percentage": 95.29411764705881,
+        "valid_ranges": 81
+      },
+      "Used": {
+        "rows": 6494,
+        "valid_percentage": 85.55589775177087,
+        "valid_ranges": 5556
+      }
+    },
+    "zero_high": 725,
+    "zero_low": 725
+  },
+  "leakage_audit": {
+    "forbidden_predictors": {
+      "_firstSeenAt": "split/audit timestamp only",
+      "_lastSeenAt": "split/audit timestamp only",
+      "_primaryKey": "record identifier; grouping only",
+      "daysOnMarket": "post-listing outcome and temporal leakage risk",
+      "dealIndicator": "KBB deal score derived from valuation and listing price",
+      "description": "unsanitized text can contain price or KBB language",
+      "isHot": "post-listing market-response signal",
+      "isNoHagglePrice": "price-policy derivative",
+      "isReducedPrice": "price-history derivative",
+      "kbbConsumerRatings": "KBB-derived metadata",
+      "kbbConsumerReviewCount": "KBB-derived metadata",
+      "kbbFairPriceHigh": "direct target",
+      "kbbFairPriceLow": "direct target",
+      "kbbFairPurchasePrice": "premium KBB point estimate and direct target proxy",
+      "kbbMidpoint": "KBB-derived target",
+      "kbbRangeWidth": "KBB-derived target",
+      "kbbVehicleId": "KBB lookup identifier and target-proxy risk",
+      "listingId": "listing identifier; grouping only",
+      "listingTitle": "unsanitized text can contain price or KBB language",
+      "msrp": "price field",
+      "priority": "paid marketplace-position signal",
+      "salePrice": "listing-price field",
+      "sellerId": "seller identifier; grouping/audit only",
+      "stockNumber": "dealer inventory identifier; grouping only"
+    },
+    "free_text_as_predictor": "forbidden_until_price_and_kbb_language_is_sanitized",
+    "identifiers_as_predictors": "forbidden",
+    "source_identity_as_predictor": "forbidden",
+    "target_derivatives_created_for_audit_only": [
+      "kbbMidpoint",
+      "kbbRangeWidth"
+    ]
+  },
+  "permissions": {
+    "acquisition": "approved_for_private_aggregate_audit_only",
+    "batch_training": "blocked",
+    "blocking_reason": "Rebrowser's terms grant no third-party source-IP rights; permission to use KBB-derived targets for ML training and model publication is unresolved.",
+    "online_learning": "blocked",
+    "premium_access": "not_attempted",
+    "raw_redistribution": "blocked"
+  },
+  "report_schema_version": 1,
+  "report_type": "rebrowser_autotrader_free_preview_acquisition_audit",
+  "scope": {
+    "currency": "USD",
+    "currency_evidence": "pinned schema descriptions; no row-level currency column",
+    "distinct_valid_states": 49,
+    "five_digit_zip_rows": 8000,
+    "invalid_or_non_us_state_rows": 0,
+    "market": "United States",
+    "missing_state_rows": 19,
+    "state_present_rows": 8000,
+    "valid_50_states_plus_dc_rows": 8000
+  },
+  "source": {
+    "attribution": "Rebrowser, AutoTrader Vehicle Listings Dataset (2026), https://rebrowser.net/products/datasets/autotrader",
+    "attribution_required": true,
+    "bundle_sha256": "768920f599e7fc0edab66f6784170c891531c001a9ba4a36da8d1283d7bf15b3",
+    "declared_license": "CC-BY-NC-4.0",
+    "file_count": 30,
+    "manifest": [
+      {
+        "path": "car-listings/data/2026-07-20.parquet",
+        "rows": 1000,
+        "sha256": "df4ffb1d7943122131fb6d38cea8b85d23f3199aa646524c96c71bc9a738d155",
+        "size_bytes": 841689
+      },
+      {
+        "path": "car-listings/data/2026-07-21.parquet",
+        "rows": 1000,
+        "sha256": "58f9d42ddd64bb1b74c40186bc0a1c96593c49eff9ae4626497f5db7e81368d5",
+        "size_bytes": 875935
+      },
+      {
+        "path": "car-listings/data/2026-07-22.parquet",
+        "rows": 1000,
+        "sha256": "155a979381920e12a9d6e15ce11f369fb023cf996ac878365d93248a136dd7d1",
+        "size_bytes": 893008
+      },
+      {
+        "path": "car-listings/data/2026-07-23.parquet",
+        "rows": 1000,
+        "sha256": "9ea1b5e1ba15bb85825440d61eb49dfa8ee50c8f65d1348409060d1274457796",
+        "size_bytes": 838246
+      },
+      {
+        "path": "car-listings/data/2026-07-24.parquet",
+        "rows": 1000,
+        "sha256": "45cc204a09fd512e6c1f5d184190c52111a6d877dd812c850642ce6ca5554c4d",
+        "size_bytes": 720226
+      },
+      {
+        "path": "car-listings/data/2026-07-25.parquet",
+        "rows": 1000,
+        "sha256": "486397ef43900c8886aa9a0c38a65a3982ce410cbcf89f0caa424db1a7d56db4",
+        "size_bytes": 874820
+      },
+      {
+        "path": "car-listings/data/2026-07-26.parquet",
+        "rows": 8,
+        "sha256": "2ac9d6f62b8c7719f14b20b5b40af7bb29ac678b5bbd7fa619e8c0af30bb8638",
+        "size_bytes": 79737
+      },
+      {
+        "path": "car-listings/data/2026-07-27.parquet",
+        "rows": 12,
+        "sha256": "7b4d04fd7ff347da5a7f2deb34eb6e2dd4a2b0e252a9ae9edd1a06ef9635451d",
+        "size_bytes": 68369
+      },
+      {
+        "path": "car-listings/data/2026-07-28.parquet",
+        "rows": 220,
+        "sha256": "41d3bab653d9017e13d1a919743545a71b46e5ffed4e203b5b20113c49ac9f3a",
+        "size_bytes": 246709
+      },
+      {
+        "path": "car-listings/data/2026-07-29.parquet",
+        "rows": 561,
+        "sha256": "5b802c4ccdce59572482271d4191af366b223defca2755e917e5c5b644712382",
+        "size_bytes": 573993
+      },
+      {
+        "path": "car-listings/data/2026-07-30.parquet",
+        "rows": 27,
+        "sha256": "b14e4eed57e286b78e278d90fab70a1939ec53515805aea683374ce2e7237e36",
+        "size_bytes": 84969
+      },
+      {
+        "path": "car-listings/data/2026-07-31.parquet",
+        "rows": 24,
+        "sha256": "c7034611734100cf1534516bbb05a03688b91bc0dc37664d1f554f62d9ce213e",
+        "size_bytes": 93019
+      },
+      {
+        "path": "car-listings/data/2026-08-01.parquet",
+        "rows": 2,
+        "sha256": "928347cdcd572ea8bba101652142e5b1ff722a0875f2d07365eb9088f2e23afd",
+        "size_bytes": 61134
+      },
+      {
+        "path": "car-listings/data/2026-08-02.parquet",
+        "rows": 14,
+        "sha256": "3281f318ef10175e3826c571218cb6f871e3bf27db2dcb70eaff60365ea789e5",
+        "size_bytes": 86610
+      },
+      {
+        "path": "car-listings/data/2026-08-03.parquet",
+        "rows": 11,
+        "sha256": "28cf96944466a5933bf011866cc3eddb9b822ee596531fad470614cafe27c0b5",
+        "size_bytes": 80557
+      },
+      {
+        "path": "car-listings/data/2026-08-04.parquet",
+        "rows": 428,
+        "sha256": "02ca18bd32121b26bc1bf6a822512d0653d0673908ee7dfc0cf0d82435a9d247",
+        "size_bytes": 458355
+      },
+      {
+        "path": "car-listings/data/2026-08-05.parquet",
+        "rows": 62,
+        "sha256": "383aef656d7ccfd02c8428d01064e6d274eaa3803f875ec504c766ce13dd1635",
+        "size_bytes": 119021
+      },
+      {
+        "path": "car-listings/data/2026-08-06.parquet",
+        "rows": 17,
+        "sha256": "dcd535eb408537bdb40b0d15f5eb4059562f3b9a9d5fa0fa9ae3de20b9a571db",
+        "size_bytes": 53205
+      },
+      {
+        "path": "car-listings/data/2026-08-07.parquet",
+        "rows": 18,
+        "sha256": "27ceb478d2ff952320c8038c8ff7567ed37e5f5339284732278bd25a06e8e0e1",
+        "size_bytes": 54378
+      },
+      {
+        "path": "car-listings/data/2026-08-08.parquet",
+        "rows": 14,
+        "sha256": "8d9c3b7e7e968940d2be9cde2c1e3f33f93dc14acb18890acb2af6adbee77c22",
+        "size_bytes": 75723
+      },
+      {
+        "path": "car-listings/data/2026-08-09.parquet",
+        "rows": 9,
+        "sha256": "3f9f88200356e10cb79aaccea086c25c931a922383f0f0a5bcc9f35ef1884d0e",
+        "size_bytes": 60296
+      },
+      {
+        "path": "car-listings/data/2026-08-10.parquet",
+        "rows": 9,
+        "sha256": "33744fbaa6a4dcbf812e95466281b907d23163520ef09c5c27f5004d63be2723",
+        "size_bytes": 54986
+      },
+      {
+        "path": "car-listings/data/2026-08-11.parquet",
+        "rows": 496,
+        "sha256": "57a3c434d7423e4319c3f371f0cdc72efab26441568f043528954d9deb17005d",
+        "size_bytes": 360649
+      },
+      {
+        "path": "car-listings/data/2026-08-12.parquet",
+        "rows": 14,
+        "sha256": "3d4421a62c217948542bc45fb4c2c8c29f96e52877d739eebbcf26d5805ad39e",
+        "size_bytes": 81651
+      },
+      {
+        "path": "car-listings/data/2026-08-13.parquet",
+        "rows": 13,
+        "sha256": "393c3c1251547ad79b1239683042495680c3a518d8a3fb112aecf84599843634",
+        "size_bytes": 65139
+      },
+      {
+        "path": "car-listings/data/2026-08-14.parquet",
+        "rows": 13,
+        "sha256": "d9af68faafaca60f3bdaf900d3fa7a80a9a11be462026baf23ba7cd64b686543",
+        "size_bytes": 93378
+      },
+      {
+        "path": "car-listings/data/2026-08-15.parquet",
+        "rows": 6,
+        "sha256": "29be10e57b523e22d477287ef97688df95a146c522cf779dbb2c0e401fbd6399",
+        "size_bytes": 59930
+      },
+      {
+        "path": "car-listings/data/2026-08-16.parquet",
+        "rows": 9,
+        "sha256": "5e18e6844010a8711f672720d081659e4fbe8cb99ab5b6b9a054c9d10707c4db",
+        "size_bytes": 76381
+      },
+      {
+        "path": "car-listings/data/2026-08-17.parquet",
+        "rows": 11,
+        "sha256": "db8d471e6f0230b6495019109e5e133a7eafa099531fb9b0f2d1e614e2e2913b",
+        "size_bytes": 74622
+      },
+      {
+        "path": "car-listings/data/2026-08-18.parquet",
+        "rows": 21,
+        "sha256": "3f23552f2dde9cdc4f0fd8a65b20aff73148e93c5d48d5d22612e71c25081ee3",
+        "size_bytes": 91374
+      }
+    ],
+    "provenance": "Rebrowser collection from publicly accessible AutoTrader pages",
+    "repo_id": "rebrowser/autotrader-dataset",
+    "revision": "a6cd0c8addded3591ccdfcd6ee4249b454f99792",
+    "upstream_affiliation": "none claimed"
+  },
+  "timestamps": {
+    "file_semantics_inference": "files behave as first-seen date cohorts, not repeated full daily snapshots",
+    "first_after_last": 0,
+    "first_seen_max": "2026-08-18T23:37:39.563000+00:00",
+    "first_seen_min": "2026-07-20T02:05:43.900000+00:00",
+    "invalid_or_missing_first_seen": 0,
+    "invalid_or_missing_last_seen": 0,
+    "last_seen_max": "2026-08-30T23:41:31.466000+00:00",
+    "last_seen_min": "2026-07-20T02:08:25.856000+00:00",
+    "rows_whose_first_seen_date_matches_file_name": 8019,
+    "snapshot_file_count": 30,
+    "snapshot_file_max": "2026-08-18",
+    "snapshot_file_min": "2026-07-20"
+  },
+  "vehicle_history": {
+    "flag_counts": {
+      "ACCIDENTS_REPORTED": 1366,
+      "FRAME_DAMAGE": 8,
+      "FREE_REPORT": 1785,
+      "NO_ACCIDENTS_REPORTED": 5988,
+      "NO_FLOOD_WATER_DAMAGE": 1689,
+      "NO_FRAME_DAMAGE": 1681,
+      "NO_ONE_OWNER": 3055,
+      "NO_SALVAGE_TITLE": 7333,
+      "ONE_OWNER": 3764,
+      "SALVAGE_TITLE": 28
+    },
+    "invalid_json_rows": 0,
+    "meaning": "preview flags, not a complete vehicle-history report",
+    "missing_rows": 562,
+    "non_list_json_rows": 0,
+    "present_rows": 7457,
+    "valid_json_array_rows": 7457
+  }
+}

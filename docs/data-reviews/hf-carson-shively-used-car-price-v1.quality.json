@@ -1,0 +1,487 @@
+{
+  "artifact": {
+    "cache_hit_at_profile_time": true,
+    "sha256": "b5530c96732db26d05e59d4d02c868a1facb1e1612a7eb1c8ee5d204d497962e",
+    "size_bytes": 114074
+  },
+  "candidate": {
+    "config": "default",
+    "file_path": "data/bronze/bronze.parquet",
+    "repo_id": "Carson-Shively/used-car-price",
+    "required_product_currency": "USD",
+    "required_product_market_country": "US",
+    "revision": "4f58418cafab4dff1bd273aae8c5da66cd2ed3f5",
+    "source_currency_status": "dollar_strings_present_but_usd_semantics_unverified",
+    "source_id": "hf_carson_shively_used_car_price",
+    "source_market_scope_status": "unverified",
+    "split": "train",
+    "target_semantics": "historical_used_vehicle_advertised_asking_price"
+  },
+  "generated_at": "2026-09-01T12:00:00+00:00",
+  "license_and_permissions": {
+    "acquisition": "approved",
+    "acquisition_evidence": "Public ungated artifact may be retrieved privately for reproducible compatibility review.",
+    "attribution": "Carson Shively, used-car-price Hugging Face dataset (archived project).",
+    "batch_training": "blocked",
+    "batch_training_evidence": "Blocked pending confirmation of upstream provenance, U.S. market scope, USD target semantics, and license metadata consistency.",
+    "declared_license": "MIT stated in dataset card text; repository metadata is incomplete",
+    "license_url": "https://huggingface.co/datasets/Carson-Shively/used-car-price/blob/4f58418cafab4dff1bd273aae8c5da66cd2ed3f5/README.md",
+    "online_learning": "blocked",
+    "online_learning_evidence": "Blocked; upstream provenance and observation/label semantics are unresolved.",
+    "usage_restrictions": [
+      "Private candidate review only until upstream provenance is documented.",
+      "Do not treat dollar-formatted price strings as confirmed U.S. market evidence.",
+      "Do not concatenate bronze and silver processing layers as independent observations.",
+      "Do not redistribute raw or processed rows from this repository without a new review."
+    ]
+  },
+  "overlap_with_current_retail": {
+    "current_retail_origin": "historical Cars.com extraction, not Craigslist",
+    "current_retail_source_id": "kaggle_us_sales_cars_v2",
+    "merge_blocked_by_overlap_gate": true,
+    "rationale": "At least one source lacks sufficient upstream provenance.",
+    "risk": "indeterminate",
+    "shared_upstream_families": []
+  },
+  "promotion_decision": {
+    "merged_into_existing_training_data": false,
+    "reason": "Blocked pending confirmation of upstream provenance, U.S. market scope, USD target semantics, and license metadata consistency.",
+    "training_experiment_started": false
+  },
+  "provenance": {
+    "accepted_row_count": 4009,
+    "acquired_at": "2026-09-01T12:00:00+00:00",
+    "acquisition_approval": "approved",
+    "batch_training_approval": "blocked",
+    "config": "default",
+    "duplicate_row_count": 0,
+    "file_path": "data/bronze/bronze.parquet",
+    "online_learning_approval": "blocked",
+    "raw_row_count": 4009,
+    "rejected_row_count": 0,
+    "repo_id": "Carson-Shively/used-car-price",
+    "revision": "4f58418cafab4dff1bd273aae8c5da66cd2ed3f5",
+    "schema_mapping_version": "hf-carson-used-car-price/1.0.0",
+    "split": "train"
+  },
+  "quality": {
+    "accident_history_coverage": {
+      "distinct_values": 2,
+      "present_percentage": 97.181342,
+      "present_rows": 3896,
+      "top_values": [
+        {
+          "count": 2910,
+          "value": "None reported"
+        },
+        {
+          "count": 986,
+          "value": "At least 1 accident or damage reported"
+        }
+      ]
+    },
+    "condition_coverage": {
+      "distinct_values": 0,
+      "present_percentage": 0.0,
+      "present_rows": 0,
+      "raw_rows": 4009,
+      "reason": "no condition field",
+      "top_values": []
+    },
+    "distribution_indicators": {
+      "records_with_price_and_mileage": 4009,
+      "vehicles_above_75000_percentage": 11.224744,
+      "vehicles_above_75000_usd": 450
+    },
+    "geographic_coverage": {
+      "distinct_values": 0,
+      "present_percentage": 0.0,
+      "present_rows": 0,
+      "raw_rows": 4009,
+      "reason": "no row-level geography",
+      "top_values": []
+    },
+    "make_coverage": {
+      "distinct_values": 57,
+      "present_percentage": 100.0,
+      "present_rows": 4009,
+      "top_values": [
+        {
+          "count": 386,
+          "value": "Ford"
+        },
+        {
+          "count": 375,
+          "value": "BMW"
+        },
+        {
+          "count": 315,
+          "value": "Mercedes-Benz"
+        },
+        {
+          "count": 292,
+          "value": "Chevrolet"
+        },
+        {
+          "count": 201,
+          "value": "Porsche"
+        },
+        {
+          "count": 200,
+          "value": "Audi"
+        },
+        {
+          "count": 199,
+          "value": "Toyota"
+        },
+        {
+          "count": 163,
+          "value": "Lexus"
+        },
+        {
+          "count": 143,
+          "value": "Jeep"
+        },
+        {
+          "count": 130,
+          "value": "Land"
+        },
+        {
+          "count": 116,
+          "value": "Nissan"
+        },
+        {
+          "count": 107,
+          "value": "Cadillac"
+        },
+        {
+          "count": 91,
+          "value": "GMC"
+        },
+        {
+          "count": 91,
+          "value": "RAM"
+        },
+        {
+          "count": 90,
+          "value": "Dodge"
+        }
+      ]
+    },
+    "mileage_coverage": {
+      "above_500000": 0,
+      "count": 4009,
+      "max": 405000.0,
+      "median": 52775.0,
+      "min": 100.0,
+      "negative_or_unparseable_nonmissing": 0,
+      "p01": 634.68,
+      "p25": 23044.0,
+      "p75": 94100.0,
+      "p95": 165000.0,
+      "p99": 222428.00000000015,
+      "present_percentage": 100.0,
+      "present_rows": 4009
+    },
+    "missing_value_percentages": {
+      "accident": 2.818658,
+      "brand": 0.0,
+      "clean_title": 14.86655,
+      "engine": 0.0,
+      "ext_col": 0.0,
+      "fuel_type": 4.240459,
+      "int_col": 0.0,
+      "milage": 0.0,
+      "model": 0.0,
+      "model_year": 0.0,
+      "price": 0.0,
+      "transmission": 0.0
+    },
+    "model_coverage": {
+      "distinct_values": 1898,
+      "present_percentage": 100.0,
+      "present_rows": 4009,
+      "top_values": [
+        {
+          "count": 30,
+          "value": "M3 Base"
+        },
+        {
+          "count": 24,
+          "value": "F-150 XLT"
+        },
+        {
+          "count": 22,
+          "value": "Corvette Base"
+        },
+        {
+          "count": 18,
+          "value": "1500 Laramie"
+        },
+        {
+          "count": 17,
+          "value": "Model Y Long Range"
+        },
+        {
+          "count": 17,
+          "value": "Camaro 2SS"
+        },
+        {
+          "count": 17,
+          "value": "Wrangler Sport"
+        },
+        {
+          "count": 16,
+          "value": "Mustang GT Premium"
+        },
+        {
+          "count": 16,
+          "value": "911 Carrera"
+        },
+        {
+          "count": 15,
+          "value": "M4 Base"
+        },
+        {
+          "count": 14,
+          "value": "911 Carrera S"
+        },
+        {
+          "count": 14,
+          "value": "Explorer XLT"
+        },
+        {
+          "count": 14,
+          "value": "F-250 Lariat"
+        },
+        {
+          "count": 13,
+          "value": "M5 Base"
+        },
+        {
+          "count": 13,
+          "value": "E-Class E 350 4MATIC"
+        }
+      ]
+    },
+    "notes": [
+      "The bronze artifact contains 4,009 original-format rows, not 7,970 independent rows.",
+      "The repository's 3,961-row silver file is a transformed/filtered layer of the bronze data and must not be concatenated with bronze as new observations.",
+      "No row geography or observation timestamp is present; U.S. scope and upstream origin remain unverified, so batch and online training are blocked."
+    ],
+    "price_distribution_usd": {
+      "count": 4009,
+      "max": 2954083.0,
+      "median": 31000.0,
+      "min": 2000.0,
+      "p01": 4000.0,
+      "p25": 17200.0,
+      "p75": 49990.0,
+      "p95": 111599.99999999991,
+      "p99": 272713.2800000002
+    },
+    "price_quality_flags": {
+      "above_1000000": 3,
+      "above_250000": 48,
+      "below_2000": 0,
+      "below_500": 0,
+      "filtering_decision": "No additional price rows removed by the quality report.",
+      "most_repeated_prices": [
+        {
+          "count": 39,
+          "price_usd": 15000.0
+        },
+        {
+          "count": 29,
+          "price_usd": 12000.0
+        },
+        {
+          "count": 28,
+          "price_usd": 30000.0
+        },
+        {
+          "count": 25,
+          "price_usd": 29000.0
+        },
+        {
+          "count": 25,
+          "price_usd": 16000.0
+        },
+        {
+          "count": 24,
+          "price_usd": 17500.0
+        },
+        {
+          "count": 24,
+          "price_usd": 18000.0
+        },
+        {
+          "count": 24,
+          "price_usd": 17000.0
+        },
+        {
+          "count": 24,
+          "price_usd": 22000.0
+        },
+        {
+          "count": 23,
+          "price_usd": 19500.0
+        }
+      ],
+      "nonpositive_or_unparseable": 0
+    },
+    "repository_layer_audit": {
+      "bronze_rows": 4009,
+      "independent_observation_interpretation": "not_supported",
+      "naive_combined_rows": 7970,
+      "silver_file_path": "data/silver/silver.parquet",
+      "silver_rows": 3961,
+      "silver_sha256": "26ed9d0d159ece7ab68b152e1355503ecd6bba46604523d21fe59fe506a7ffa7",
+      "silver_size_bytes": 82060
+    },
+    "row_accounting": {
+      "acceptance_is_training_approval": false,
+      "accepted_rows": 4009,
+      "exact_duplicate_rows": 0,
+      "raw_rows": 4009,
+      "rejected_rows": 0
+    },
+    "schema_compatibility": {
+      "broad_coverage_fields": {
+        "drivetrain": {
+          "present_percentage": 0.0,
+          "source_column": null,
+          "supported": false
+        },
+        "fuel_type": {
+          "present_percentage": 95.759541,
+          "source_column": "fuel_type",
+          "supported": true
+        },
+        "geography": {
+          "present_percentage": 0.0,
+          "source_column": null,
+          "supported": false
+        },
+        "make": {
+          "present_percentage": 100.0,
+          "source_column": "brand",
+          "supported": true
+        },
+        "mileage": {
+          "present_percentage": 100.0,
+          "source_column": "milage",
+          "supported": true
+        },
+        "model": {
+          "present_percentage": 100.0,
+          "source_column": "model",
+          "supported": true
+        },
+        "transmission": {
+          "present_percentage": 100.0,
+          "source_column": "transmission",
+          "supported": true
+        },
+        "vehicle_type": {
+          "present_percentage": 0.0,
+          "source_column": null,
+          "supported": false
+        },
+        "year": {
+          "present_percentage": 100.0,
+          "source_column": "model_year",
+          "supported": true
+        }
+      },
+      "rich_fields": {
+        "accident_status": {
+          "present_percentage": 97.181342,
+          "source_column": "accident",
+          "supported": true
+        },
+        "condition": {
+          "present_percentage": 0.0,
+          "source_column": null,
+          "supported": false
+        },
+        "engine": {
+          "present_percentage": 100.0,
+          "source_column": "engine",
+          "supported": true
+        },
+        "title_status": {
+          "present_percentage": 85.13345,
+          "source_column": "clean_title",
+          "supported": true
+        }
+      }
+    },
+    "title_status_coverage": {
+      "distinct_values": 1,
+      "present_percentage": 85.13345,
+      "present_rows": 3413,
+      "top_values": [
+        {
+          "count": 3413,
+          "value": "Yes"
+        }
+      ]
+    },
+    "year_coverage": {
+      "count": 4009,
+      "distinct_years": 34,
+      "impossible_or_future_after_2028": 0,
+      "max": 2024.0,
+      "median": 2017.0,
+      "min": 1974.0,
+      "p01": 1997.08,
+      "p25": 2012.0,
+      "p75": 2020.0,
+      "p95": 2023.0,
+      "p99": 2023.0
+    }
+  },
+  "report_schema_version": 1,
+  "report_type": "hugging_face_candidate_quality_and_compatibility",
+  "schema": {
+    "canonical_mapping": {
+      "accident_status": "accident",
+      "condition": null,
+      "drivetrain": null,
+      "engine": "engine",
+      "fuel_type": "fuel_type",
+      "make": "brand",
+      "mileage": "milage (strict miles-string parser)",
+      "model": "model",
+      "price_cents": "price (strict dollar-string parser)",
+      "state": null,
+      "title_status": "clean_title",
+      "transmission": "transmission",
+      "vehicle_type": null,
+      "year": "model_year"
+    },
+    "mapping_version": "hf-carson-used-car-price/1.0.0",
+    "source_columns": [
+      "brand",
+      "model",
+      "model_year",
+      "milage",
+      "fuel_type",
+      "engine",
+      "transmission",
+      "ext_col",
+      "int_col",
+      "accident",
+      "clean_title",
+      "price"
+    ],
+    "source_id_available_for_audit_only": true,
+    "source_id_is_predictive_feature": false
+  },
+  "source_provenance": {
+    "known_upstream_families": [],
+    "provenance_known": false,
+    "upstream_source": "Unknown; the repository card does not identify the original row source. The repository's bronze and silver files are processing layers, not 7,970 independent observations."
+  }
+}

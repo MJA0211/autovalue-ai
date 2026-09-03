@@ -1,0 +1,110 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!**/.env.example
+kaggle.json
+**/kaggle.json
+credentials.json
+service-account*.json
+.npmrc
+.pypirc
+secrets/
+*.secret
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# JavaScript
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.tsbuildinfo
+npm-debug.log*
+*.log
+
+# Local databases
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+
+# Downloaded and generated data
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/private/
+data/local/
+data/cache/
+private/
+local-data/
+.local/
+.cache/
+.huggingface/
+.kaggle/
+
+# Source-row artifacts are local-only; synthetic fixtures are the sole exception
+*.csv
+*.parquet
+*.arrow
+*.feather
+*.jsonl
+*.ndjson
+*.zip
+*.7z
+*.tar
+*.tar.gz
+!data/fixtures/**/*.csv
+!data/fixtures/**/*.jsonl
+
+# Stateful checkpoints that may contain pending rows are local-only
+checkpoints/
+*.shadow-state.json
+*.online-checkpoint.json
+*.private-checkpoint.*
+prediction-history*
+prediction-events*
+outcome-events*
+
+# Generated model artifacts
+models/*
+!models/README.md
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.skops
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

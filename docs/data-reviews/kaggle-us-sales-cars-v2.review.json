@@ -1,0 +1,142 @@
+{
+  "review_schema_version": 1,
+  "review_id": "kaggle-us-sales-cars-v2-2026-08-28",
+  "reviewed_on": "2026-08-28",
+  "decision": "approved_with_conditions",
+  "project_role": "historical_us_retail_asking_price_candidate",
+  "source": {
+    "platform": "Kaggle",
+    "uploader": "juanmerinobermejo",
+    "dataset_slug": "us-sales-cars-dataset",
+    "dataset_url": "https://www.kaggle.com/datasets/juanmerinobermejo/us-sales-cars-dataset",
+    "version": "v2",
+    "version_release_date": "2024-03-31",
+    "license_label": "Apache-2.0",
+    "license_label_source": "Kaggle dataset metadata",
+    "upstream_repository": "https://github.com/juanmerino89/cars-data-cleaning",
+    "upstream_origin": "historical Cars.com listing extraction performed by the dataset author",
+    "underlying_ownership_independently_verified": false,
+    "permission_evidence": {
+      "kind": "project-owner attestation of direct source contact",
+      "summary": "The project owner reports being in contact with the relevant source and confirms that the historical acquisition and this noncommercial portfolio ML use were authorized and performed legally.",
+      "scraping_permission": "approved_by_project_owner_attestation_for_the_historical_source_collection_only",
+      "ml_training_permission": "approved_by_project_owner_attestation_for_this_noncommercial_portfolio_project",
+      "external_correspondence_committed": false
+    }
+  },
+  "retrieval": {
+    "retrieved_on": "2026-08-28",
+    "reviewed_on": "2026-08-28",
+    "required_method": "official KaggleHub v1.0.2 download of version 2",
+    "csv_path": "data/raw/kaggle_us_sales_cars_v2/cars.csv",
+    "csv": {
+      "file_name": "cars.csv",
+      "size_bytes": 17171976,
+      "sha256": "25854afc3ef8b6c6a0349bf7f422c40dacb9bec60a8b318462737ebf9edcc5ea",
+      "row_count": 144867,
+      "encoding": "UTF-16 with BOM",
+      "columns": [
+        "Brand",
+        "Model",
+        "Year",
+        "Status",
+        "Mileage",
+        "Dealer",
+        "Price"
+      ]
+    }
+  },
+  "permissions": {
+    "official_download": "approved",
+    "local_storage": "approved",
+    "private_transformation": "approved",
+    "ml_training_and_evaluation": "approved",
+    "public_aggregate_metrics_and_charts": "approved",
+    "hosted_inference": "approved",
+    "autovalue_direct_scraping_of_cars_com": "prohibited",
+    "raw_row_redistribution": "pending",
+    "processed_row_redistribution": "pending",
+    "downloadable_trained_model": "pending",
+    "sublicensing": "pending",
+    "commercial_use": "pending"
+  },
+  "market_scope": {
+    "raw_scope": "United States according to the Kaggle description and upstream repository",
+    "approved_scope": "United States",
+    "row_level_geography_available": false,
+    "geography_status": "source_level_attestation_only",
+    "currency": "USD",
+    "currency_status": "declared_by_kaggle_description",
+    "mileage_unit": "miles",
+    "mileage_unit_status": "inferred_from_us_market_context",
+    "observation_period": "2023 source snapshots; no row-level observation timestamp",
+    "observation_period_status": "inferred_from_upstream extraction filenames"
+  },
+  "target": {
+    "source_column": "Price",
+    "meaning": "advertised retail asking price",
+    "approved_claim": "historical U.S. advertised asking-price estimate for New, Used, and Certified listings represented by the 2023 source snapshots",
+    "prohibited_claims": [
+      "completed sale price",
+      "wholesale auction value",
+      "current live market value"
+    ]
+  },
+  "quality_profile": {
+    "raw_rows": 144867,
+    "status_counts": {
+      "New": 88951,
+      "Used": 48307,
+      "Certified": 7609
+    },
+    "target_valid_rows_before_deduplication": 140956,
+    "target_valid_exact_duplicate_rows": 3857,
+    "target_valid_rows_after_exact_deduplication": 137099,
+    "rows_missing_or_invalid_price": 3911,
+    "target_valid_rows_missing_mileage": 85056,
+    "year_min_for_target_valid_rows": 1959,
+    "year_max_for_target_valid_rows": 2024,
+    "price_min_usd_for_target_valid_rows": 1,
+    "price_max_usd_for_target_valid_rows": 8078160,
+    "notes": [
+      "New, Used, and Certified are retained as explicit vehicle_status categories so the expanded model can learn their different price regimes.",
+      "Every target-valid New row and two target-valid Used rows have missing Mileage; later pipelines must learn missing-value handling inside training folds and report metrics by status.",
+      "Dealer is provenance-only source content and must not enter normalized artifacts or model features.",
+      "Extreme prices require training-fold-only outlier analysis; the acquisition adapter must not silently winsorize targets."
+    ]
+  },
+  "required_processing_gates": [
+    "Verify the exact CSV byte size and SHA-256 before and after streaming parse.",
+    "Require the exact seven-column schema and UTF-16 BOM encoding.",
+    "Retain New, Used, and Certified as explicit vehicle_status categories; quarantine unknown status values.",
+    "Require non-empty brand and model, a valid vehicle year, optional nonnegative integral mileage, and a positive finite Price.",
+    "Remove Dealer from every normalized record, feature table, rejection message, identifier, and published artifact.",
+    "Deduplicate exact source rows without exposing source values in identifiers.",
+    "Represent Price as USD asking-price cents and label every result as a historical U.S. advertised asking-price estimate.",
+    "Keep this asking-price target separate from the completed wholesale-auction target unless an explicitly designed domain feature or multi-task experiment is reviewed.",
+    "Do not scrape Cars.com from AutoValue AI; this approval covers only the already-created, version-pinned Kaggle artifact.",
+    "Fit imputers, encoders, category grouping, outlier rules, and all learned transforms on training folds only.",
+    "Do not commit or redistribute raw rows, processed rows, or a downloadable model without a new permission decision."
+  ],
+  "publication_policy": {
+    "allowed": [
+      "aggregate validation counts",
+      "aggregate model metrics",
+      "aggregate charts that do not expose source rows",
+      "hosted predictions from an approved deployment"
+    ],
+    "blocked_pending_review": [
+      "raw dataset files",
+      "processed row-level datasets",
+      "row-level examples copied from the dataset",
+      "downloadable trained model artifacts",
+      "commercial deployment"
+    ]
+  },
+  "training_status": "not_started",
+  "notes": [
+    "Kaggle displays an Apache 2.0 license label and identifies the upstream repository; this project separately records the project owner's authorization attestation.",
+    "The authorization attestation is the basis for scoped use in this noncommercial portfolio and is not a general sublicense or legal conclusion.",
+    "The two Kaggle datasets describe different targets and will be evaluated as separate modeling tracks rather than concatenated as if their labels were equivalent."
+  ]
+}

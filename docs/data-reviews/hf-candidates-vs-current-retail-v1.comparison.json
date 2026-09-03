@@ -1,0 +1,393 @@
+{
+  "coarse_cross_source_key_collisions": {
+    "carson_shively": {
+      "candidate_unique_complete_keys": 4009,
+      "current_unique_complete_keys": 55817,
+      "key_fields": [
+        "year",
+        "make",
+        "model",
+        "mileage",
+        "price"
+      ],
+      "shared_unique_keys": 0,
+      "training_action": "group_or_deduplicate_before_any_cross-source_split",
+      "warning": "Year/make/model/mileage/price collisions are possible-duplicate signals, not proof, because neither comparison exposes a common stable listing ID."
+    },
+    "yoad22_craigslist": {
+      "candidate_unique_complete_keys": 201343,
+      "current_unique_complete_keys": 55817,
+      "key_fields": [
+        "year",
+        "make",
+        "mileage",
+        "price"
+      ],
+      "shared_unique_keys": 1,
+      "training_action": "group_or_deduplicate_before_any_cross-source_split",
+      "warning": "Year/make/mileage/price collisions are only possible-duplicate signals; Yoad omits model, VIN, listing ID, and URL."
+    }
+  },
+  "coverage_comparison": {
+    "carson_shively": {
+      "existing_make_model_pair_overlap_count": 24,
+      "existing_make_overlap_count": 53,
+      "make_model_pairs_not_present_in_current_retail": 1871,
+      "makes_not_present_in_current_retail": [
+        "alfa",
+        "aston",
+        "land",
+        "mercedes-benz"
+      ],
+      "richer_fields": [
+        "engine",
+        "transmission",
+        "fuel_type",
+        "accident",
+        "clean_title"
+      ]
+    },
+    "yoad22_craigslist": {
+      "existing_make_overlap_count": 35,
+      "makes_not_present_in_current_retail": [
+        "alfa-romeo",
+        "aston-martin",
+        "datsun",
+        "harley-davidson",
+        "mercedes-benz",
+        "morgan",
+        "rover",
+        "unknown"
+      ],
+      "model_coverage": "unavailable",
+      "richer_fields": [
+        "condition",
+        "cylinders",
+        "fuel",
+        "title_status",
+        "transmission",
+        "drive",
+        "vehicle_type",
+        "state"
+      ]
+    }
+  },
+  "current_retail_artifact": {
+    "manifest_path": "data/processed/kaggle_us_sales_cars_v2/asking_price_candidate.manifest.json",
+    "review_path": "docs/data-reviews/kaggle-us-sales-cars-v2.review.json",
+    "rows": 137099,
+    "source_id": "kaggle_us_sales_cars_v2",
+    "upstream_origin": "historical Cars.com extraction"
+  },
+  "distribution_summary": {
+    "carson_shively": {
+      "above_75000_usd_percentage": 11.224744,
+      "distinct_make_model_pairs": 1895,
+      "distinct_makes": 57,
+      "mileage_miles": {
+        "count": 4009,
+        "max": 405000.0,
+        "median": 52775.0,
+        "min": 100.0,
+        "p25": 23044.0,
+        "p75": 94100.0
+      },
+      "mileage_present_percentage": 100.0,
+      "price_usd": {
+        "count": 4009,
+        "max": 2954083.0,
+        "median": 31000.0,
+        "min": 2000.0,
+        "p25": 17200.0,
+        "p75": 49990.0
+      },
+      "rows": 4009,
+      "top_makes": [
+        {
+          "count": 386,
+          "make": "ford"
+        },
+        {
+          "count": 375,
+          "make": "bmw"
+        },
+        {
+          "count": 315,
+          "make": "mercedes-benz"
+        },
+        {
+          "count": 292,
+          "make": "chevrolet"
+        },
+        {
+          "count": 201,
+          "make": "porsche"
+        },
+        {
+          "count": 200,
+          "make": "audi"
+        },
+        {
+          "count": 199,
+          "make": "toyota"
+        },
+        {
+          "count": 163,
+          "make": "lexus"
+        },
+        {
+          "count": 143,
+          "make": "jeep"
+        },
+        {
+          "count": 130,
+          "make": "land"
+        },
+        {
+          "count": 116,
+          "make": "nissan"
+        },
+        {
+          "count": 107,
+          "make": "cadillac"
+        },
+        {
+          "count": 91,
+          "make": "gmc"
+        },
+        {
+          "count": 91,
+          "make": "ram"
+        },
+        {
+          "count": 90,
+          "make": "dodge"
+        }
+      ],
+      "year": {
+        "count": 4009,
+        "max": 2024.0,
+        "median": 2017.0,
+        "min": 1974.0,
+        "p25": 2012.0,
+        "p75": 2020.0
+      }
+    },
+    "current_retail": {
+      "above_75000_usd_percentage": 16.513614,
+      "distinct_make_model_pairs": 765,
+      "distinct_makes": 62,
+      "mileage_miles": {
+        "count": 55819,
+        "max": 419096.0,
+        "median": 41418.0,
+        "min": 0.0,
+        "p25": 20120.5,
+        "p75": 73597.0
+      },
+      "mileage_present_percentage": 40.714374,
+      "price_usd": {
+        "count": 137099,
+        "max": 8078160.0,
+        "median": 46984.0,
+        "min": 1.0,
+        "p25": 31995.0,
+        "p75": 65335.0
+      },
+      "rows": 137099,
+      "top_makes": [
+        {
+          "count": 16620,
+          "make": "ford"
+        },
+        {
+          "count": 14000,
+          "make": "chevrolet"
+        },
+        {
+          "count": 13723,
+          "make": "toyota"
+        },
+        {
+          "count": 8020,
+          "make": "jeep"
+        },
+        {
+          "count": 7084,
+          "make": "gmc"
+        },
+        {
+          "count": 7053,
+          "make": "bmw"
+        },
+        {
+          "count": 5644,
+          "make": "honda"
+        },
+        {
+          "count": 5610,
+          "make": "mercedes"
+        },
+        {
+          "count": 5116,
+          "make": "lexus"
+        },
+        {
+          "count": 4878,
+          "make": "ram"
+        },
+        {
+          "count": 4472,
+          "make": "kia"
+        },
+        {
+          "count": 4444,
+          "make": "audi"
+        },
+        {
+          "count": 4036,
+          "make": "nissan"
+        },
+        {
+          "count": 3237,
+          "make": "hyundai"
+        },
+        {
+          "count": 3146,
+          "make": "mazda"
+        }
+      ],
+      "year": {
+        "count": 137099,
+        "max": 2024.0,
+        "median": 2023.0,
+        "min": 1959.0,
+        "p25": 2020.0,
+        "p75": 2023.0
+      }
+    },
+    "yoad22_craigslist": {
+      "above_75000_usd_percentage": 0.0,
+      "distinct_make_model_pairs": 0,
+      "distinct_makes": 43,
+      "mileage_miles": {
+        "count": 250361,
+        "max": 399999.0,
+        "median": 96000.0,
+        "min": 0.0,
+        "p25": 44853.0,
+        "p75": 142998.0
+      },
+      "mileage_present_percentage": 100.0,
+      "price_usd": {
+        "count": 250361,
+        "max": 54241.0,
+        "median": 13900.0,
+        "min": 500.0,
+        "p25": 6900.0,
+        "p75": 24984.0
+      },
+      "rows": 250361,
+      "top_makes": [
+        {
+          "count": 39779,
+          "make": "ford"
+        },
+        {
+          "count": 30264,
+          "make": "chevrolet"
+        },
+        {
+          "count": 21845,
+          "make": "toyota"
+        },
+        {
+          "count": 14554,
+          "make": "honda"
+        },
+        {
+          "count": 12148,
+          "make": "nissan"
+        },
+        {
+          "count": 11077,
+          "make": "jeep"
+        },
+        {
+          "count": 9160,
+          "make": "ram"
+        },
+        {
+          "count": 8931,
+          "make": "gmc"
+        },
+        {
+          "count": 8786,
+          "make": "bmw"
+        },
+        {
+          "count": 7726,
+          "make": "dodge"
+        },
+        {
+          "count": 7695,
+          "make": "unknown"
+        },
+        {
+          "count": 6659,
+          "make": "subaru"
+        },
+        {
+          "count": 6468,
+          "make": "mercedes-benz"
+        },
+        {
+          "count": 6430,
+          "make": "hyundai"
+        },
+        {
+          "count": 5806,
+          "make": "volkswagen"
+        }
+      ],
+      "year": {
+        "count": 250361,
+        "max": 2022.0,
+        "median": 2013.0,
+        "min": 1990.0,
+        "p25": 2008.0,
+        "p75": 2016.0
+      }
+    }
+  },
+  "domain_shift_findings": [
+    "Current retail is dominated by 2023 New/Used/Certified Cars.com snapshots and has substantial structurally missing mileage for New vehicles.",
+    "Yoad is an older, lower-priced Craigslist used-vehicle population with complete odometer/state coverage but no model field; it changes the target domain rather than simply filling current-retail gaps.",
+    "Carson is smaller and more luxury-heavy, with detailed model/engine/accident/title fields, but its geography, USD semantics, timestamp, and upstream origin are unresolved."
+  ],
+  "feature_strategy": {
+    "broad_coverage_model": [
+      "year",
+      "make",
+      "mileage"
+    ],
+    "decision": "Do not force rich fields into the current model. If permissions are resolved, evaluate a separate rich-feature experiment against the broad model.",
+    "rich_feature_candidate": [
+      "model",
+      "engine",
+      "transmission",
+      "fuel_type",
+      "accident_status",
+      "title_status"
+    ]
+  },
+  "generated_at": "2026-09-01T12:00:00+00:00",
+  "merge_decision": {
+    "experiment_b_carson": "blocked_pending_provenance_and_usd_us_scope",
+    "experiment_c_yoad": "pending_quality_split_and_domain_design",
+    "experiment_d_combined": "blocked_until_each_source_is_independently_approved",
+    "merged": false
+  },
+  "report_schema_version": 1,
+  "report_type": "hugging_face_candidates_vs_current_retail"
+}

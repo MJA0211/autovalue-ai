@@ -1,0 +1,7 @@
+-r requirements-training.txt
+
+jsonschema==4.26.0
+mypy==2.3.1
+pytest==9.1.1
+pytest-cov==7.1.0
+ruff==0.16.4

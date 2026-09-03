@@ -1,0 +1,17 @@
+* text=auto eol=lf
+
+*.joblib binary
+*.pkl binary
+*.pickle binary
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.pdf binary
+
+# Preserve the exact bytes of this checksum-pinned frozen evidence artifact.
+docs/experiments/river-shadow-simulation-v1.json binary -eol

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AutoValue Synthetic Inventory - Page 3</title>
+  </head>
+  <body>
+    <main>
+      <h1>Synthetic vehicle inventory with controlled data-quality cases</h1>
+
+      <!-- Missing optional fields are valid and remain null after normalization. -->
+      <article class="vehicle-card" data-listing-id="synthetic-004">
+        <a class="vehicle-card__link" href="/vehicles/synthetic-004">View invented vehicle</a>
+        <span data-field="year">2018</span>
+        <span data-field="make">Honda</span>
+        <span data-field="model">Civic</span>
+        <span data-field="mileage">78,400 mi</span>
+        <span data-field="drivetrain">FWD</span>
+        <span data-field="vehicle-type">Sedan</span>
+        <span data-field="price" data-currency="USD" data-price-kind="asking">$16,250</span>
+      </article>
+
+      <!-- Missing required make: this row must be quarantined. -->
+      <article class="vehicle-card" data-listing-id="synthetic-005">
+        <a class="vehicle-card__link" href="/vehicles/synthetic-005">View invented vehicle</a>
+        <span data-field="year">2020</span>
+        <span data-field="model">Missing Make Demo</span>
+        <span data-field="mileage">40,000 mi</span>
+        <span data-field="price" data-currency="USD" data-price-kind="asking">$20,000</span>
+      </article>
+
+      <!-- Malformed target: a monthly payment must never become a vehicle price. -->
+      <article class="vehicle-card" data-listing-id="synthetic-006">
+        <a class="vehicle-card__link" href="/vehicles/synthetic-006">View invented vehicle</a>
+        <span data-field="year">2023</span>
+        <span data-field="make">Demo</span>
+        <span data-field="model">Malformed Price</span>
+        <span data-field="mileage">10,000 mi</span>
+        <span data-field="price" data-currency="USD" data-price-kind="asking">$399/mo</span>
+      </article>
+    </main>
+  </body>
+</html>

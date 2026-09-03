@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "policy_id": "autovalue-retail-rf05-calibration-v1",
+  "preregistered_on": "2026-09-02",
+  "decision": "approved_for_first_calibration_use_only",
+  "scope": "historical_us_advertised_asking_price_usd_2023",
+  "frozen_inputs": {
+    "phase4_protocol_sha256": "6e517acb29634d676155c80fb73f4f126db492eba12a4281e9216dc568b1d384",
+    "phase4_retail_confirmation_sha256": "07cf667e2e325f0bbb9b0fca1d62f4f3cdb54db4d607a03ff603142ee5fbc54f",
+    "rf05_candidate_id": "phase4-retail-random_forest-05",
+    "rf05_parameters": [96, 1024, 5, 1.0, 0.6],
+    "rf05_random_state": 1254777149,
+    "feature_contract_version": "retail-historical-asking-price-v2",
+    "phase3_train_rows": 109510,
+    "development_rows": 98552,
+    "calibration_rows": 10958,
+    "calibration_assignment_sha256": "caa743681158c4eaccb2ec75ce17a1c5e20327a311f66c5e8e0d0c630c48e992",
+    "legacy_holdout_rows": 27589
+  },
+  "data_use": {
+    "first_authorized_calibration_population_use": true,
+    "fit_rf05_on_development_only": true,
+    "calibration_rows_used_for_estimator_fit": false,
+    "calibration_rows_used_for_estimator_selection_or_tuning": false,
+    "legacy_holdout_access": false,
+    "yoad_access": false,
+    "river_access": false,
+    "other_dataset_access": false
+  },
+  "conformal_method": {
+    "score": "absolute_error_usd",
+    "coverage_levels": [0.8, 0.9, 0.95],
+    "finite_sample_order": "ceil((n + 1) * coverage)",
+    "lower_bound": "max(0, point_prediction - radius)",
+    "upper_bound": "point_prediction + radius",
+    "methods_reported": [
+      "global",
+      "vehicle_status",
+      "vehicle_status_and_predicted_value_band_hierarchy"
+    ],
+    "default_candidate": "vehicle_status_and_predicted_value_band_hierarchy",
+    "fallback_candidate": "vehicle_status",
+    "global_always_available": true
+  },
+  "conditional_policy": {
+    "predicted_value_band_count": 4,
+    "predicted_value_cutpoints": "25th, 50th, and 75th percentiles of target-free RF05 calibration predictions",
+    "most_specific_key": "vehicle_status|predicted_value_band",
+    "fallback_order": [
+      "vehicle_status_and_predicted_value_band",
+      "vehicle_status",
+      "predicted_value_band",
+      "global"
+    ],
+    "minimum_bucket_support": 400,
+    "manufacturer_conditioning": false,
+    "manufacturer_conditioning_reason": "Avoid a high-cardinality search and tiny buckets in the first calibration use.",
+    "mileage_and_age_conditioning": false,
+    "mileage_and_age_role": "diagnostics_only_to_avoid_excessive_segmentation"
+  },
+  "diagnostic_policy": {
+    "scheme": "five_fold_predictor_group_cross_calibration",
+    "folds": 5,
+    "shuffle": false,
+    "group_key": "existing retail_predictor_groups v2",
+    "quantiles_fit_on_other_four_calibration_folds": true,
+    "validation_fold_residuals_excluded_from_its_quantile_fit": true,
+    "minimum_reported_slice_support": 200,
+    "price_bands_usd": [8995, 19995, 36590],
+    "mileage_bands_miles": [38282, 86204, 135803],
+    "missing_mileage_separate": true,
+    "vehicle_age_reference_year": 2023,
+    "vehicle_age_bands_years": [3, 8, 13],
+    "manufacturer_reporting": "only_calibration_manufacturers_with_at_least_200_rows"
+  },
+  "conditional_acceptance_gates": {
+    "evaluate_all_coverage_levels": true,
+    "minimum_overall_coverage_gap_from_target": -0.02,
+    "minimum_status_coverage_gap_from_target": -0.05,
+    "maximum_average_width_ratio_vs_status_method": 1.05,
+    "maximum_90pct_high_price_coverage_regression_vs_status": 0.02,
+    "failure_action": "use_vehicle_status_calibration_with_global_fallback",
+    "selection_metric_is_not_narrowness_alone": true
+  },
+  "confidence_policy": {
+    "coverage_level": 0.9,
+    "relative_width": "interval_width / max(point_prediction, 1 USD)",
+    "empirical_thresholds": "33rd and 67th percentiles of cross-fitted selected-method relative widths",
+    "high": "applicable support at least 1000 and relative width at or below the 33rd-percentile threshold",
+    "moderate": "applicable support at least 400 and relative width at or below the 67th-percentile threshold",
+    "low": "all other cases",
+    "data_quality_warnings_are_separate": true,
+    "confidence_is_not_a_probability": true
+  },
+  "publication": {
+    "artifact_contains_raw_rows": false,
+    "artifact_contains_predictions": false,
+    "artifact_contains_residuals": false,
+    "reports_are_aggregate_only": true,
+    "language": "calibrated_prediction_interval_not_probability_or_official_third_party_value"
+  }
+}

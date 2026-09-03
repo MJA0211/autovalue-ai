@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "report_type": "phase4_partition_audit",
+  "generated_on": "2026-08-29",
+  "policy_id": "autovalue-phase4-model-selection-v1",
+  "policy_sha256": "6e517acb29634d676155c80fb73f4f126db492eba12a4281e9216dc568b1d384",
+  "target_used_for_allocation": false,
+  "tracks": {
+    "retail": {
+      "source_id": "kaggle_us_sales_cars_v2",
+      "phase3_train_rows": 109510,
+      "legacy_holdout_rows": 27589,
+      "calibration": {
+        "development_rows": 98552,
+        "calibration_rows": 10958,
+        "predictor_group_overlap": 0,
+        "development_rows_by_status": {
+          "certified": 5467,
+          "new": 58360,
+          "used": 34725
+        },
+        "calibration_rows_by_status": {
+          "certified": 607,
+          "new": 6493,
+          "used": 3858
+        },
+        "assignment_sha256": "caa743681158c4eaccb2ec75ce17a1c5e20327a311f66c5e8e0d0c630c48e992",
+        "assignment_hash_payload": "For every zero-based Phase-3 outer-train position in ascending order: position + ',' + ('calibration' or 'development') + LF, encoded as ASCII."
+      },
+      "screening": {
+        "population": "development_partition_only",
+        "population_rows": 98552,
+        "sample_rows": 29619,
+        "sample_rows_by_status": {
+          "certified": 1640,
+          "new": 17562,
+          "used": 10417
+        },
+        "nonsample_rows_by_status": {
+          "certified": 3827,
+          "new": 40798,
+          "used": 24308
+        },
+        "assignment_sha256": "fe8954d81f681c0d3ce7253d8a23f7995e9789693d7a261c851bc4078e173988",
+        "assignment_hash_payload": "For every zero-based development-local position in ascending order: position + ',' + ('screening' or 'not_screening') + LF, encoded as ASCII."
+      }
+    },
+    "wholesale": {
+      "source_id": "kaggle_vehicle_sales_v1",
+      "phase3_train_rows": 442130,
+      "legacy_holdout_rows": 98634,
+      "calibration": {
+        "development_rows": 391641,
+        "calibration_rows": 50489,
+        "development_rows_by_bucket": {
+          "warmup": 51586,
+          "2015_01": 134449,
+          "2015_02": 158432,
+          "2015_03_04": 47174
+        },
+        "calibration_rows_by_bucket": {
+          "2015_05": 50489
+        },
+        "assignment_sha256": "f359c455accdfd8dc2de37ceab0ad218d81b5ee0e612d1e15fcd84fedd30f0d4",
+        "assignment_hash_payload": "For every zero-based Phase-3 outer-train position in ascending order: position + ',' + ('calibration' or 'development') + LF, encoded as ASCII."
+      },
+      "screening": {
+        "population": "development_partition_only",
+        "population_rows": 391641,
+        "sample_rows": 97909,
+        "sample_rows_by_bucket": {
+          "warmup": 12896,
+          "2015_01": 33612,
+          "2015_02": 39608,
+          "2015_03_04": 11793
+        },
+        "nonsample_rows_by_bucket": {
+          "warmup": 38690,
+          "2015_01": 100837,
+          "2015_02": 118824,
+          "2015_03_04": 35381
+        },
+        "assignment_sha256": "cecdf8d34fc7d549024dfdb22ae83a371855808a2b405f35bcb858e665d01bc1",
+        "assignment_hash_payload": "For every development row in ascending original Phase-3 outer-train position: original position + ',' + ('screening' or 'not_screening') + LF, encoded as ASCII."
+      }
+    }
+  }
+}

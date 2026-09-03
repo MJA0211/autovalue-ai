@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "policy_id": "autovalue-phase4-model-selection-v1",
+  "reviewed_on": "2026-08-29",
+  "decision": "approved_for_private_local_implementation",
+  "master_seed_label": "autovalue-phase4-v1",
+  "seed_derivation": {
+    "algorithm": "uint32 big-endian from the first four bytes of SHA-256(master_seed_label + '|' + track + '|' + purpose)",
+    "purpose_labels": [
+      "calibration",
+      "screening_sample",
+      "random_forest",
+      "gradient_boosting",
+      "permutation_importance"
+    ]
+  },
+  "purpose": "Select, calibrate, audit, and privately persist one deployable model per independent historical price track without using a legacy holdout for development decisions.",
+  "holdout_policy": {
+    "holdout_used_for_preprocessing": false,
+    "holdout_used_for_hyperparameter_tuning": false,
+    "holdout_used_for_model_family_selection": false,
+    "holdout_used_for_interval_calibration": false,
+    "final_evaluation_name": "phase3_reused_legacy_holdout",
+    "limitation": "Both outer holdouts were already scored and published in Phase 3. Phase 4 may audit one frozen winner on each for comparability, but must not call either untouched. A genuinely unbiased final claim requires newly authorized later-period data."
+  },
+  "tracks": {
+    "retail": {
+      "source_id": "kaggle_us_sales_cars_v2",
+      "target_semantics": "historical_us_advertised_asking_price_usd_2023",
+      "feature_contract_version": "retail-historical-asking-price-v2",
+      "candidate_sha256": "12880cfbb2cb7f600f291c077adfa247afb9774b400b21bb7eb7409d72f7fb92",
+      "split_assignment_sha256": "5b3e39d0ef418c07b0c4d08ecc18700fc9f387518a21dbd604f515463cb5ebe5",
+      "split_manifest_sha256": "c60bf010fb47dff44d03b5da80b191ddb4b748661cb5cf02397422fdbaaf3466",
+      "split_artifact_set_id": "8ab1e31f08aab9cefe3293e9a1e4bfe6ddf544da5020e5ac64b6b5fff7625edf",
+      "phase3_baseline_report_sha256": "b5cae941ebb01d9766716d01a24acc75ad7d0432b05e8dde44a6200caffad28a",
+      "phase3_train_rows": 109510,
+      "legacy_holdout_rows": 27589,
+      "development_calibration_split": {
+        "algorithm": "Within each vehicle_status, sort indivisible year/make/model/mileage/status predictor groups by the exact seeded rank below and select the prefix whose cumulative row count is closest to one tenth of Phase-3 training rows for that status. Prefix zero participates and ties choose the smaller prefix. Targets are excluded.",
+        "group_id_algorithm": "retail_predictor_groups from feature contract v2: SHA-256 hex of UTF-8 compact JSON [model_year,make,model,mileage_or_null,vehicle_status] with ensure_ascii=false and separators comma/colon",
+        "seeded_rank_algorithm": "SHA-256 bytes of b'autovalue-retail-calibration-v1\\x00' + calibration_seed as unsigned 32-bit big-endian + ASCII group_id; sort by digest bytes then group_id",
+        "calibration_fraction_numerator": 1,
+        "calibration_fraction_denominator": 10,
+        "calibration_seed": 1416582761,
+        "expected_calibration_rows_approximate": 10951
+      },
+      "development_cv": {
+        "scheme": "predictor_group_kfold",
+        "folds": 5,
+        "shuffle": false
+      },
+      "screening": {
+        "input": "development_partition_only",
+        "algorithm": "Within each vehicle_status, keep predictor groups indivisible, rank them by the exact seeded rank below, and select the prefix whose cumulative row count is closest to three tenths of development rows for that status. Prefix zero participates and ties choose the smaller prefix. Targets are excluded from sampling.",
+        "group_id_algorithm": "same retail_predictor_groups v2 group_id used by development_calibration_split",
+        "seeded_rank_algorithm": "SHA-256 bytes of b'autovalue-retail-screening-v1\\x00' + screening_sample_seed as unsigned 32-bit big-endian + ASCII group_id; sort by digest bytes then group_id",
+        "sample_fraction_numerator": 3,
+        "sample_fraction_denominator": 10,
+        "cv_scheme": "predictor_group_kfold",
+        "cv_folds": 5,
+        "shuffle": false
+      },
+      "screening_sample_seed": 1707037927,
+      "random_forest_seed": 1254777149,
+      "gradient_boosting_seed": 3295129705,
+      "permutation_importance_seed": 2824429337
+    },
+    "wholesale": {
+      "source_id": "kaggle_vehicle_sales_v1",
+      "target_semantics": "historical_us_wholesale_auction_completed_sale_price_usd_2014_2015",
+      "feature_contract_version": "wholesale-historical-completed-sale-v2",
+      "raw_source_sha256": "32ba3ce51664e6a12c0c927ed193b41e3c4743fdf18bc0317389892aed27f556",
+      "candidate_sha256": "ef9f77b14d0cfc2b180cca5d57e6de04b10df2b4d0e6871e00ec3c6d095c1489",
+      "split_assignment_sha256": "a96909345612f5ddc5665c4d6817d2c8f0dd6d59c3a84fc523cb82b6adeeb5f2",
+      "split_manifest_sha256": "d0dd0c24f342a8a45c1f89419780f470d0f152d61cf5dd54b2cb786df9525bd3",
+      "split_artifact_set_id": "75fe4bbe4b1d77c48e2e8804dfdde86a2ef037580fdf58c257e762fa53ee6d37",
+      "phase3_baseline_report_sha256": "b0be8b30367f7b7adca904d80610dd161b9b33dffd9e116d5030bd34403a3030",
+      "phase3_train_rows": 442130,
+      "legacy_holdout_rows": 98634,
+      "development_calibration_split": {
+        "development_buckets": [
+          "warmup",
+          "2015_01",
+          "2015_02",
+          "2015_03_04"
+        ],
+        "development_rows": 391641,
+        "calibration_bucket": "2015_05",
+        "calibration_rows": 50489,
+        "calibration_seed": 3061104204
+      },
+      "development_cv": {
+        "scheme": "forward_chaining_cv_bucket",
+        "bucket_order": [
+          "warmup",
+          "2015_01",
+          "2015_02",
+          "2015_03_04"
+        ],
+        "validation_folds": 3
+      },
+      "screening": {
+        "input": "development_partition_only",
+        "algorithm": "Within each ordered development bucket, rank rows by the exact seeded rank below and select the prefix whose row count is closest to one quarter of that bucket. Prefix zero participates and ties choose the smaller prefix. Targets are excluded from sampling; every sampled row retains its original bucket so CV remains forward-only.",
+        "seeded_rank_algorithm": "SHA-256 bytes of b'autovalue-wholesale-screening-v1\\x00' + screening_sample_seed as unsigned 32-bit big-endian + UTF-8 bucket + b'\\x00' + zero-based Phase-3 outer-train row position as unsigned 64-bit big-endian; sort by digest bytes then row position",
+        "sample_fraction_numerator": 1,
+        "sample_fraction_denominator": 4,
+        "bucket_order": [
+          "warmup",
+          "2015_01",
+          "2015_02",
+          "2015_03_04"
+        ],
+        "cv_scheme": "forward_chaining_cv_bucket",
+        "validation_folds": 3
+      },
+      "screening_sample_seed": 759966512,
+      "random_forest_seed": 2903812338,
+      "gradient_boosting_seed": 177971163,
+      "permutation_importance_seed": 3132861797
+    }
+  },
+  "preprocessing": {
+    "fit_scope": "inside_each_development_fold",
+    "feature_engineering": "existing_track_v2",
+    "numeric": "median_imputation_without_scaling",
+    "categorical": "constant_missing_imputation_then_capped_infrequent_one_hot_encoding",
+    "matrix": "csr_float32",
+    "dense_conversion_forbidden": true,
+    "target_clipping": false,
+    "target_log_transform": false
+  },
+  "candidate_families": {
+    "linear_regression_incumbent": {
+      "role": "same-fold_reference",
+      "configuration": "phase3_v2_linear_pipeline"
+    },
+    "random_forest": {
+      "common": {
+        "criterion": "squared_error",
+        "bootstrap": true,
+        "max_depth": null,
+        "n_jobs_training": 4,
+        "n_jobs_serving": 1
+      },
+      "retail": [
+        [96, 512, 5, 0.5, 0.6],
+        [128, 1024, 15, 0.7, 0.8],
+        [160, 2048, 15, 0.7, 0.8],
+        [160, 1024, 30, 1.0, 0.8],
+        [128, 2048, 30, 0.5, 1.0],
+        [96, 1024, 5, 1.0, 0.6]
+      ],
+      "wholesale": [
+        [96, 512, 25, 0.4, 0.5],
+        [128, 1024, 50, 0.6, 0.6],
+        [160, 2048, 50, 0.6, 0.7],
+        [160, 1024, 100, 0.8, 0.7],
+        [128, 2048, 100, 0.4, 0.6],
+        [96, 1024, 25, 0.8, 0.5]
+      ],
+      "tuple_fields": [
+        "n_estimators",
+        "max_leaf_nodes",
+        "min_samples_leaf",
+        "max_features",
+        "max_samples"
+      ]
+    },
+    "gradient_boosting": {
+      "common": {
+        "n_iter_no_change": null
+      },
+      "retail": [
+        ["squared_error", 0.9, 120, 0.08, 2, 20, 0.8, 0.8],
+        ["squared_error", 0.9, 180, 0.05, 2, 20, 0.65, 0.8],
+        ["squared_error", 0.9, 240, 0.03, 3, 50, 0.65, 0.5],
+        ["huber", 0.9, 180, 0.05, 2, 20, 0.65, 0.8],
+        ["huber", 0.85, 240, 0.03, 2, 50, 0.8, 0.5],
+        ["huber", 0.9, 120, 0.08, 3, 50, 0.65, 0.5]
+      ],
+      "wholesale": [
+        ["squared_error", 0.9, 100, 0.08, 2, 50, 0.7, 0.7],
+        ["squared_error", 0.9, 140, 0.05, 2, 100, 0.5, 0.4],
+        ["squared_error", 0.9, 180, 0.03, 2, 50, 0.7, 0.7],
+        ["squared_error", 0.9, 140, 0.05, 3, 100, 0.5, 0.4],
+        ["squared_error", 0.9, 100, 0.08, 3, 200, 0.5, 0.7],
+        ["huber", 0.9, 140, 0.05, 2, 100, 0.7, 0.4]
+      ],
+      "tuple_fields": [
+        "loss",
+        "alpha",
+        "n_estimators",
+        "learning_rate",
+        "max_depth",
+        "min_samples_leaf",
+        "subsample",
+        "max_features"
+      ]
+    },
+    "xgboost": {
+      "status": "deferred_optional",
+      "reason": "It is open source but is not currently a project dependency and adds a native binary, image-size, and security-maintenance cost. Review and pin it separately only if both sklearn challengers miss the material-gain gate."
+    }
+  },
+  "search_budget": {
+    "parallel_candidate_fits": 1,
+    "pre_dispatch": 1,
+    "native_threads": 1,
+    "random_forest_internal_jobs": 4,
+    "maximum_peak_rss_gb": 8,
+    "target_peak_rss_gb": 6,
+    "maximum_wall_clock_hours_per_track": 4,
+    "screen_all_explicit_candidates_on_target_free_group_or_time_safe_sample": true,
+    "confirm_top_candidates_per_family_on_full_development_cv": 2,
+    "screening_shortlist": {
+      "metric": "micro_out_of_fold_mae_usd",
+      "ranking": "ascending exact finite float, then ascending stable candidate_id",
+      "separate_by_family": true,
+      "challengers_per_family": 2,
+      "linear_incumbent": "evaluate on the same screening and full-development folds as a reference; it is not part of either family shortlist",
+      "promotion_metrics": "only full-development CV metrics may promote a model"
+    }
+  },
+  "selection": {
+    "primary_metric": "micro_out_of_fold_mae_usd",
+    "retail_material_gain": {
+      "minimum_relative_mae_improvement": 0.03,
+      "minimum_absolute_mae_improvement_usd": 300,
+      "maximum_status_mae_regression": 0.05,
+      "maximum_rmse_regression": 0.05
+    },
+    "wholesale_material_gain": {
+      "minimum_relative_mae_improvement": 0.02,
+      "minimum_absolute_mae_improvement_usd": 50,
+      "maximum_latest_fold_mae_regression": 0.05,
+      "maximum_rmse_regression": 0.05
+    },
+    "near_tie_relative_mae": 0.01,
+    "near_tie_breakers": [
+      "smaller_artifact",
+      "lower_single_row_p95_latency",
+      "stable_model_id"
+    ],
+    "fallback": "Keep Linear Regression when no challenger clears every accuracy and deployment gate."
+  },
+  "deployment_gates": {
+    "maximum_private_artifact_mb": 50,
+    "maximum_warm_resident_memory_mb": 350,
+    "maximum_startup_peak_mb": 450,
+    "maximum_single_row_p95_ms": 500,
+    "serving_workers": 1,
+    "serving_native_threads": 1
+  },
+  "prediction_range": {
+    "method": "split_conformal_absolute_residual",
+    "alpha": 0.1,
+    "finite_sample_order": "ceil((n_calibration + 1) * (1 - alpha))",
+    "lower_bound": "max(0, prediction - quantile)",
+    "upper_bound": "prediction + quantile",
+    "retail": "status-specific quantiles for certified/new/used with a global fallback",
+    "wholesale": "one quantile from the 2015_05 calibration bucket",
+    "minimum_overall_observed_coverage": 0.88,
+    "minimum_retail_status_coverage": 0.85,
+    "label": "estimated_prediction_range_not_statistical_confidence"
+  },
+  "feature_importance": {
+    "method": "permutation_drop_in_negative_mae_on_raw_feature_families",
+    "holdout_role": "phase3_reused_legacy_holdout",
+    "retail_sample_rows": 10000,
+    "wholesale_sample_rows": 20000,
+    "repeats": 5,
+    "n_jobs": 1,
+    "output": "aggregate_mean_and_standard_deviation_only",
+    "local_explanation_claim": false,
+    "raw_linear_coefficients_forbidden_as_importance": true
+  },
+  "artifact_policy": {
+    "storage": "private_git_ignored_models_directory",
+    "downloadable_publication": "pending_new_permission_review",
+    "hosted_inference": "approved_with_existing_scoped_reviews",
+    "trusted_local_joblib_only": true,
+    "user_uploaded_or_remote_artifacts_forbidden": true,
+    "verify_sha256_before_load": true,
+    "persist_source_rows_predictions_residuals_or_category_vocabulary_in_public_reports": false
+  }
+}

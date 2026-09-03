@@ -1,0 +1,26 @@
+{
+  "manifest_schema_version": 1,
+  "source": {
+    "owner": "REPLACE_WITH_SOURCE_OWNER",
+    "name": "REPLACE_WITH_DATASET_NAME",
+    "version": "REPLACE_WITH_IMMUTABLE_VERSION",
+    "canonical_url": "https://example.invalid/dataset/version",
+    "market_country": "US"
+  },
+  "license": {
+    "spdx_id": "REPLACE-WITH-SPDX-ID",
+    "url": "https://example.invalid/license",
+    "reviewed_on": "YYYY-MM-DD"
+  },
+  "artifact": {
+    "file_name": "REPLACE_WITH_DATASET.csv",
+    "format": "csv",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "approvals": {
+    "approved_for_acquisition": false,
+    "acquisition_evidence": "",
+    "approved_for_ml_training": false,
+    "ml_training_evidence": ""
+  }
+}

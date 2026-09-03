@@ -1,0 +1,105 @@
+{
+  "review_schema_version": 1,
+  "review_id": "kaggle-vehicle-sales-data-v1-2026-08-28",
+  "reviewed_on": "2026-08-28",
+  "decision": "approved_with_conditions",
+  "project_role": "selected_historical_us_wholesale_candidate",
+  "source": {
+    "platform": "Kaggle",
+    "uploader": "syedanwarafridi",
+    "dataset_slug": "vehicle-sales-data",
+    "dataset_url": "https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data/data",
+    "version": "v1",
+    "initial_release_date": "2024-02-21",
+    "license_label": "MIT",
+    "license_label_source": "Kaggle dataset page",
+    "underlying_ownership_independently_verified": false,
+    "permission_evidence": {
+      "kind": "project-owner attestation of direct uploader communication",
+      "summary": "The project owner reports that the uploader directly confirmed the dataset is legal to use.",
+      "external_correspondence_committed": false
+    }
+  },
+  "retrieval": {
+    "retrieved_on": "2026-08-28",
+    "reviewed_on": "2026-08-28",
+    "required_method": "official Kaggle download",
+    "csv_path": "data/raw/kaggle_vehicle_sales_v1/car_prices.csv",
+    "archive_path": "data/raw/kaggle_syedanwarafridi_vehicle-sales-data_v1/vehicle-sales-data-v1.zip",
+    "archive": {
+      "recommended_file_name": "vehicle-sales-data-v1.zip",
+      "size_bytes": 19753181,
+      "sha256": "8eb8e42023ee7255818b31ac1a716b438e7bd9298116b98c250937754418c8b1"
+    },
+    "csv": {
+      "file_name": "car_prices.csv",
+      "size_bytes": 88047552,
+      "sha256": "32ba3ce51664e6a12c0c927ed193b41e3c4743fdf18bc0317389892aed27f556",
+      "row_count": 558837
+    }
+  },
+  "permissions": {
+    "official_download": "approved",
+    "local_storage": "approved",
+    "private_transformation": "approved",
+    "ml_training_and_evaluation": "approved",
+    "public_aggregate_metrics_and_charts": "approved",
+    "hosted_inference": "approved",
+    "raw_row_redistribution": "pending",
+    "processed_row_redistribution": "pending",
+    "downloadable_trained_model": "pending",
+    "sublicensing": "pending",
+    "commercial_use": "pending"
+  },
+  "market_scope": {
+    "raw_scope": "mixed United States, Canada, and Puerto Rico",
+    "approved_scope": "50 United States plus the District of Columbia",
+    "raw_row_count": 558837,
+    "us_50_plus_dc_row_count": 550410,
+    "us_50_plus_dc_valid_target_and_date_row_count": 550398,
+    "us_50_plus_dc_core_complete_row_count": 529245,
+    "sale_date_min": "2014-01-01",
+    "sale_date_max": "2015-07-21",
+    "currency": "USD",
+    "currency_status": "inferred_for_validated_us_rows",
+    "currency_assumption": "The source does not explicitly document currency. AutoValue AI treats sellingprice as USD only after retaining a validated U.S. state or District of Columbia row. This remains an open semantic assumption until the uploader or upstream source confirms it."
+  },
+  "target": {
+    "source_column": "sellingprice",
+    "meaning": "historical wholesale auction sale price",
+    "approved_claim": "historical U.S. wholesale auction sale-price estimate for the 2014-2015 source period",
+    "prohibited_claim": "current consumer retail market value"
+  },
+  "required_processing_gates": [
+    "Verify the exact archive and CSV byte sizes and SHA-256 hashes before parsing.",
+    "Retain only records mapped to one of the 50 U.S. states or the District of Columbia; reject Canada and Puerto Rico.",
+    "Require a parseable sale date and positive sellingprice target.",
+    "Remove VIN and seller from every feature table and published artifact.",
+    "Forbid MMR from model features, preprocessing, feature selection, tuning, explanations, and inference payloads because it is a competing valuation estimate and target-leakage risk.",
+    "Use a chronological test boundary and keep every normalized VIN in only one split.",
+    "Fit imputers, encoders, category grouping, and all learned transforms on training folds only.",
+    "Label every result as historical wholesale-auction performance and disclose the 2014-2015 time window.",
+    "Do not commit or redistribute raw rows, processed rows, or a downloadable model without a new permission decision."
+  ],
+  "publication_policy": {
+    "allowed": [
+      "aggregate validation counts",
+      "aggregate model metrics",
+      "aggregate charts that do not expose source rows",
+      "hosted predictions from an approved deployment"
+    ],
+    "blocked_pending_review": [
+      "raw dataset files",
+      "processed row-level datasets",
+      "row-level examples copied from the dataset",
+      "downloadable trained model artifacts",
+      "commercial deployment"
+    ]
+  },
+  "training_status": "not_started",
+  "notes": [
+    "The Kaggle page displays an MIT license label, but underlying ownership and upstream provenance have not been independently verified by this project.",
+    "The project owner's attestation is the basis for the scoped approval recorded here; it is not a general sublicense or legal conclusion.",
+    "This review approves a bounded portfolio use, subject to every processing and publication gate above."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "split_policy_schema_version": 1,
+  "policy_id": "kaggle-vehicle-sales-v1-chronological-vin-isolated-v1",
+  "reviewed_on": "2026-08-28",
+  "decision": "approved",
+  "source_id": "kaggle_vehicle_sales_v1",
+  "source_review_id": "kaggle-vehicle-sales-data-v1-2026-08-28",
+  "algorithm_version": "chronological-vin-isolated-v1.0.0",
+  "cutoff_date": "2015-06-01",
+  "date_rule": "Rows dated on or after the cutoff begin in the test partition.",
+  "group_rule": "If any accepted row in an identifier group is on or after the cutoff, every accepted row in that group is assigned to test; groups entirely before the cutoff are assigned to train.",
+  "cv_bucket_rule": "Each train identifier group is assigned wholly to one ordered bucket using its latest accepted sale date; test rows have no CV bucket.",
+  "cv_buckets": [
+    {
+      "name": "warmup",
+      "start_inclusive": "2014-01-01",
+      "end_exclusive": "2015-01-01"
+    },
+    {
+      "name": "2015_01",
+      "start_inclusive": "2015-01-01",
+      "end_exclusive": "2015-02-01"
+    },
+    {
+      "name": "2015_02",
+      "start_inclusive": "2015-02-01",
+      "end_exclusive": "2015-03-01"
+    },
+    {
+      "name": "2015_03_04",
+      "start_inclusive": "2015-03-01",
+      "end_exclusive": "2015-05-01"
+    },
+    {
+      "name": "2015_05",
+      "start_inclusive": "2015-05-01",
+      "end_exclusive": "2015-06-01"
+    }
+  ],
+  "assignment_columns": [
+    "source_listing_id",
+    "split",
+    "cv_bucket"
+  ],
+  "feature_allowlist": [
+    "year",
+    "make",
+    "model",
+    "trim",
+    "mileage",
+    "condition",
+    "vehicle_type"
+  ],
+  "target_column": "price_cents",
+  "publication_status": "private_local_only"
+}

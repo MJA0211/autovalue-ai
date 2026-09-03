@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "policy_id": "autovalue-retail-rf05-uncertainty-sharpness-v1",
+  "preregistered_on": "2026-09-02",
+  "objective": "reduce_interval_width_without_sacrificing_defensible_empirical_coverage",
+  "scope": "historical_us_advertised_asking_price_usd_2023",
+  "frozen_inputs": {
+    "phase4_protocol_sha256": "6e517acb29634d676155c80fb73f4f126db492eba12a4281e9216dc568b1d384",
+    "phase4_retail_confirmation_sha256": "07cf667e2e325f0bbb9b0fca1d62f4f3cdb54db4d607a03ff603142ee5fbc54f",
+    "rf05_identity_sha256": "3bbd73d6442387496b05253dd20bc749db24aa482d56fa6ba73ec2702de8b513",
+    "rf05_candidate_id": "phase4-retail-random_forest-05",
+    "rf05_parameters": [96, 1024, 5, 1.0, 0.6],
+    "rf05_random_state": 1254777149,
+    "feature_contract_version": "retail-historical-asking-price-v2",
+    "calibration_v1_policy_sha256": "1398519c699bd129ef4fbb552813c064839c6c1e1c4ecd35c7f5d42bcf8e1ca2",
+    "calibration_v1_artifact_sha256": "b7eb5970b164ec68fb76cf8314f36080d085cda02968d3570d11f724490a6da0",
+    "calibration_v1_report_sha256": "e7fafff505603669e73cfbff2fe1cf5e04f9c5d896666470fe212411aa1b3084",
+    "development_residual_diagnostics_sha256": "8f79ac027a72fff2512ab0b168d91a3a7b46677d72374dc00571a4646aac925d",
+    "calibration_assignment_sha256": "caa743681158c4eaccb2ec75ce17a1c5e20327a311f66c5e8e0d0c630c48e992",
+    "phase3_train_rows": 109510,
+    "development_rows": 98552,
+    "calibration_rows": 10958,
+    "legacy_holdout_rows": 27589
+  },
+  "boundary_interpretation": {
+    "no_persisted_rf05_or_row_level_predictions_exist": true,
+    "authorized_reconstruction": "five exact fold-local RF05 clones for development OOF predictions plus one exact full-development clone for calibration point predictions",
+    "reconstruction_is_not": [
+      "RF05 hyperparameter tuning",
+      "RF05 estimator comparison",
+      "RF05 fitting on calibration observations",
+      "RF05 replacement or promotion"
+    ],
+    "outer_train_loader": "partition=train emits no legacy-holdout record; the immutable candidate file is physically combined and is integrity-scanned before assignment filtering",
+    "legacy_holdout_definition": "no holdout row is emitted to modeling code and no holdout target or prediction is used for fitting, calibration, selection, or evaluation",
+    "calibration_targets_fit_rf05": false,
+    "calibration_targets_fit_residual_scale_model": false,
+    "calibration_targets_select_scale_model_hyperparameters": false,
+    "raw_rows_predictions_or_residuals_persisted": false
+  },
+  "development_diagnostics": {
+    "population": "98,552 development rows only",
+    "folds": "five deterministic existing retail predictor-group folds",
+    "actual_price_role": "residual target and evaluation diagnostics only, never a predictor",
+    "minimum_manufacturer_support": 500,
+    "minimum_model_support": 500,
+    "minimum_combination_support": 400,
+    "maximum_reported_manufacturers_or_models": 20,
+    "heteroscedasticity_gate": "highest predicted-value quartile mean absolute residual at least 1.25 times lowest quartile",
+    "observed_ratio_before_preregistration": 3.274992101110353
+  },
+  "candidate_methods": [
+    {
+      "id": "vehicle_status_absolute_residual_v1",
+      "role": "immutable_current_baseline",
+      "scale": "1 USD",
+      "score": "absolute_error_usd",
+      "quantile_hierarchy": ["vehicle_status", "global"],
+      "minimum_status_support": 400
+    },
+    {
+      "id": "normalized_gamma_scale_v1",
+      "role": "learned_heteroscedastic_candidate",
+      "scale_target": "max(development_OOF_absolute_RF05_residual_usd, 1 USD)",
+      "scale_inputs": [
+        "log1p(max(RF05_prediction_usd, 0) / 10000)",
+        "model_year",
+        "mileage",
+        "mileage_per_year",
+        "mileage_missing",
+        "make",
+        "model",
+        "vehicle_status"
+      ],
+      "preprocessing": "development-fit median imputation, standard scaling for numeric inputs, and bounded one-hot encoding with the frozen retail category thresholds",
+      "estimator": "sklearn.linear_model.GammaRegressor",
+      "hyperparameters": {
+        "alpha": 1.0,
+        "fit_intercept": true,
+        "solver": "lbfgs",
+        "max_iter": 2000,
+        "tol": 1e-7,
+        "warm_start": false
+      },
+      "scale_floor_usd": 500.0,
+      "scale_cap_usd": 250000.0,
+      "score": "absolute_error_usd / clipped_predicted_scale_usd",
+      "quantile_hierarchy": ["vehicle_status", "global"],
+      "minimum_status_support": 400,
+      "fit_boundary": "development rows and development OOF residual targets only"
+    },
+    {
+      "id": "normalized_smooth_value_scale_v1",
+      "role": "simple_heteroscedastic_candidate",
+      "scale_formula": "1 + ln(1 + max(RF05_prediction_usd, 0) / 10000)",
+      "scale_fit": "none",
+      "score": "absolute_error_usd / deterministic_dimensionless_scale",
+      "quantile_hierarchy": ["vehicle_status", "global"],
+      "minimum_status_support": 400
+    }
+  ],
+  "calibration_comparison": {
+    "coverage_levels": [0.8, 0.9, 0.95],
+    "finite_sample_order": "ceil((n + 1) * coverage)",
+    "scheme": "five_fold_predictor_group_cross_calibration",
+    "same_folds_and_point_predictions_for_every_method": true,
+    "fold_quantiles_use_other_four_calibration_folds_only": true,
+    "lower_bound": "max(0, point_prediction - radius)",
+    "upper_bound": "point_prediction + radius",
+    "sharpness_primary_width": "unclipped symmetric width equal to 2 times radius",
+    "displayed_width": "zero-clipped lower-bound width",
+    "minimum_reported_slice_support": 200,
+    "price_bands_usd": [8995, 19995, 36590],
+    "mileage_bands_miles": [38282, 86204, 135803],
+    "vehicle_age_reference_year": 2023,
+    "vehicle_age_bands_years": [3, 8, 13],
+    "manufacturer_support": 200,
+    "bootstrap": {
+      "unit": "existing retail predictor group",
+      "replicates": 2000,
+      "random_state": 2841907531,
+      "confidence_level": 0.95,
+      "paired_across_methods": true
+    }
+  },
+  "acceptance_gates": {
+    "validity": {
+      "invalid_or_nonfinite_intervals": 0,
+      "reversed_or_point_excluding_intervals": 0,
+      "negative_displayed_lower_bounds": 0,
+      "clipped_and_unclipped_coverage_must_match": true,
+      "gamma_scale_floor_hit_maximum_rate": 0.1,
+      "gamma_scale_cap_hit_maximum_rate": 0.01
+    },
+    "overall_coverage": {
+      "minimum_gap_from_target_each_level": -0.02,
+      "maximum_regression_vs_baseline_each_level": 0.01,
+      "minimum_cluster_bootstrap_95pct_lower_delta_vs_baseline": -0.015
+    },
+    "sharpness": {
+      "minimum_unclipped_mean_width_reduction_80pct": 0.05,
+      "minimum_unclipped_mean_width_reduction_90pct": 0.1,
+      "minimum_unclipped_mean_width_reduction_95pct": 0.05,
+      "minimum_displayed_median_width_reduction_each_level": 0.05,
+      "maximum_bootstrap_95pct_upper_mean_width_ratio_at_90pct": 0.95,
+      "maximum_p95_width_ratio_vs_baseline_each_level": 1.75
+    },
+    "conditional_coverage": {
+      "minimum_status_gap_from_target_each_level": -0.05,
+      "maximum_status_regression_vs_baseline_each_level": 0.02,
+      "maximum_broad_slice_regression_vs_baseline_each_level": 0.03,
+      "new_broad_slice_undercoverage_boundary": -0.1,
+      "maximum_manufacturer_regression_vs_baseline_at_90pct": 0.05,
+      "manufacturer_count_below_80pct_at_90pct_may_increase": false,
+      "focus_90pct_maximum_regression_vs_baseline": 0.01,
+      "focus_slices": ["highest_price_band", "gmc", "genesis", "bmw", "audi", "mercedes"]
+    },
+    "stability": {
+      "maximum_fold_coverage_regression_vs_baseline_each_level": 0.03,
+      "maximum_fold_coverage_sd_increase_vs_baseline_each_level": 0.01,
+      "maximum_fallback_rate_increase_vs_baseline": 0.005,
+      "maximum_p95_to_median_width_ratio": 6.0,
+      "maximum_interval_width_usd": 750000.0
+    }
+  },
+  "selection_rule": {
+    "candidate_must_pass_every_gate": true,
+    "if_neither_passes": "retain_current_calibration_baseline",
+    "if_execution_or_baseline_reproduction_fails": "uncertainty_method_requires_further_research",
+    "if_both_pass": "prefer normalized_smooth_value_scale_v1 unless normalized_gamma_scale_v1 reduces 90pct mean width by at least 3 additional percentage points without a worse gate result",
+    "coverage_is_primary": true,
+    "do_not_force_a_winner": true
+  },
+  "confidence_policy": {
+    "coverage_level": 0.9,
+    "relative_width": "displayed_interval_width / max(point_prediction, 1 USD)",
+    "high_max_relative_width": 0.686682300031913,
+    "moderate_max_relative_width": 1.094478855653873,
+    "high_minimum_support": 1000,
+    "moderate_minimum_support": 400,
+    "thresholds_reused_from_v1_for_direct_comparability": true,
+    "confidence_is_not_a_probability": true,
+    "data_quality_warnings_remain_separate": true
+  },
+  "publication": {
+    "reports_are_aggregate_only": true,
+    "persist_new_serving_artifact_only_if_candidate_passes_every_gate": true,
+    "preserve_calibration_v1_artifacts": true,
+    "preserve_phase4_yoad_river_autotrader_and_carson_artifacts": true,
+    "legacy_holdout_access": false
+  }
+}

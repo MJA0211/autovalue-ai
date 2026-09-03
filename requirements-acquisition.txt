@@ -1,0 +1,4 @@
+# Optional dataset acquisition/audit tools; not needed by the API or model runtime.
+kagglehub==1.0.2
+# Parquet reader for governed candidate audits; substantially lighter than datasets.
+pyarrow==25.0.1

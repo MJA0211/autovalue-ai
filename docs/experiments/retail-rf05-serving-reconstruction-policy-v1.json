@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "policy_id": "retail-rf05-serving-reconstruction-policy-v1",
+  "authorized_on": "2026-09-02",
+  "classification": "deterministic reconstruction and packaging of the frozen reference estimator",
+  "purpose": "Create one authenticated serving binary from the already-selected RF05 definition without making or revisiting any model decision.",
+  "model": {
+    "model_version": "retail-rf05-v1",
+    "candidate_id": "phase4-retail-random_forest-05",
+    "candidate_index": 5,
+    "parameters": [96, 1024, 5, 1.0, 0.6],
+    "random_state": 1254777149,
+    "feature_contract_version": "retail-historical-asking-price-v2"
+  },
+  "training_boundary": {
+    "source_id": "kaggle_us_sales_cars_v2",
+    "phase3_train_rows": 109510,
+    "calibration_assignment_sha256": "caa743681158c4eaccb2ec75ce17a1c5e20327a311f66c5e8e0d0c630c48e992",
+    "calibration_rows_excluded": 10958,
+    "development_rows_authorized": 98552,
+    "development_only_fit": true,
+    "forbidden_sources": [
+      "final_legacy_holdout",
+      "calibration_partition",
+      "Yoad22",
+      "AutoTrader",
+      "Carson-Shively",
+      "River synthetic events",
+      "newly acquired data"
+    ]
+  },
+  "reproduction_gate": {
+    "method": "existing five-fold predictor-group out-of-fold evaluation",
+    "sample_count": 98552,
+    "expected_metrics": {
+      "mae_usd": 10269.781733328542,
+      "rmse_usd": 30602.265758177135,
+      "r_squared": 0.4856628873797728
+    },
+    "relative_tolerance": 1e-12,
+    "absolute_tolerance": 1e-9,
+    "publish_on_mismatch": false
+  },
+  "determinism_gate": {
+    "independent_full_development_fits": 2,
+    "prediction_comparison_population": "all authorized development predictors plus privacy-safe synthetic fixtures",
+    "maximum_absolute_prediction_difference_usd": 0.0,
+    "serialized_byte_identity_required": false
+  },
+  "serialization": {
+    "format": "joblib",
+    "pickle_protocol": 5,
+    "compression": 0,
+    "trusted_local_only": true,
+    "authenticate_bytes_before_deserialization": true,
+    "remote_or_user_uploaded_artifacts_forbidden": true
+  },
+  "calibration_binding": {
+    "version": "retail-rf05-split-conformal-v1",
+    "artifact_sha256": "b7eb5970b164ec68fb76cf8314f36080d085cda02968d3570d11f724490a6da0",
+    "regeneration_forbidden": true
+  },
+  "upstream_sha256": {
+    "data/processed/kaggle_us_sales_cars_v2/asking_price_candidate.csv": "12880cfbb2cb7f600f291c077adfa247afb9774b400b21bb7eb7409d72f7fb92",
+    "data/processed/kaggle_us_sales_cars_v2/asking_price_candidate.manifest.json": "16a707481684894e3136223985d23cb8b01e113526c7c36ed674e51685f7146d",
+    "data/processed/kaggle_us_sales_cars_v2/asking_price_candidate.ready.json": "0a3ab941d3145b36c6439c36c27759c1ec6273ab0dcde8e57d16d1bb5be818c7",
+    "data/processed/kaggle_us_sales_cars_v2/split/split_assignments.csv": "5b3e39d0ef418c07b0c4d08ecc18700fc9f387518a21dbd604f515463cb5ebe5",
+    "data/processed/kaggle_us_sales_cars_v2/split/split_assignments.manifest.json": "c60bf010fb47dff44d03b5da80b191ddb4b748661cb5cf02397422fdbaaf3466",
+    "data/processed/kaggle_us_sales_cars_v2/split/split_assignments.ready.json": "a6e27179fbfc10c2d6e1a7ff89d21569711a0853859208ac83ee464c144fc248",
+    "docs/data-reviews/kaggle-us-sales-cars-v2.review.json": "316f02c398339022c5667ec66a93f4e209f6386d3578c75a18efbf40d774cf76",
+    "docs/experiments/phase4-model-selection-v1.json": "6e517acb29634d676155c80fb73f4f126db492eba12a4281e9216dc568b1d384",
+    "docs/experiments/phase4-retail-full-development-v1.json": "07cf667e2e325f0bbb9b0fca1d62f4f3cdb54db4d607a03ff603142ee5fbc54f",
+    "docs/experiments/retail-rf05-calibration-v1.artifact.json": "b7eb5970b164ec68fb76cf8314f36080d085cda02968d3570d11f724490a6da0",
+    "ml/src/autovalue_ml/modeling/candidates.py": "480140a97af8a230a38d56d7b037b3f393944e1f7166d3f45b1584179516d18d",
+    "ml/src/autovalue_ml/modeling/tree_preprocessing.py": "fab8894876c0eb82e9dbf8fa353d7f322d4aae2a9e73f32feb76be663473986d",
+    "ml/src/autovalue_ml/modeling/feature_engineering.py": "5471abae3057273733203718072cf6595c9a178f4159c4b58bb1ee9145e8c1a2",
+    "ml/src/autovalue_ml/modeling/contracts.py": "312f8a3aaa31e3b02681611f681c22929785225c904d28bd295fb324652f7316"
+  },
+  "publication": {
+    "bundle_location": "private git-ignored models/retail-rf05-v1",
+    "raw_rows_in_bundle": false,
+    "model_binary_distribution": "blocked_pending_explicit_permission",
+    "source_code_and_aggregate_reconstruction_evidence": "publishable"
+  },
+  "prohibited_actions": [
+    "model selection",
+    "hyperparameter tuning",
+    "feature selection",
+    "calibration regeneration",
+    "holdout loading or scoring",
+    "post-holdout optimization"
+  ]
+}
