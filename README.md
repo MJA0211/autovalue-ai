@@ -27,7 +27,7 @@ A short walkthrough of AutoValue AI will be added here, covering the valuation
 workflow, calibrated uncertainty, engineering dashboard, and River
 shadow-learning simulation.
 
-<!-- Future GitHub-hosted video URL: add here -->
+(https://github.com/user-attachments/assets/67b0460e-c3aa-4675-a5dd-2b3c03d8fade)
 
 ## Final evidence at a glance
 
