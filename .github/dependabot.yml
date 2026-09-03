@@ -13,6 +13,8 @@ updates:
     ignore:
       - dependency-name: "numpy"
         versions: [">=2.5.0"]
+      - dependency-name: "scipy"
+        versions: [">=1.18.0"]
     groups:
       python-compatible-updates:
         patterns:
