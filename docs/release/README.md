@@ -1,12 +1,12 @@
 # Release candidate
 
-AutoValue AI is ready for local demonstration and public source inspection. The
-ML lifecycle is closed: release work must not retrain, tune, recalibrate, open
-the final holdout, or change any frozen experiment decision.
+AutoValue AI can be demonstrated locally and its public source can be reviewed.
+The ML lifecycle is closed. Release work must not retrain, tune, recalibrate,
+open the final holdout, or change any frozen experiment decision.
 
 ## Verified product flow
 
-The authenticated local flow passes end to end:
+The authenticated local flow passed this sequence:
 
 ```text
 React form
@@ -28,12 +28,12 @@ corrupt, unexpected, and mismatched bundles remain fail-closed.
 
 ## UI release findings
 
-The existing product hierarchy was retained. The release pass added five clear
-synthetic presets, keyboard focus on success and error results, busy/live-region
-semantics, active-navigation semantics, accessible River scenario controls, and
-explicit synthetic/shadow labeling. No confidence label appears in the primary
-UI. The primary wording remains “90% calibrated valuation range,” with separate
-data-quality warnings.
+The release pass kept the existing product hierarchy and added five synthetic
+presets. It also added keyboard focus for success and error results,
+busy/live-region semantics, active-navigation semantics, accessible River
+scenario controls, and explicit synthetic/shadow labels. No confidence label
+appears in the primary UI. The primary wording remains "90% calibrated valuation
+range," with separate data-quality warnings.
 
 Headless Chromium visual checks passed at 1440 × 1200 and a true emulated
 390 × 844 viewport. The mobile document reported identical inner and scroll
@@ -61,5 +61,6 @@ serving without expanding dataset or model rights.
 - [Deployment plan](../deployment.md)
 - [Security policy](../../SECURITY.md)
 
-The local Git commit is created only after these artifacts and every quality gate
-are rechecked. No GitHub push or public deployment is part of this release phase.
+The local Git commit was created only after these artifacts and every quality
+gate were rechecked. No GitHub push or public deployment is part of this release
+phase.

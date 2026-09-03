@@ -2,17 +2,18 @@
 
 ## Status
 
-The code, aggregate evidence, synthetic fixtures, and portfolio UI are suitable
-for repository review. Local live valuation is ready with an authenticated,
-Git-ignored RF05 bundle. Public deployment may provision it privately under the
-existing hosted-inference approval, but public download or redistribution of the
-binary remains blocked pending explicit trained-model permission.
+The code, aggregate evidence, synthetic fixtures, and portfolio UI are ready for
+repository review. Local valuation runs with an authenticated, Git-ignored
+RF05 bundle. A public deployment may provision the bundle privately under the
+existing hosted-inference approval. Public download or redistribution remains
+blocked pending explicit trained-model permission.
 
 ## Repository audit
 
-The first-commit candidate had no prior revision history to scan. A current-tree
-scan found no username, absolute local workspace path, API token, hard-coded
-password, bearer credential, or private key in the publishable source tree.
+The repository had no earlier history when the first-commit candidate was
+reviewed. A scan of that tree found no username, absolute local workspace path,
+API token, hard-coded password, bearer credential, or private key in the
+publishable source tree.
 
 Ignore-rule checks confirm that the following stay local:
 
@@ -69,9 +70,9 @@ remain separate permissions.
    local release-candidate captures only after desktop, tablet, and mobile
    review passes.
 
-Free hosting is possible with a static frontend host and a free compute tier for
-FastAPI, but free-tier availability and limits change. Recheck provider terms at
-deployment time; no paid service is required by the architecture.
+A static frontend host and a free compute tier can run the FastAPI application
+without a paid service. Free-tier availability and limits change, so provider
+terms must be checked again before deployment.
 
 The current release-candidate scan, exact first-commit inventory, screenshots,
 and smoke procedure are indexed in [`docs/release`](release/README.md).

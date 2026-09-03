@@ -1,23 +1,25 @@
 # AutoValue AI
 
-**An end-to-end used-vehicle valuation ML engineering system.** AutoValue AI
-combines leakage-safe batch modeling, calibrated uncertainty, governed
-multi-source research, a River shadow-learning architecture, concept-drift
-telemetry, and a production-style FastAPI/React product experience. It uses real
-machine learning and no paid pricing API.
+**An end-to-end used-vehicle valuation ML engineering system.** I built
+AutoValue AI to cover the full ML lifecycle: governed multi-source research,
+leakage-safe batch modeling, calibrated uncertainty, a River shadow-learning
+architecture, and concept-drift telemetry. The application pairs FastAPI with a
+production-style React interface. The estimate comes from the trained model,
+not a paid pricing API.
 
 The active scope is the United States and USD. The frozen RF05 reference model
-estimates historical 2023 advertised asking price—not a live quote, final sale
-price, appraisal, or official Kelley Blue Book/AutoTrader valuation.
+estimates historical 2023 advertised asking price. It does not provide a live
+quote, final sale price, appraisal, or official Kelley Blue Book/AutoTrader
+valuation.
 
-> **Current status:** the ML experimentation lifecycle is closed. The final
-> holdout was opened once and is permanently evaluation-only. Productization is
-> implemented around a checksum-verified, fail-closed serving boundary. A
-> deployment-only process has deterministically reconstructed the already-frozen
-> RF05 estimator from the exact 98,552 development rows, reproduced its five-fold
-> evidence, and created an authenticated private local bundle. The binary remains
-> excluded from Git and public redistribution; a clone without it truthfully
-> reports `artifact required` and never substitutes a placeholder.
+> **Current status:** ML experimentation is closed. The final holdout was opened
+> once and is permanently evaluation-only. The serving boundary verifies
+> checksums and fails closed. A deployment-only process deterministically
+> reconstructed the frozen RF05 estimator from the exact 98,552 development
+> rows, reproduced its five-fold evidence, and created an authenticated private
+> local bundle. The binary remains excluded from Git and public redistribution.
+> A clone without it reports `artifact required` and never substitutes a
+> placeholder.
 
 ## Final evidence at a glance
 
@@ -54,8 +56,9 @@ outcome stream. This is a portfolio/research system, not an appraisal or offer.
 
 ![AutoValue AI authenticated valuation result](docs/screenshots/valuation-result-desktop.png)
 
-The screenshot uses a project-owned example vehicle and the authentic private
-RF05 serving path. No third-party source row or hand-authored valuation is shown.
+The screenshot shows a project-owned example vehicle evaluated through the
+authentic private RF05 serving path. It contains no third-party source row or
+hand-authored valuation.
 
 ## Product goal
 
@@ -99,9 +102,10 @@ flowchart LR
   end
 ```
 
-The paths cannot silently cross governance boundaries. Training and tuning run
-offline. The API loads a local estimator only after its SHA-256, RF05 identity,
-pipeline structure, fitted state, and exact hyperparameters pass validation; it
+These paths cannot silently cross governance boundaries. Training and tuning
+run offline. The API loads a local estimator only after its SHA-256, RF05
+identity, pipeline structure, fitted state, and exact hyperparameters pass
+validation; it
 then binds the estimator to the immutable calibration artifact. Missing or
 mismatched artifacts return a sanitized `503`, never a demo estimate. See
 [the architecture document](docs/architecture.md) for component boundaries and
@@ -463,7 +467,7 @@ scrape Cars.com.
 is the separate wholesale candidate, subject to checksum, geography, privacy,
 leakage, and split gates. It contains 558,837 historical auction rows. The
 approved modeling subset is limited to the 50 U.S. states plus Washington, D.C.;
-Canada and Puerto Rico are excluded. The target is a 2014–2015 **historical
+Canada and Puerto Rico are excluded. The target is a 2014-2015 **historical
 wholesale auction sale price**, not a current retail-market value.
 
 Its verified U.S.-only candidate contains 540,764 accepted rows. VIN, seller,

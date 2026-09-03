@@ -1,8 +1,8 @@
 # Zero-cost deployment design
 
-**Current state:** local valuation is ready with the authenticated, Git-ignored
-RF05 bundle. Public deployment requires provisioning that same bundle privately;
-public binary redistribution remains unapproved.
+**Current state:** local valuation runs with the authenticated, Git-ignored RF05
+bundle. A public deployment must provision that same bundle privately. Public
+binary redistribution remains unapproved.
 
 ## Approved topology
 
@@ -12,7 +12,7 @@ GitHub monorepo
 └── backend  -> any free Python web-service tier -> private RF05 bundle
 ```
 
-The React portfolio and engineering demo require no private data and can deploy
+The React portfolio and engineering demo use no private data and can be deployed
 as static files. FastAPI also starts without data or a model, but deliberately
 reports `artifact_required` until the pinned manifest, model, runtime,
 feature-contract, training-data, and calibration bindings pass. No paid API or
@@ -30,7 +30,7 @@ checked against the selected host rather than assumed.
 ## Backend deployment budget
 
 - one Uvicorn worker;
-- inference only—never train on the host;
+- inference only; training never runs on the host;
 - model artifact below the loader's 300 MB hard limit;
 - warm memory and startup peak measured on the selected free tier;
 - target warm p95 prediction below 500 ms;
@@ -83,14 +83,16 @@ hashes and call `/health/live`, `/api/v1/model`, and the golden
 
 The binary did not exist after model evaluation because that phase intentionally
 persisted aggregate evidence only. It was later created through deterministic
-reconstruction and packaging of the frozen reference estimator—not post-holdout
-tuning. The build used only the 98,552 development rows, reproduced the exact
-five-fold development evidence, and bound the model to unchanged calibration
-v1. See the aggregate reconstruction report for the artifact hashes and runtime.
+reconstruction and packaging of the frozen reference estimator, not through
+post-holdout tuning. The build used only the 98,552 development rows, reproduced
+the exact five-fold development evidence, and bound the model to unchanged
+calibration v1. See the aggregate reconstruction report for the artifact hashes
+and runtime.
 
-The recommended publication strategy is **deployment-private**. Do not commit
-the binary, attach it to a GitHub Release, or add it to LFS while downloadable
-trained-model rights remain pending. An authorized operator can instead run the
+The recommended publication strategy remains **deployment-private**. Do not
+commit the binary, attach it to a GitHub Release, or add it to LFS while
+downloadable trained-model rights remain pending. An authorized operator can
+instead run the
 pinned local reconstruction command documented in `models/README.md` or copy
 the already-authenticated two-file bundle through a private deployment channel.
 

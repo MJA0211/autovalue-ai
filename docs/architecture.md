@@ -2,9 +2,9 @@
 
 ## Goals and constraints
 
-AutoValue AI must demonstrate an original machine-learning workflow rather than
-delegate valuation to a paid API. It must run locally with free, open-source
-software and support a zero-dollar public portfolio deployment.
+AutoValue AI runs its own machine-learning workflow instead of delegating
+valuation to a paid API. It runs locally with free, open-source software and
+supports a zero-dollar public portfolio deployment.
 
 The valuation scope is intentionally narrow: United States vehicles only, with
 `market_country="US"` retained in lineage and all targets and predictions in
@@ -68,11 +68,11 @@ browser/API contract, so a separate shared-code package is not currently needed.
 
 ## Acquisition boundary
 
-Acquisition is an offline subsystem, never an API request path. Collection and
-storage approval are independent from ML-training and public-portfolio approval.
-Successful acquisition therefore cannot silently become a training dependency.
-For a licensed local file, a project-owned review record pins the strict
-manifest's SHA-256 before that manifest can authorize source/version/license,
+Acquisition runs offline and is never part of an API request. Approval to collect
+and store data is separate from approval for ML training and public portfolio
+use, so a successful acquisition does not automatically become a training
+dependency. For a licensed local file, a project-owned review record pins the
+strict manifest's SHA-256 before that manifest can authorize source/version/license,
 approval evidence, format, and artifact checksum for bounded CSV/JSONL parsing.
 For a scraping adapter, a versioned policy pins exact origin, paths, query keys,
 permitted fields, terms evidence, retention, and crawl budgets. `robots.txt` may
@@ -176,8 +176,8 @@ heteroscedastic, but rejected both tested normalized-conformal candidates. Their
 80% width results were flat or worse and their roughly 3.5% reductions at 90%
 did not satisfy the frozen sharpness and bootstrap gates; both also produced
 excessive conditional-coverage regressions.
-Consequently the architecture remains on the simpler status-conditional v1
-artifact; no Gamma residual-scale model or v2 serving artifact exists. Any
+The architecture therefore retains the simpler status-conditional v1 artifact;
+no Gamma residual-scale model or v2 serving artifact exists. Any
 eventual legacy-holdout evaluation must use this frozen choice, and a new
 unbiased coverage claim still requires newly authorized later-period data.
 
