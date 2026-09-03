@@ -23,11 +23,10 @@ valuation.
 
 ## Demo Video
 
-A short walkthrough of AutoValue AI will be added here, covering the valuation
-workflow, calibrated uncertainty, engineering dashboard, and River
-shadow-learning simulation.
+A short walkthrough of AutoValue AI covering the valuation workflow, calibrated
+uncertainty, engineering dashboard, and River shadow-learning simulation.
 
-(https://github.com/user-attachments/assets/67b0460e-c3aa-4675-a5dd-2b3c03d8fade)
+[![AutoValue AI demo video](docs/screenshots/valuation-result-desktop.png)](https://github.com/user-attachments/assets/67b0460e-c3aa-4675-a5dd-2b3c03d8fade)
 
 ## Final evidence at a glance
 
@@ -62,9 +61,7 @@ outcome stream. This is a portfolio/research system, not an appraisal or offer.
 
 ## Product preview
 
-![AutoValue AI authenticated valuation result](docs/screenshots/valuation-result-desktop.png)
-
-The screenshot shows a project-owned example vehicle evaluated through the
+The demo thumbnail shows a project-owned example vehicle evaluated through the
 authentic private RF05 serving path. It contains no third-party source row or
 hand-authored valuation.
 
