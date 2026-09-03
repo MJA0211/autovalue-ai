@@ -28,6 +28,10 @@ uncertainty, engineering dashboard, and River shadow-learning simulation.
 
 [![AutoValue AI demo video](docs/screenshots/valuation-result-desktop.png)](https://github.com/user-attachments/assets/%36%37b0460e-c3aa-4675-a5dd-2b3c03d8fade)
 
+The demo uses a project-owned example vehicle evaluated through the authentic
+private RF05 serving path. It contains no third-party source row or hand-authored
+valuation.
+
 ## Final evidence at a glance
 
 | Evidence | Result |
@@ -58,12 +62,6 @@ Mercedes and Porsche are weak supported manufacturer slices; intervals can be
 broad; the asking-price data describes a historical 2023 market rather than the
 live market; and River uses synthetic shadow scenarios with no verified live
 outcome stream. This is a portfolio/research system, not an appraisal or offer.
-
-## Product preview
-
-The demo thumbnail shows a project-owned example vehicle evaluated through the
-authentic private RF05 serving path. It contains no third-party source row or
-hand-authored valuation.
 
 ## Product goal
 
