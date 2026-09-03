@@ -15,6 +15,10 @@ updates:
         versions: [">=2.5.0"]
       - dependency-name: "scipy"
         versions: [">=1.18.0"]
+      # Joblib is serialization-bound to the frozen RF05 V1 serving manifest. Remove when a
+      # future model version is intentionally rebuilt and governed under a new runtime contract.
+      - dependency-name: "joblib"
+        versions: [">1.5.3"]
     groups:
       python-compatible-updates:
         patterns:
