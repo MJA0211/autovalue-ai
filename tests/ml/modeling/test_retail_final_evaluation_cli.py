@@ -22,6 +22,11 @@ from autovalue_ml.modeling.retail_final_evaluation import FinalEvaluationResult
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 POLICY_PATH = PROJECT_ROOT / "docs" / "experiments" / "retail-rf05-final-evaluation-policy-v1.json"
+_PRIVATE_EVIDENCE_PROVISIONED = all(
+    PROJECT_ROOT.joinpath(*relative.parts).is_file()
+    for relative, _ in cli._BOUND_FILES.values()
+    if relative.parts[0] == "data"
+)
 
 
 class CountedRows:
@@ -44,6 +49,10 @@ def _features(rows: int) -> pd.DataFrame:
     )
 
 
+@pytest.mark.skipif(
+    not _PRIVATE_EVIDENCE_PROVISIONED,
+    reason="governed local RF05 evidence is not provisioned",
+)
 def test_actual_frozen_evidence_bindings_verify_without_holdout_access() -> None:
     evidence = cli._verify_frozen_evidence(PROJECT_ROOT)
 

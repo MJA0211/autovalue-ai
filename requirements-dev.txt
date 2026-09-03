@@ -1,4 +1,5 @@
 -r requirements-training.txt
+-r requirements-acquisition.txt
 
 jsonschema==4.26.0
 mypy==2.3.1
